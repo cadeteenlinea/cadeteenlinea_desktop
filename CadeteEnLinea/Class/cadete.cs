@@ -50,22 +50,36 @@ namespace CadeteEnLinea
 
                 if (estado == 3)
                 {
-                    var trans = conexion.cadete.Where(p => p.estado == estado);
-                    foreach (var u in trans)
-                    {
-                        conexion.cadete.Remove(u);
-                    }
+                    cadete.deleteEstado(3);
                 }
                 else
                 {
-                    conexion.cadete
-                        .Where(p => p.estado == estado)
-                        .ToList()
-                        .ForEach(p => p.estado = 0);
+                    cadete.changeEstado(estado, 0);
                 }
                 conexion.SaveChanges();
             }
             return result;
+        }
+
+        /******Cambia de estado los registros, segun el actual y el despues*****/
+        public static void changeEstado(int estadoActual, int estadoDespues)
+        {
+            conexion.cadete
+                .Where(p => p.estado == estadoActual)
+                .ToList()
+                .ForEach(p => p.estado = estadoDespues);
+            conexion.SaveChanges();
+        }
+
+        /********Elimina los registros que tengan el estado entregado**********/
+        public static void deleteEstado(int estado)
+        {
+            var trans = conexion.cadete.Where(p => p.estado == estado);
+            foreach (var u in trans)
+            {
+                conexion.cadete.Remove(u);
+            }
+            conexion.SaveChanges();
         }
     }
 }

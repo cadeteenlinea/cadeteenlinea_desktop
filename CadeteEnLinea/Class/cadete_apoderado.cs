@@ -15,7 +15,7 @@ namespace CadeteEnLinea
         public static string sendWeb(int estado)
         {
             var json = "";
-            var cadete_apoderado = conexion.cadete_apoderado.Where(p => p.estado == estado).Select(p => new
+            var cadetes_apoderados = conexion.cadete_apoderado.Where(p => p.estado == estado).Select(p => new
             {
                 idcadete_apoderado	 = p.idcadete_apoderado,
                 cadete_rut = p.cadete_rut,
@@ -24,10 +24,10 @@ namespace CadeteEnLinea
             }).ToList();
 
             string result = String.Empty;
-            if (cadete_apoderado.Count() != 0)
+            if (cadetes_apoderados.Count() != 0)
             {
                 JavaScriptSerializer jss = new JavaScriptSerializer();
-                json = jss.Serialize(cadete_apoderado);
+                json = jss.Serialize(cadetes_apoderados);
 
                 Service_CadeteEnLinea.SiteControllerPortTypeClient webService = new SiteControllerPortTypeClient();
                 result = webService.cadete_apoderado(json, estado.ToString());
@@ -35,22 +35,36 @@ namespace CadeteEnLinea
 
                 if (estado == 3)
                 {
-                    var trans = conexion.cadete_apoderado.Where(p => p.estado == estado);
-                    foreach (var u in trans)
-                    {
-                        conexion.cadete_apoderado.Remove(u);
-                    }
+                    cadete_apoderado.deleteEstado(3);
                 }
                 else
                 {
-                    conexion.cadete_apoderado
-                        .Where(p => p.estado == estado)
-                        .ToList()
-                        .ForEach(p => p.estado = 0);
+                    cadete_apoderado.changeEstado(estado, 0);
                 }
                 conexion.SaveChanges();
             }
             return result;
+        }
+
+        /******Cambia de estado los registros, segun el actual y el despues*****/
+        public static void changeEstado(int estadoActual, int estadoDespues)
+        {
+            conexion.cadete_apoderado
+                .Where(p => p.estado == estadoActual)
+                .ToList()
+                .ForEach(p => p.estado = estadoDespues);
+            conexion.SaveChanges();
+        }
+
+        /********Elimina los registros que tengan el estado entregado**********/
+        public static void deleteEstado(int estado)
+        {
+            var trans = conexion.cadete_apoderado.Where(p => p.estado == estado);
+            foreach (var u in trans)
+            {
+                conexion.cadete_apoderado.Remove(u);
+            }
+            conexion.SaveChanges();
         }
     }
 }
