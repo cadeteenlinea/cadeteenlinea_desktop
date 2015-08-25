@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6d80f54f9ea648d7ac0fb756343fcdd9" Name="Diagrama1" ZoomLevel="50">
+        <EntityTypeShape EntityType="cadeteenlineaModel.apoderado" Width="1.5" PointX="3" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="cadeteenlineaModel.asignatura" Width="1.5" PointX="6" PointY="23" IsExpanded="true" />
+        <EntityTypeShape EntityType="cadeteenlineaModel.cadete" Width="1.5" PointX="3" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="cadeteenlineaModel.cadete_apoderado" Width="1.5" PointX="8.25" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="cadeteenlineaModel.calificaciones" Width="1.5" PointX="5.25" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="cadeteenlineaModel.ingles_tae" Width="1.5" PointX="5.25" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cadeteenlineaModel.notas_finales" Width="1.5" PointX="8.25" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="cadeteenlineaModel.notas_parciales" Width="1.5" PointX="5.25" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cadeteenlineaModel.transaccion" Width="1.5" PointX="5.25" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cadeteenlineaModel.usuario" Width="1.5" PointX="0.75" PointY="12.25" IsExpanded="true" />
+        <AssociationConnector Association="cadeteenlineaModel.FK_apoderado_usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="cadeteenlineaModel.FK_cadete_apoderado_apoderado" ManuallyRouted="false" />
+        <AssociationConnector Association="cadeteenlineaModel.FK_notas_finales_asignatura" ManuallyRouted="false" />
+        <AssociationConnector Association="cadeteenlineaModel.FK_notas_parciales_asignatura" ManuallyRouted="false" />
+        <AssociationConnector Association="cadeteenlineaModel.FK_cadete_apoderado_cadete" ManuallyRouted="false" />
+        <AssociationConnector Association="cadeteenlineaModel.FK_cadete_usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="cadeteenlineaModel.FK_calificaciones_cadete" ManuallyRouted="false" />
+        <AssociationConnector Association="cadeteenlineaModel.FK_ingles_tae_cadete" ManuallyRouted="false" />
+        <AssociationConnector Association="cadeteenlineaModel.FK_notas_finales_cadete" ManuallyRouted="false" />
+        <AssociationConnector Association="cadeteenlineaModel.FK_notas_parciales_cadete1" ManuallyRouted="false" />
+        <AssociationConnector Association="cadeteenlineaModel.FK_transaccion_cadete" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

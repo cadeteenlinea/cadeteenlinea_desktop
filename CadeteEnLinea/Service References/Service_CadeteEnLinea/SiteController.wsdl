@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn:SiteControllerwsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns="http://schemas.xmlsoap.org/wsdl/" name="SiteController" targetNamespace="urn:SiteControllerwsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types />
+  <wsdl:message name="usuariosIn">
+    <wsdl:part name="usuariosJson" type="xsd:string" />
+    <wsdl:part name="estado" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="usuariosOut">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="cadetesIn">
+    <wsdl:part name="cadetesJson" type="xsd:string" />
+    <wsdl:part name="estado" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="cadetesOut">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="apoderadosIn">
+    <wsdl:part name="apoderadoJson" type="xsd:string" />
+    <wsdl:part name="estado" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="apoderadosOut">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="cadete_apoderadoIn">
+    <wsdl:part name="cadete_apoderadoJson" type="xsd:string" />
+    <wsdl:part name="estado" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="cadete_apoderadoOut">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="calificacionesIn">
+    <wsdl:part name="calificacionesJson" type="xsd:string" />
+    <wsdl:part name="estado" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="calificacionesOut">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="inglesIn">
+    <wsdl:part name="inglesJson" type="xsd:string" />
+    <wsdl:part name="estado" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="inglesOut">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="asignaturasIn">
+    <wsdl:part name="asignaturasJson" type="xsd:string" />
+    <wsdl:part name="estado" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="asignaturasOut">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="notasParcialesIn">
+    <wsdl:part name="notasParcialesJson" type="xsd:string" />
+    <wsdl:part name="estado" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="notasParcialesOut">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="notasFinalesIn">
+    <wsdl:part name="notasFinalesJson" type="xsd:string" />
+    <wsdl:part name="estado" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="notasFinalesOut">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="transaccionesIn">
+    <wsdl:part name="transaccionesJson" type="xsd:string" />
+    <wsdl:part name="estado" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="transaccionesOut">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:portType name="SiteControllerPortType">
+    <wsdl:operation name="usuarios">
+      <wsdl:documentation />
+      <wsdl:input message="tns:usuariosIn" />
+      <wsdl:output message="tns:usuariosOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cadetes">
+      <wsdl:documentation />
+      <wsdl:input message="tns:cadetesIn" />
+      <wsdl:output message="tns:cadetesOut" />
+    </wsdl:operation>
+    <wsdl:operation name="apoderados">
+      <wsdl:documentation />
+      <wsdl:input message="tns:apoderadosIn" />
+      <wsdl:output message="tns:apoderadosOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cadete_apoderado">
+      <wsdl:documentation />
+      <wsdl:input message="tns:cadete_apoderadoIn" />
+      <wsdl:output message="tns:cadete_apoderadoOut" />
+    </wsdl:operation>
+    <wsdl:operation name="calificaciones">
+      <wsdl:documentation />
+      <wsdl:input message="tns:calificacionesIn" />
+      <wsdl:output message="tns:calificacionesOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ingles">
+      <wsdl:documentation />
+      <wsdl:input message="tns:inglesIn" />
+      <wsdl:output message="tns:inglesOut" />
+    </wsdl:operation>
+    <wsdl:operation name="asignaturas">
+      <wsdl:documentation />
+      <wsdl:input message="tns:asignaturasIn" />
+      <wsdl:output message="tns:asignaturasOut" />
+    </wsdl:operation>
+    <wsdl:operation name="notasParciales">
+      <wsdl:documentation />
+      <wsdl:input message="tns:notasParcialesIn" />
+      <wsdl:output message="tns:notasParcialesOut" />
+    </wsdl:operation>
+    <wsdl:operation name="notasFinales">
+      <wsdl:documentation />
+      <wsdl:input message="tns:notasFinalesIn" />
+      <wsdl:output message="tns:notasFinalesOut" />
+    </wsdl:operation>
+    <wsdl:operation name="transacciones">
+      <wsdl:documentation />
+      <wsdl:input message="tns:transaccionesIn" />
+      <wsdl:output message="tns:transaccionesOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SiteControllerBinding" type="tns:SiteControllerPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <wsdl:operation name="usuarios">
+      <soap:operation soapAction="urn:SiteControllerwsdl#usuarios" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:SiteControllerwsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:SiteControllerwsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cadetes">
+      <soap:operation soapAction="urn:SiteControllerwsdl#cadetes" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:SiteControllerwsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:SiteControllerwsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="apoderados">
+      <soap:operation soapAction="urn:SiteControllerwsdl#apoderados" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:SiteControllerwsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:SiteControllerwsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cadete_apoderado">
+      <soap:operation soapAction="urn:SiteControllerwsdl#cadete_apoderado" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:SiteControllerwsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:SiteControllerwsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="calificaciones">
+      <soap:operation soapAction="urn:SiteControllerwsdl#calificaciones" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:SiteControllerwsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:SiteControllerwsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ingles">
+      <soap:operation soapAction="urn:SiteControllerwsdl#ingles" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:SiteControllerwsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:SiteControllerwsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="asignaturas">
+      <soap:operation soapAction="urn:SiteControllerwsdl#asignaturas" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:SiteControllerwsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:SiteControllerwsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="notasParciales">
+      <soap:operation soapAction="urn:SiteControllerwsdl#notasParciales" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:SiteControllerwsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:SiteControllerwsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="notasFinales">
+      <soap:operation soapAction="urn:SiteControllerwsdl#notasFinales" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:SiteControllerwsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:SiteControllerwsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="transacciones">
+      <soap:operation soapAction="urn:SiteControllerwsdl#transacciones" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:SiteControllerwsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:SiteControllerwsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SiteControllerService">
+    <wsdl:port name="SiteControllerPort" binding="tns:SiteControllerBinding">
+      <soap:address location="http://localhost/cadeteenlinea/site/cadeteEnLineaDesktop?ws=1" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

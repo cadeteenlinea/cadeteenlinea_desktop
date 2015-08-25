@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2E2800DA-BE32-4C25-A609-B0C033975026}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CadeteEnLinea</RootNamespace>
+    <AssemblyName>CadeteEnLinea</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="apoderado.cs">
+      <DependentUpon>CadeteEnLineaSqlServer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="asignatura.cs">
+      <DependentUpon>CadeteEnLineaSqlServer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cadete.cs">
+      <DependentUpon>CadeteEnLineaSqlServer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CadeteEnLineaSqlServer.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CadeteEnLineaSqlServer.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CadeteEnLineaSqlServer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CadeteEnLineaSqlServer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CadeteEnLineaSqlServer.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CadeteEnLineaSqlServer.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="cadete_apoderado.cs">
+      <DependentUpon>CadeteEnLineaSqlServer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="calificaciones.cs">
+      <DependentUpon>CadeteEnLineaSqlServer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Class\apoderado.cs" />
+    <Compile Include="Class\asignatura.cs" />
+    <Compile Include="Class\cadete.cs" />
+    <Compile Include="Class\cadete_apoderado.cs" />
+    <Compile Include="Class\calificaciones.cs" />
+    <Compile Include="Class\Error.cs" />
+    <Compile Include="Class\ingles_tae.cs" />
+    <Compile Include="Class\notas_finales.cs" />
+    <Compile Include="Class\notas_parciales.cs" />
+    <Compile Include="Class\transaccion.cs" />
+    <Compile Include="Class\usuario.cs" />
+    <Compile Include="FormProgress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProgress.Designer.cs">
+      <DependentUpon>FormProgress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ingles_tae.cs">
+      <DependentUpon>CadeteEnLineaSqlServer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="notas_finales.cs">
+      <DependentUpon>CadeteEnLineaSqlServer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="notas_parciales.cs">
+      <DependentUpon>CadeteEnLineaSqlServer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\Service_CadeteEnLinea\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="transaccion.cs">
+      <DependentUpon>CadeteEnLineaSqlServer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usuario.cs">
+      <DependentUpon>CadeteEnLineaSqlServer.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FormProgress.resx">
+      <DependentUpon>FormProgress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EntityDeploy Include="CadeteEnLineaSqlServer.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CadeteEnLineaSqlServer.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="CadeteEnLineaSqlServer.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CadeteEnLineaSqlServer.edmx</DependentUpon>
+      <LastGenOutput>CadeteEnLineaSqlServer.Context.cs</LastGenOutput>
+    </None>
+    <None Include="CadeteEnLineaSqlServer.edmx.diagram">
+      <DependentUpon>CadeteEnLineaSqlServer.edmx</DependentUpon>
+    </None>
+    <None Include="CadeteEnLineaSqlServer.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CadeteEnLineaSqlServer.edmx</DependentUpon>
+      <LastGenOutput>CadeteEnLineaSqlServer.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Service References\Service_CadeteEnLinea\SiteController.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\Service_CadeteEnLinea\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Service_CadeteEnLinea\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Service_CadeteEnLinea\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Service_CadeteEnLinea\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loading.gif" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,887 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="cadeteenlineaModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="cadeteenlineaModelStoreContainer">
+          <EntitySet Name="apoderado" EntityType="cadeteenlineaModel.Store.apoderado" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="asignatura" EntityType="cadeteenlineaModel.Store.asignatura" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="cadete" EntityType="cadeteenlineaModel.Store.cadete" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="cadete_apoderado" EntityType="cadeteenlineaModel.Store.cadete_apoderado" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="calificaciones" EntityType="cadeteenlineaModel.Store.calificaciones" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ingles_tae" EntityType="cadeteenlineaModel.Store.ingles_tae" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="notas_finales" EntityType="cadeteenlineaModel.Store.notas_finales" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="notas_parciales" EntityType="cadeteenlineaModel.Store.notas_parciales" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="transaccion" EntityType="cadeteenlineaModel.Store.transaccion" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="usuario" EntityType="cadeteenlineaModel.Store.usuario" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_apoderado_usuario" Association="cadeteenlineaModel.Store.FK_apoderado_usuario">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="apoderado" EntitySet="apoderado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cadete_apoderado_apoderado" Association="cadeteenlineaModel.Store.FK_cadete_apoderado_apoderado">
+            <End Role="apoderado" EntitySet="apoderado" />
+            <End Role="cadete_apoderado" EntitySet="cadete_apoderado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cadete_apoderado_cadete" Association="cadeteenlineaModel.Store.FK_cadete_apoderado_cadete">
+            <End Role="cadete" EntitySet="cadete" />
+            <End Role="cadete_apoderado" EntitySet="cadete_apoderado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cadete_usuario" Association="cadeteenlineaModel.Store.FK_cadete_usuario">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="cadete" EntitySet="cadete" />
+          </AssociationSet>
+          <AssociationSet Name="FK_calificaciones_cadete" Association="cadeteenlineaModel.Store.FK_calificaciones_cadete">
+            <End Role="cadete" EntitySet="cadete" />
+            <End Role="calificaciones" EntitySet="calificaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ingles_tae_cadete" Association="cadeteenlineaModel.Store.FK_ingles_tae_cadete">
+            <End Role="cadete" EntitySet="cadete" />
+            <End Role="ingles_tae" EntitySet="ingles_tae" />
+          </AssociationSet>
+          <AssociationSet Name="FK_notas_finales_asignatura" Association="cadeteenlineaModel.Store.FK_notas_finales_asignatura">
+            <End Role="asignatura" EntitySet="asignatura" />
+            <End Role="notas_finales" EntitySet="notas_finales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_notas_finales_cadete" Association="cadeteenlineaModel.Store.FK_notas_finales_cadete">
+            <End Role="cadete" EntitySet="cadete" />
+            <End Role="notas_finales" EntitySet="notas_finales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_notas_parciales_asignatura" Association="cadeteenlineaModel.Store.FK_notas_parciales_asignatura">
+            <End Role="asignatura" EntitySet="asignatura" />
+            <End Role="notas_parciales" EntitySet="notas_parciales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_notas_parciales_cadete1" Association="cadeteenlineaModel.Store.FK_notas_parciales_cadete1">
+            <End Role="cadete" EntitySet="cadete" />
+            <End Role="notas_parciales" EntitySet="notas_parciales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_transaccion_cadete" Association="cadeteenlineaModel.Store.FK_transaccion_cadete">
+            <End Role="cadete" EntitySet="cadete" />
+            <End Role="transaccion" EntitySet="transaccion" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="apoderado">
+          <Key>
+            <PropertyRef Name="rut" />
+          </Key>
+          <Property Name="rut" Type="numeric" Nullable="false" Precision="10" />
+          <Property Name="direccion" Type="nvarchar" MaxLength="100" />
+          <Property Name="comuna" Type="nvarchar" MaxLength="25" />
+          <Property Name="ciudad" Type="nvarchar" MaxLength="25" />
+          <Property Name="fono" Type="nvarchar" MaxLength="15" />
+          <Property Name="fonoComercial" Type="nvarchar" MaxLength="15" />
+          <Property Name="difunto" Type="nvarchar" MaxLength="2" />
+          <Property Name="estado" Type="int" />
+        </EntityType>
+        <EntityType Name="asignatura">
+          <Key>
+            <PropertyRef Name="idasignatura" />
+          </Key>
+          <Property Name="idasignatura" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="codigo" Type="nvarchar" MaxLength="6" />
+          <Property Name="ano" Type="numeric" Precision="4" />
+          <Property Name="semestre" Type="numeric" Precision="1" />
+          <Property Name="curso" Type="numeric" Precision="1" />
+          <Property Name="nombre" Type="nvarchar" MaxLength="25" />
+          <Property Name="especialidad" Type="nvarchar" MaxLength="1" />
+          <Property Name="estado" Type="int" />
+        </EntityType>
+        <EntityType Name="cadete">
+          <Key>
+            <PropertyRef Name="rut" />
+          </Key>
+          <Property Name="rut" Type="numeric" Nullable="false" Precision="10" />
+          <Property Name="nCadete" Type="numeric" Precision="10" />
+          <Property Name="division" Type="nvarchar" MaxLength="2" />
+          <Property Name="anoIngreso" Type="numeric" Precision="10" />
+          <Property Name="anoNacimiento" Type="numeric" Precision="10" />
+          <Property Name="mesNacimiento" Type="numeric" Precision="10" />
+          <Property Name="diaNacimiento" Type="numeric" Precision="10" />
+          <Property Name="lugarNacimiento" Type="nvarchar" MaxLength="100" />
+          <Property Name="seleccion" Type="nvarchar" MaxLength="25" />
+          <Property Name="especialidad" Type="nvarchar" MaxLength="1" />
+          <Property Name="nivel" Type="nvarchar" MaxLength="25" />
+          <Property Name="curso" Type="nvarchar" MaxLength="2" />
+          <Property Name="circulo" Type="nvarchar" MaxLength="50" />
+          <Property Name="nacionalidad" Type="nvarchar" MaxLength="20" />
+          <Property Name="estado" Type="int" />
+        </EntityType>
+        <EntityType Name="cadete_apoderado">
+          <Key>
+            <PropertyRef Name="idcadete_apoderado" />
+          </Key>
+          <Property Name="idcadete_apoderado" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="cadete_rut" Type="numeric" Nullable="false" Precision="10" />
+          <Property Name="apoderado_rut" Type="numeric" Nullable="false" Precision="10" />
+          <Property Name="tipoApoderado" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="estado" Type="int" />
+        </EntityType>
+        <EntityType Name="calificaciones">
+          <Key>
+            <PropertyRef Name="idcalificaciones" />
+          </Key>
+          <Property Name="idcalificaciones" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="cadete_rut" Type="numeric" Precision="10" />
+          <Property Name="ano" Type="numeric" Precision="4" />
+          <Property Name="semestre" Type="numeric" Precision="1" />
+          <Property Name="mando" Type="numeric" Precision="4" Scale="2" />
+          <Property Name="interes_profesional" Type="numeric" Precision="4" Scale="2" />
+          <Property Name="personalidad_madurez" Type="numeric" Precision="4" Scale="2" />
+          <Property Name="responsabilidad" Type="numeric" Precision="4" Scale="2" />
+          <Property Name="espiritu_militar" Type="numeric" Precision="4" Scale="2" />
+          <Property Name="cooperacion" Type="numeric" Precision="4" Scale="2" />
+          <Property Name="conducta" Type="numeric" Precision="4" Scale="2" />
+          <Property Name="aptitud_fisica" Type="numeric" Precision="4" Scale="2" />
+          <Property Name="tenida_orden_aseo" Type="numeric" Precision="4" Scale="2" />
+          <Property Name="final" Type="numeric" Precision="4" Scale="2" />
+          <Property Name="estado" Type="int" />
+        </EntityType>
+        <EntityType Name="ingles_tae">
+          <Key>
+            <PropertyRef Name="idingles_tae" />
+          </Key>
+          <Property Name="idingles_tae" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="cadete_rut" Type="numeric" Precision="10" />
+          <Property Name="mes" Type="numeric" Precision="11" />
+          <Property Name="ano" Type="numeric" Precision="11" />
+          <Property Name="speaking" Type="numeric" Precision="11" />
+          <Property Name="understanding" Type="numeric" Precision="11" />
+          <Property Name="writing" Type="numeric" Precision="11" />
+          <Property Name="average" Type="numeric" Precision="11" />
+          <Property Name="estado" Type="int" />
+        </EntityType>
+        <EntityType Name="notas_finales">
+          <Key>
+            <PropertyRef Name="idnotas_finales" />
+          </Key>
+          <Property Name="idnotas_finales" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="nota_presentacion" Type="numeric" Precision="6" Scale="2" />
+          <Property Name="nota_examen" Type="numeric" Precision="6" Scale="2" />
+          <Property Name="nota_final" Type="numeric" Precision="6" Scale="2" />
+          <Property Name="nota_examen_repeticion" Type="numeric" Precision="6" Scale="2" />
+          <Property Name="nota_final_repeticion" Type="numeric" Precision="6" Scale="2" />
+          <Property Name="estado" Type="nvarchar" MaxLength="1" />
+          <Property Name="asignatura_idasignatura" Type="int" />
+          <Property Name="cadete_rut" Type="numeric" Precision="10" />
+          <Property Name="estado_tf" Type="int" />
+        </EntityType>
+        <EntityType Name="notas_parciales">
+          <Key>
+            <PropertyRef Name="idnotas_parciales" />
+          </Key>
+          <Property Name="idnotas_parciales" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="cadete_rut" Type="numeric" Precision="10" />
+          <Property Name="nota" Type="numeric" Precision="3" Scale="1" />
+          <Property Name="dia" Type="numeric" Precision="2" />
+          <Property Name="mes" Type="numeric" Precision="2" />
+          <Property Name="ano" Type="numeric" Precision="4" />
+          <Property Name="semestre" Type="numeric" Precision="1" />
+          <Property Name="asignatura_idasignatura" Type="int" />
+          <Property Name="tipo" Type="nvarchar" MaxLength="1" />
+          <Property Name="nNota" Type="numeric" Precision="2" />
+          <Property Name="estado" Type="int" />
+        </EntityType>
+        <EntityType Name="transaccion">
+          <Key>
+            <PropertyRef Name="idtransaccion" />
+          </Key>
+          <Property Name="idtransaccion" Type="int" Nullable="false" />
+          <Property Name="cadete_rut" Type="numeric" Precision="10" />
+          <Property Name="tipoTransaccion" Type="nvarchar" MaxLength="5" />
+          <Property Name="monto" Type="int" />
+          <Property Name="fechaMovimiento" Type="datetime" />
+          <Property Name="descripcion" Type="varchar" MaxLength="50" />
+          <Property Name="tipoCuenta" Type="varchar" MaxLength="25" />
+          <Property Name="estado" Type="int" />
+        </EntityType>
+        <EntityType Name="usuario">
+          <Key>
+            <PropertyRef Name="rut" />
+          </Key>
+          <Property Name="rut" Type="numeric" Nullable="false" Precision="10" />
+          <Property Name="apellidoPat" Type="nvarchar" MaxLength="25" />
+          <Property Name="apellidoMat" Type="nvarchar" MaxLength="25" />
+          <Property Name="nombre" Type="nvarchar" MaxLength="50" />
+          <Property Name="password_2" Type="varchar" MaxLength="250" />
+          <Property Name="perfil" Type="varchar" MaxLength="15" />
+          <Property Name="estado" Type="int" />
+        </EntityType>
+        <Association Name="FK_apoderado_usuario">
+          <End Role="usuario" Type="cadeteenlineaModel.Store.usuario" Multiplicity="1" />
+          <End Role="apoderado" Type="cadeteenlineaModel.Store.apoderado" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="rut" />
+            </Principal>
+            <Dependent Role="apoderado">
+              <PropertyRef Name="rut" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cadete_apoderado_apoderado">
+          <End Role="apoderado" Type="cadeteenlineaModel.Store.apoderado" Multiplicity="1" />
+          <End Role="cadete_apoderado" Type="cadeteenlineaModel.Store.cadete_apoderado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="apoderado">
+              <PropertyRef Name="rut" />
+            </Principal>
+            <Dependent Role="cadete_apoderado">
+              <PropertyRef Name="apoderado_rut" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cadete_apoderado_cadete">
+          <End Role="cadete" Type="cadeteenlineaModel.Store.cadete" Multiplicity="1" />
+          <End Role="cadete_apoderado" Type="cadeteenlineaModel.Store.cadete_apoderado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cadete">
+              <PropertyRef Name="rut" />
+            </Principal>
+            <Dependent Role="cadete_apoderado">
+              <PropertyRef Name="cadete_rut" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cadete_usuario">
+          <End Role="usuario" Type="cadeteenlineaModel.Store.usuario" Multiplicity="1" />
+          <End Role="cadete" Type="cadeteenlineaModel.Store.cadete" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="rut" />
+            </Principal>
+            <Dependent Role="cadete">
+              <PropertyRef Name="rut" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_calificaciones_cadete">
+          <End Role="cadete" Type="cadeteenlineaModel.Store.cadete" Multiplicity="0..1" />
+          <End Role="calificaciones" Type="cadeteenlineaModel.Store.calificaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cadete">
+              <PropertyRef Name="rut" />
+            </Principal>
+            <Dependent Role="calificaciones">
+              <PropertyRef Name="cadete_rut" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ingles_tae_cadete">
+          <End Role="cadete" Type="cadeteenlineaModel.Store.cadete" Multiplicity="0..1" />
+          <End Role="ingles_tae" Type="cadeteenlineaModel.Store.ingles_tae" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cadete">
+              <PropertyRef Name="rut" />
+            </Principal>
+            <Dependent Role="ingles_tae">
+              <PropertyRef Name="cadete_rut" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_notas_finales_asignatura">
+          <End Role="asignatura" Type="cadeteenlineaModel.Store.asignatura" Multiplicity="0..1" />
+          <End Role="notas_finales" Type="cadeteenlineaModel.Store.notas_finales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="asignatura">
+              <PropertyRef Name="idasignatura" />
+            </Principal>
+            <Dependent Role="notas_finales">
+              <PropertyRef Name="asignatura_idasignatura" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_notas_finales_cadete">
+          <End Role="cadete" Type="cadeteenlineaModel.Store.cadete" Multiplicity="0..1" />
+          <End Role="notas_finales" Type="cadeteenlineaModel.Store.notas_finales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cadete">
+              <PropertyRef Name="rut" />
+            </Principal>
+            <Dependent Role="notas_finales">
+              <PropertyRef Name="cadete_rut" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_notas_parciales_asignatura">
+          <End Role="asignatura" Type="cadeteenlineaModel.Store.asignatura" Multiplicity="0..1" />
+          <End Role="notas_parciales" Type="cadeteenlineaModel.Store.notas_parciales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="asignatura">
+              <PropertyRef Name="idasignatura" />
+            </Principal>
+            <Dependent Role="notas_parciales">
+              <PropertyRef Name="asignatura_idasignatura" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_notas_parciales_cadete1">
+          <End Role="cadete" Type="cadeteenlineaModel.Store.cadete" Multiplicity="0..1" />
+          <End Role="notas_parciales" Type="cadeteenlineaModel.Store.notas_parciales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cadete">
+              <PropertyRef Name="rut" />
+            </Principal>
+            <Dependent Role="notas_parciales">
+              <PropertyRef Name="cadete_rut" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_transaccion_cadete">
+          <End Role="cadete" Type="cadeteenlineaModel.Store.cadete" Multiplicity="0..1" />
+          <End Role="transaccion" Type="cadeteenlineaModel.Store.transaccion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cadete">
+              <PropertyRef Name="rut" />
+            </Principal>
+            <Dependent Role="transaccion">
+              <PropertyRef Name="cadete_rut" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="cadeteenlineaModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="cadeteenlineaEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="apoderado" EntityType="cadeteenlineaModel.apoderado" />
+          <EntitySet Name="asignatura" EntityType="cadeteenlineaModel.asignatura" />
+          <EntitySet Name="cadete" EntityType="cadeteenlineaModel.cadete" />
+          <EntitySet Name="cadete_apoderado" EntityType="cadeteenlineaModel.cadete_apoderado" />
+          <EntitySet Name="calificaciones" EntityType="cadeteenlineaModel.calificaciones" />
+          <EntitySet Name="ingles_tae" EntityType="cadeteenlineaModel.ingles_tae" />
+          <EntitySet Name="notas_finales" EntityType="cadeteenlineaModel.notas_finales" />
+          <EntitySet Name="notas_parciales" EntityType="cadeteenlineaModel.notas_parciales" />
+          <EntitySet Name="transaccion" EntityType="cadeteenlineaModel.transaccion" />
+          <EntitySet Name="usuario" EntityType="cadeteenlineaModel.usuario" />
+          <AssociationSet Name="FK_apoderado_usuario" Association="cadeteenlineaModel.FK_apoderado_usuario">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="apoderado" EntitySet="apoderado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cadete_apoderado_apoderado" Association="cadeteenlineaModel.FK_cadete_apoderado_apoderado">
+            <End Role="apoderado" EntitySet="apoderado" />
+            <End Role="cadete_apoderado" EntitySet="cadete_apoderado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_notas_finales_asignatura" Association="cadeteenlineaModel.FK_notas_finales_asignatura">
+            <End Role="asignatura" EntitySet="asignatura" />
+            <End Role="notas_finales" EntitySet="notas_finales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_notas_parciales_asignatura" Association="cadeteenlineaModel.FK_notas_parciales_asignatura">
+            <End Role="asignatura" EntitySet="asignatura" />
+            <End Role="notas_parciales" EntitySet="notas_parciales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cadete_apoderado_cadete" Association="cadeteenlineaModel.FK_cadete_apoderado_cadete">
+            <End Role="cadete" EntitySet="cadete" />
+            <End Role="cadete_apoderado" EntitySet="cadete_apoderado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cadete_usuario" Association="cadeteenlineaModel.FK_cadete_usuario">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="cadete" EntitySet="cadete" />
+          </AssociationSet>
+          <AssociationSet Name="FK_calificaciones_cadete" Association="cadeteenlineaModel.FK_calificaciones_cadete">
+            <End Role="cadete" EntitySet="cadete" />
+            <End Role="calificaciones" EntitySet="calificaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ingles_tae_cadete" Association="cadeteenlineaModel.FK_ingles_tae_cadete">
+            <End Role="cadete" EntitySet="cadete" />
+            <End Role="ingles_tae" EntitySet="ingles_tae" />
+          </AssociationSet>
+          <AssociationSet Name="FK_notas_finales_cadete" Association="cadeteenlineaModel.FK_notas_finales_cadete">
+            <End Role="cadete" EntitySet="cadete" />
+            <End Role="notas_finales" EntitySet="notas_finales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_notas_parciales_cadete1" Association="cadeteenlineaModel.FK_notas_parciales_cadete1">
+            <End Role="cadete" EntitySet="cadete" />
+            <End Role="notas_parciales" EntitySet="notas_parciales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_transaccion_cadete" Association="cadeteenlineaModel.FK_transaccion_cadete">
+            <End Role="cadete" EntitySet="cadete" />
+            <End Role="transaccion" EntitySet="transaccion" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="apoderado">
+          <Key>
+            <PropertyRef Name="rut" />
+          </Key>
+          <Property Name="rut" Type="Decimal" Nullable="false" Precision="10" Scale="0" />
+          <Property Name="direccion" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="comuna" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+          <Property Name="ciudad" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+          <Property Name="fono" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
+          <Property Name="fonoComercial" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
+          <Property Name="difunto" Type="String" MaxLength="2" Unicode="true" FixedLength="false" />
+          <Property Name="estado" Type="Int32" />
+          <NavigationProperty Name="usuario" Relationship="cadeteenlineaModel.FK_apoderado_usuario" FromRole="apoderado" ToRole="usuario" />
+          <NavigationProperty Name="cadete_apoderado" Relationship="cadeteenlineaModel.FK_cadete_apoderado_apoderado" FromRole="apoderado" ToRole="cadete_apoderado" />
+        </EntityType>
+        <EntityType Name="asignatura">
+          <Key>
+            <PropertyRef Name="idasignatura" />
+          </Key>
+          <Property Name="idasignatura" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="codigo" Type="String" MaxLength="6" Unicode="true" FixedLength="false" />
+          <Property Name="ano" Type="Decimal" Precision="4" Scale="0" />
+          <Property Name="semestre" Type="Decimal" Precision="1" Scale="0" />
+          <Property Name="curso" Type="Decimal" Precision="1" Scale="0" />
+          <Property Name="nombre" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+          <Property Name="especialidad" Type="String" MaxLength="1" Unicode="true" FixedLength="false" />
+          <Property Name="estado" Type="Int32" />
+          <NavigationProperty Name="notas_finales" Relationship="cadeteenlineaModel.FK_notas_finales_asignatura" FromRole="asignatura" ToRole="notas_finales" />
+          <NavigationProperty Name="notas_parciales" Relationship="cadeteenlineaModel.FK_notas_parciales_asignatura" FromRole="asignatura" ToRole="notas_parciales" />
+        </EntityType>
+        <EntityType Name="cadete">
+          <Key>
+            <PropertyRef Name="rut" />
+          </Key>
+          <Property Name="rut" Type="Decimal" Nullable="false" Precision="10" Scale="0" />
+          <Property Name="nCadete" Type="Decimal" Precision="10" Scale="0" />
+          <Property Name="division" Type="String" MaxLength="2" Unicode="true" FixedLength="false" />
+          <Property Name="anoIngreso" Type="Decimal" Precision="10" Scale="0" />
+          <Property Name="anoNacimiento" Type="Decimal" Precision="10" Scale="0" />
+          <Property Name="mesNacimiento" Type="Decimal" Precision="10" Scale="0" />
+          <Property Name="diaNacimiento" Type="Decimal" Precision="10" Scale="0" />
+          <Property Name="lugarNacimiento" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="seleccion" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+          <Property Name="especialidad" Type="String" MaxLength="1" Unicode="true" FixedLength="false" />
+          <Property Name="nivel" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+          <Property Name="curso" Type="String" MaxLength="2" Unicode="true" FixedLength="false" />
+          <Property Name="circulo" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="nacionalidad" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="estado" Type="Int32" />
+          <NavigationProperty Name="cadete_apoderado" Relationship="cadeteenlineaModel.FK_cadete_apoderado_cadete" FromRole="cadete" ToRole="cadete_apoderado" />
+          <NavigationProperty Name="usuario" Relationship="cadeteenlineaModel.FK_cadete_usuario" FromRole="cadete" ToRole="usuario" />
+          <NavigationProperty Name="calificaciones" Relationship="cadeteenlineaModel.FK_calificaciones_cadete" FromRole="cadete" ToRole="calificaciones" />
+          <NavigationProperty Name="ingles_tae" Relationship="cadeteenlineaModel.FK_ingles_tae_cadete" FromRole="cadete" ToRole="ingles_tae" />
+          <NavigationProperty Name="notas_finales" Relationship="cadeteenlineaModel.FK_notas_finales_cadete" FromRole="cadete" ToRole="notas_finales" />
+          <NavigationProperty Name="notas_parciales" Relationship="cadeteenlineaModel.FK_notas_parciales_cadete1" FromRole="cadete" ToRole="notas_parciales" />
+          <NavigationProperty Name="transaccion" Relationship="cadeteenlineaModel.FK_transaccion_cadete" FromRole="cadete" ToRole="transaccion" />
+        </EntityType>
+        <EntityType Name="cadete_apoderado">
+          <Key>
+            <PropertyRef Name="idcadete_apoderado" />
+          </Key>
+          <Property Name="idcadete_apoderado" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="cadete_rut" Type="Decimal" Nullable="false" Precision="10" Scale="0" />
+          <Property Name="apoderado_rut" Type="Decimal" Nullable="false" Precision="10" Scale="0" />
+          <Property Name="tipoApoderado" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="estado" Type="Int32" />
+          <NavigationProperty Name="apoderado" Relationship="cadeteenlineaModel.FK_cadete_apoderado_apoderado" FromRole="cadete_apoderado" ToRole="apoderado" />
+          <NavigationProperty Name="cadete" Relationship="cadeteenlineaModel.FK_cadete_apoderado_cadete" FromRole="cadete_apoderado" ToRole="cadete" />
+        </EntityType>
+        <EntityType Name="calificaciones">
+          <Key>
+            <PropertyRef Name="idcalificaciones" />
+          </Key>
+          <Property Name="idcalificaciones" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="cadete_rut" Type="Decimal" Precision="10" Scale="0" />
+          <Property Name="ano" Type="Decimal" Precision="4" Scale="0" />
+          <Property Name="semestre" Type="Decimal" Precision="1" Scale="0" />
+          <Property Name="mando" Type="Decimal" Precision="4" Scale="2" />
+          <Property Name="interes_profesional" Type="Decimal" Precision="4" Scale="2" />
+          <Property Name="personalidad_madurez" Type="Decimal" Precision="4" Scale="2" />
+          <Property Name="responsabilidad" Type="Decimal" Precision="4" Scale="2" />
+          <Property Name="espiritu_militar" Type="Decimal" Precision="4" Scale="2" />
+          <Property Name="cooperacion" Type="Decimal" Precision="4" Scale="2" />
+          <Property Name="conducta" Type="Decimal" Precision="4" Scale="2" />
+          <Property Name="aptitud_fisica" Type="Decimal" Precision="4" Scale="2" />
+          <Property Name="tenida_orden_aseo" Type="Decimal" Precision="4" Scale="2" />
+          <Property Name="final" Type="Decimal" Precision="4" Scale="2" />
+          <Property Name="estado" Type="Int32" />
+          <NavigationProperty Name="cadete" Relationship="cadeteenlineaModel.FK_calificaciones_cadete" FromRole="calificaciones" ToRole="cadete" />
+        </EntityType>
+        <EntityType Name="ingles_tae">
+          <Key>
+            <PropertyRef Name="idingles_tae" />
+          </Key>
+          <Property Name="idingles_tae" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="cadete_rut" Type="Decimal" Precision="10" Scale="0" />
+          <Property Name="mes" Type="Decimal" Precision="11" Scale="0" />
+          <Property Name="ano" Type="Decimal" Precision="11" Scale="0" />
+          <Property Name="speaking" Type="Decimal" Precision="11" Scale="0" />
+          <Property Name="understanding" Type="Decimal" Precision="11" Scale="0" />
+          <Property Name="writing" Type="Decimal" Precision="11" Scale="0" />
+          <Property Name="average" Type="Decimal" Precision="11" Scale="0" />
+          <Property Name="estado" Type="Int32" />
+          <NavigationProperty Name="cadete" Relationship="cadeteenlineaModel.FK_ingles_tae_cadete" FromRole="ingles_tae" ToRole="cadete" />
+        </EntityType>
+        <EntityType Name="notas_finales">
+          <Key>
+            <PropertyRef Name="idnotas_finales" />
+          </Key>
+          <Property Name="idnotas_finales" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="nota_presentacion" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="nota_examen" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="nota_final" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="nota_examen_repeticion" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="nota_final_repeticion" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="estado" Type="String" MaxLength="1" Unicode="true" FixedLength="false" />
+          <Property Name="asignatura_idasignatura" Type="Int32" />
+          <Property Name="cadete_rut" Type="Decimal" Precision="10" Scale="0" />
+          <Property Name="estado_tf" Type="Int32" />
+          <NavigationProperty Name="asignatura" Relationship="cadeteenlineaModel.FK_notas_finales_asignatura" FromRole="notas_finales" ToRole="asignatura" />
+          <NavigationProperty Name="cadete" Relationship="cadeteenlineaModel.FK_notas_finales_cadete" FromRole="notas_finales" ToRole="cadete" />
+        </EntityType>
+        <EntityType Name="notas_parciales">
+          <Key>
+            <PropertyRef Name="idnotas_parciales" />
+          </Key>
+          <Property Name="idnotas_parciales" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="cadete_rut" Type="Decimal" Precision="10" Scale="0" />
+          <Property Name="nota" Type="Decimal" Precision="3" Scale="1" />
+          <Property Name="dia" Type="Decimal" Precision="2" Scale="0" />
+          <Property Name="mes" Type="Decimal" Precision="2" Scale="0" />
+          <Property Name="ano" Type="Decimal" Precision="4" Scale="0" />
+          <Property Name="semestre" Type="Decimal" Precision="1" Scale="0" />
+          <Property Name="asignatura_idasignatura" Type="Int32" />
+          <Property Name="tipo" Type="String" MaxLength="1" Unicode="true" FixedLength="false" />
+          <Property Name="nNota" Type="Decimal" Precision="2" Scale="0" />
+          <Property Name="estado" Type="Int32" />
+          <NavigationProperty Name="asignatura" Relationship="cadeteenlineaModel.FK_notas_parciales_asignatura" FromRole="notas_parciales" ToRole="asignatura" />
+          <NavigationProperty Name="cadete" Relationship="cadeteenlineaModel.FK_notas_parciales_cadete1" FromRole="notas_parciales" ToRole="cadete" />
+        </EntityType>
+        <EntityType Name="transaccion">
+          <Key>
+            <PropertyRef Name="idtransaccion" />
+          </Key>
+          <Property Name="idtransaccion" Type="Int32" Nullable="false" />
+          <Property Name="cadete_rut" Type="Decimal" Precision="10" Scale="0" />
+          <Property Name="tipoTransaccion" Type="String" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="monto" Type="Int32" />
+          <Property Name="fechaMovimiento" Type="DateTime" Precision="3" />
+          <Property Name="descripcion" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="tipoCuenta" Type="String" MaxLength="25" Unicode="false" FixedLength="false" />
+          <Property Name="estado" Type="Int32" />
+          <NavigationProperty Name="cadete" Relationship="cadeteenlineaModel.FK_transaccion_cadete" FromRole="transaccion" ToRole="cadete" />
+        </EntityType>
+        <EntityType Name="usuario">
+          <Key>
+            <PropertyRef Name="rut" />
+          </Key>
+          <Property Name="rut" Type="Decimal" Nullable="false" Precision="10" Scale="0" />
+          <Property Name="apellidoPat" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+          <Property Name="apellidoMat" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+          <Property Name="nombre" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="password_2" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="perfil" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="estado" Type="Int32" />
+          <NavigationProperty Name="apoderado" Relationship="cadeteenlineaModel.FK_apoderado_usuario" FromRole="usuario" ToRole="apoderado" />
+          <NavigationProperty Name="cadete" Relationship="cadeteenlineaModel.FK_cadete_usuario" FromRole="usuario" ToRole="cadete" />
+        </EntityType>
+        <Association Name="FK_apoderado_usuario">
+          <End Role="usuario" Type="cadeteenlineaModel.usuario" Multiplicity="1" />
+          <End Role="apoderado" Type="cadeteenlineaModel.apoderado" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="rut" />
+            </Principal>
+            <Dependent Role="apoderado">
+              <PropertyRef Name="rut" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cadete_apoderado_apoderado">
+          <End Role="apoderado" Type="cadeteenlineaModel.apoderado" Multiplicity="1" />
+          <End Role="cadete_apoderado" Type="cadeteenlineaModel.cadete_apoderado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="apoderado">
+              <PropertyRef Name="rut" />
+            </Principal>
+            <Dependent Role="cadete_apoderado">
+              <PropertyRef Name="apoderado_rut" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_notas_finales_asignatura">
+          <End Role="asignatura" Type="cadeteenlineaModel.asignatura" Multiplicity="0..1" />
+          <End Role="notas_finales" Type="cadeteenlineaModel.notas_finales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="asignatura">
+              <PropertyRef Name="idasignatura" />
+            </Principal>
+            <Dependent Role="notas_finales">
+              <PropertyRef Name="asignatura_idasignatura" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_notas_parciales_asignatura">
+          <End Role="asignatura" Type="cadeteenlineaModel.asignatura" Multiplicity="0..1" />
+          <End Role="notas_parciales" Type="cadeteenlineaModel.notas_parciales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="asignatura">
+              <PropertyRef Name="idasignatura" />
+            </Principal>
+            <Dependent Role="notas_parciales">
+              <PropertyRef Name="asignatura_idasignatura" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cadete_apoderado_cadete">
+          <End Role="cadete" Type="cadeteenlineaModel.cadete" Multiplicity="1" />
+          <End Role="cadete_apoderado" Type="cadeteenlineaModel.cadete_apoderado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cadete">
+              <PropertyRef Name="rut" />
+            </Principal>
+            <Dependent Role="cadete_apoderado">
+              <PropertyRef Name="cadete_rut" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cadete_usuario">
+          <End Role="usuario" Type="cadeteenlineaModel.usuario" Multiplicity="1" />
+          <End Role="cadete" Type="cadeteenlineaModel.cadete" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="rut" />
+            </Principal>
+            <Dependent Role="cadete">
+              <PropertyRef Name="rut" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_calificaciones_cadete">
+          <End Role="cadete" Type="cadeteenlineaModel.cadete" Multiplicity="0..1" />
+          <End Role="calificaciones" Type="cadeteenlineaModel.calificaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cadete">
+              <PropertyRef Name="rut" />
+            </Principal>
+            <Dependent Role="calificaciones">
+              <PropertyRef Name="cadete_rut" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ingles_tae_cadete">
+          <End Role="cadete" Type="cadeteenlineaModel.cadete" Multiplicity="0..1" />
+          <End Role="ingles_tae" Type="cadeteenlineaModel.ingles_tae" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cadete">
+              <PropertyRef Name="rut" />
+            </Principal>
+            <Dependent Role="ingles_tae">
+              <PropertyRef Name="cadete_rut" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_notas_finales_cadete">
+          <End Role="cadete" Type="cadeteenlineaModel.cadete" Multiplicity="0..1" />
+          <End Role="notas_finales" Type="cadeteenlineaModel.notas_finales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cadete">
+              <PropertyRef Name="rut" />
+            </Principal>
+            <Dependent Role="notas_finales">
+              <PropertyRef Name="cadete_rut" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_notas_parciales_cadete1">
+          <End Role="cadete" Type="cadeteenlineaModel.cadete" Multiplicity="0..1" />
+          <End Role="notas_parciales" Type="cadeteenlineaModel.notas_parciales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cadete">
+              <PropertyRef Name="rut" />
+            </Principal>
+            <Dependent Role="notas_parciales">
+              <PropertyRef Name="cadete_rut" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_transaccion_cadete">
+          <End Role="cadete" Type="cadeteenlineaModel.cadete" Multiplicity="0..1" />
+          <End Role="transaccion" Type="cadeteenlineaModel.transaccion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cadete">
+              <PropertyRef Name="rut" />
+            </Principal>
+            <Dependent Role="transaccion">
+              <PropertyRef Name="cadete_rut" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="cadeteenlineaModelStoreContainer" CdmEntityContainer="cadeteenlineaEntities">
+          <EntitySetMapping Name="apoderado">
+            <EntityTypeMapping TypeName="cadeteenlineaModel.apoderado">
+              <MappingFragment StoreEntitySet="apoderado">
+                <ScalarProperty Name="rut" ColumnName="rut" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="comuna" ColumnName="comuna" />
+                <ScalarProperty Name="ciudad" ColumnName="ciudad" />
+                <ScalarProperty Name="fono" ColumnName="fono" />
+                <ScalarProperty Name="fonoComercial" ColumnName="fonoComercial" />
+                <ScalarProperty Name="difunto" ColumnName="difunto" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="asignatura">
+            <EntityTypeMapping TypeName="cadeteenlineaModel.asignatura">
+              <MappingFragment StoreEntitySet="asignatura">
+                <ScalarProperty Name="idasignatura" ColumnName="idasignatura" />
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="ano" ColumnName="ano" />
+                <ScalarProperty Name="semestre" ColumnName="semestre" />
+                <ScalarProperty Name="curso" ColumnName="curso" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="especialidad" ColumnName="especialidad" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cadete">
+            <EntityTypeMapping TypeName="cadeteenlineaModel.cadete">
+              <MappingFragment StoreEntitySet="cadete">
+                <ScalarProperty Name="rut" ColumnName="rut" />
+                <ScalarProperty Name="nCadete" ColumnName="nCadete" />
+                <ScalarProperty Name="division" ColumnName="division" />
+                <ScalarProperty Name="anoIngreso" ColumnName="anoIngreso" />
+                <ScalarProperty Name="anoNacimiento" ColumnName="anoNacimiento" />
+                <ScalarProperty Name="mesNacimiento" ColumnName="mesNacimiento" />
+                <ScalarProperty Name="diaNacimiento" ColumnName="diaNacimiento" />
+                <ScalarProperty Name="lugarNacimiento" ColumnName="lugarNacimiento" />
+                <ScalarProperty Name="seleccion" ColumnName="seleccion" />
+                <ScalarProperty Name="especialidad" ColumnName="especialidad" />
+                <ScalarProperty Name="nivel" ColumnName="nivel" />
+                <ScalarProperty Name="curso" ColumnName="curso" />
+                <ScalarProperty Name="circulo" ColumnName="circulo" />
+                <ScalarProperty Name="nacionalidad" ColumnName="nacionalidad" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cadete_apoderado">
+            <EntityTypeMapping TypeName="cadeteenlineaModel.cadete_apoderado">
+              <MappingFragment StoreEntitySet="cadete_apoderado">
+                <ScalarProperty Name="idcadete_apoderado" ColumnName="idcadete_apoderado" />
+                <ScalarProperty Name="cadete_rut" ColumnName="cadete_rut" />
+                <ScalarProperty Name="apoderado_rut" ColumnName="apoderado_rut" />
+                <ScalarProperty Name="tipoApoderado" ColumnName="tipoApoderado" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="calificaciones">
+            <EntityTypeMapping TypeName="cadeteenlineaModel.calificaciones">
+              <MappingFragment StoreEntitySet="calificaciones">
+                <ScalarProperty Name="idcalificaciones" ColumnName="idcalificaciones" />
+                <ScalarProperty Name="cadete_rut" ColumnName="cadete_rut" />
+                <ScalarProperty Name="ano" ColumnName="ano" />
+                <ScalarProperty Name="semestre" ColumnName="semestre" />
+                <ScalarProperty Name="mando" ColumnName="mando" />
+                <ScalarProperty Name="interes_profesional" ColumnName="interes_profesional" />
+                <ScalarProperty Name="personalidad_madurez" ColumnName="personalidad_madurez" />
+                <ScalarProperty Name="responsabilidad" ColumnName="responsabilidad" />
+                <ScalarProperty Name="espiritu_militar" ColumnName="espiritu_militar" />
+                <ScalarProperty Name="cooperacion" ColumnName="cooperacion" />
+                <ScalarProperty Name="conducta" ColumnName="conducta" />
+                <ScalarProperty Name="aptitud_fisica" ColumnName="aptitud_fisica" />
+                <ScalarProperty Name="tenida_orden_aseo" ColumnName="tenida_orden_aseo" />
+                <ScalarProperty Name="final" ColumnName="final" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ingles_tae">
+            <EntityTypeMapping TypeName="cadeteenlineaModel.ingles_tae">
+              <MappingFragment StoreEntitySet="ingles_tae">
+                <ScalarProperty Name="idingles_tae" ColumnName="idingles_tae" />
+                <ScalarProperty Name="cadete_rut" ColumnName="cadete_rut" />
+                <ScalarProperty Name="mes" ColumnName="mes" />
+                <ScalarProperty Name="ano" ColumnName="ano" />
+                <ScalarProperty Name="speaking" ColumnName="speaking" />
+                <ScalarProperty Name="understanding" ColumnName="understanding" />
+                <ScalarProperty Name="writing" ColumnName="writing" />
+                <ScalarProperty Name="average" ColumnName="average" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="notas_finales">
+            <EntityTypeMapping TypeName="cadeteenlineaModel.notas_finales">
+              <MappingFragment StoreEntitySet="notas_finales">
+                <ScalarProperty Name="idnotas_finales" ColumnName="idnotas_finales" />
+                <ScalarProperty Name="nota_presentacion" ColumnName="nota_presentacion" />
+                <ScalarProperty Name="nota_examen" ColumnName="nota_examen" />
+                <ScalarProperty Name="nota_final" ColumnName="nota_final" />
+                <ScalarProperty Name="nota_examen_repeticion" ColumnName="nota_examen_repeticion" />
+                <ScalarProperty Name="nota_final_repeticion" ColumnName="nota_final_repeticion" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="asignatura_idasignatura" ColumnName="asignatura_idasignatura" />
+                <ScalarProperty Name="cadete_rut" ColumnName="cadete_rut" />
+                <ScalarProperty Name="estado_tf" ColumnName="estado_tf" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="notas_parciales">
+            <EntityTypeMapping TypeName="cadeteenlineaModel.notas_parciales">
+              <MappingFragment StoreEntitySet="notas_parciales">
+                <ScalarProperty Name="idnotas_parciales" ColumnName="idnotas_parciales" />
+                <ScalarProperty Name="cadete_rut" ColumnName="cadete_rut" />
+                <ScalarProperty Name="nota" ColumnName="nota" />
+                <ScalarProperty Name="dia" ColumnName="dia" />
+                <ScalarProperty Name="mes" ColumnName="mes" />
+                <ScalarProperty Name="ano" ColumnName="ano" />
+                <ScalarProperty Name="semestre" ColumnName="semestre" />
+                <ScalarProperty Name="asignatura_idasignatura" ColumnName="asignatura_idasignatura" />
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
+                <ScalarProperty Name="nNota" ColumnName="nNota" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="transaccion">
+            <EntityTypeMapping TypeName="cadeteenlineaModel.transaccion">
+              <MappingFragment StoreEntitySet="transaccion">
+                <ScalarProperty Name="idtransaccion" ColumnName="idtransaccion" />
+                <ScalarProperty Name="cadete_rut" ColumnName="cadete_rut" />
+                <ScalarProperty Name="tipoTransaccion" ColumnName="tipoTransaccion" />
+                <ScalarProperty Name="monto" ColumnName="monto" />
+                <ScalarProperty Name="fechaMovimiento" ColumnName="fechaMovimiento" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="tipoCuenta" ColumnName="tipoCuenta" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="usuario">
+            <EntityTypeMapping TypeName="cadeteenlineaModel.usuario">
+              <MappingFragment StoreEntitySet="usuario">
+                <ScalarProperty Name="rut" ColumnName="rut" />
+                <ScalarProperty Name="apellidoPat" ColumnName="apellidoPat" />
+                <ScalarProperty Name="apellidoMat" ColumnName="apellidoMat" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="password_2" ColumnName="password_2" />
+                <ScalarProperty Name="perfil" ColumnName="perfil" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
