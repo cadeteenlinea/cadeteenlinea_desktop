@@ -42,7 +42,7 @@ namespace CadeteEnLinea
                 }
                 else
                 {
-                    usuario.changeEstado(1, 0);
+                    usuario.changeEstado(estado, 0);
                 }
                 
             }

@@ -15,7 +15,7 @@ namespace CadeteEnLinea
         public static string sendWeb(int estado)
         {
             var json = "";
-            var notas_parciales = conexion.notas_parciales.Where(p => p.estado == estado).Select(p => new
+            var notas_parcial = conexion.notas_parciales.Where(p => p.estado == estado).Select(p => new
             {
                 idnotas_parciales = p.idnotas_parciales,
                 nota = p.nota,
@@ -29,34 +29,47 @@ namespace CadeteEnLinea
             }).ToList();
 
             string result = String.Empty;
-            if (notas_parciales.Count() != 0)
+            if (notas_parcial.Count() != 0)
             {
                 JavaScriptSerializer jss = new JavaScriptSerializer();
-                json = jss.Serialize(notas_parciales);
+                json = jss.Serialize(notas_parcial);
 
                 Service_CadeteEnLinea.SiteControllerPortTypeClient webService = new SiteControllerPortTypeClient();
                 result = webService.notasParciales(json, estado.ToString());
 
-
                 if (estado == 3)
                 {
-                    var trans = conexion.notas_parciales.Where(p => p.estado == estado);
-                    foreach (var u in trans)
-                    {
-                        conexion.notas_parciales.Remove(u);
-                    }
+                    notas_parciales.deleteEstado(3);
                 }
                 else
                 {
-                    conexion.notas_parciales
-                        .Where(p => p.estado == estado)
-                        .ToList()
-                        .ForEach(p => p.estado = 0);
+                    notas_parciales.changeEstado(estado, 0);
                 }
 
                 conexion.SaveChanges();
             }
             return result;
+        }
+
+        /******Cambia de estado los registros, segun el actual y el despues*****/
+        public static void changeEstado(int estadoActual, int estadoDespues)
+        {
+            conexion.notas_parciales
+                .Where(p => p.estado == estadoActual)
+                .ToList()
+                .ForEach(p => p.estado = estadoDespues);
+            conexion.SaveChanges();
+        }
+
+        /********Elimina los registros que tengan el estado entregado**********/
+        public static void deleteEstado(int estado)
+        {
+            var trans = conexion.notas_parciales.Where(p => p.estado == estado);
+            foreach (var u in trans)
+            {
+                conexion.notas_parciales.Remove(u);
+            }
+            conexion.SaveChanges();
         }
     }
 }

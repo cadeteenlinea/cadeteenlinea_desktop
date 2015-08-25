@@ -15,7 +15,7 @@ namespace CadeteEnLinea
         public static string sendWeb(int estado)
         {
             var json = "";
-            var calificaciones = conexion.calificaciones.Where(p => p.estado == estado).Select(p => new
+            var calificacion = conexion.calificaciones.Where(p => p.estado == estado).Select(p => new
             {
                 idcalificaciones = p.idcalificaciones,
                 ano = p.ano,
@@ -34,32 +34,46 @@ namespace CadeteEnLinea
             }).ToList();
 
             string result = String.Empty;
-            if (calificaciones.Count() != 0)
+            if (calificacion.Count() != 0)
             {
                 JavaScriptSerializer jss = new JavaScriptSerializer();
-                json = jss.Serialize(calificaciones);
+                json = jss.Serialize(calificacion);
 
                 Service_CadeteEnLinea.SiteControllerPortTypeClient webService = new SiteControllerPortTypeClient();
                 result = webService.calificaciones(json, estado.ToString());
 
                 if (estado == 3)
                 {
-                    var trans = conexion.calificaciones.Where(p => p.estado == estado);
-                    foreach (var u in trans)
-                    {
-                        conexion.calificaciones.Remove(u);
-                    }
+                    calificaciones.deleteEstado(3);
                 }
                 else
                 {
-                    conexion.calificaciones
-                        .Where(p => p.estado == estado)
-                        .ToList()
-                        .ForEach(p => p.estado = 0);
+                    calificaciones.changeEstado(estado, 0);
                 }
                 conexion.SaveChanges();
             }
             return result;
+        }
+
+        /******Cambia de estado los registros, segun el actual y el despues*****/
+        public static void changeEstado(int estadoActual, int estadoDespues)
+        {
+            conexion.calificaciones
+                .Where(p => p.estado == estadoActual)
+                .ToList()
+                .ForEach(p => p.estado = estadoDespues);
+            conexion.SaveChanges();
+        }
+
+        /********Elimina los registros que tengan el estado entregado**********/
+        public static void deleteEstado(int estado)
+        {
+            var trans = conexion.calificaciones.Where(p => p.estado == estado);
+            foreach (var u in trans)
+            {
+                conexion.calificaciones.Remove(u);
+            }
+            conexion.SaveChanges();
         }
     }
 }
