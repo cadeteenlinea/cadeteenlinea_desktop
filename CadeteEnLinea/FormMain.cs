@@ -30,7 +30,6 @@ namespace CadeteEnLinea
             }
             this.enableBtn(false);
 
-
             this.setErrors(usuario.sendWeb(1));
             this.setErrors(usuario.sendWeb(2));
             this.setErrors(cadete.sendWeb(1));
