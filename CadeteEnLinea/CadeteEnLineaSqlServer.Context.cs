@@ -35,5 +35,7 @@ namespace CadeteEnLinea
         public DbSet<notas_parciales> notas_parciales { get; set; }
         public DbSet<transaccion> transaccion { get; set; }
         public DbSet<usuario> usuario { get; set; }
+        public DbSet<proceso> proceso { get; set; }
+        public DbSet<tarea> tarea { get; set; }
     }
 }

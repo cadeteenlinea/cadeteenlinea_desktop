@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Web.Script.Serialization;
 using System.Windows.Forms;
 
+
 namespace CadeteEnLinea
 {
     public partial class FormMain : Form
@@ -24,10 +25,7 @@ namespace CadeteEnLinea
 
         private void buttonActualizarUsuarios_Click(object sender, EventArgs e)
         {
-            if (result.Count() > 0) {
-                result = new List<Error>();
-                dgwErrores.DataSource = result;
-            }
+
             this.enableBtn(false);
 
             this.setErrors(usuario.sendWeb(1));
@@ -42,6 +40,12 @@ namespace CadeteEnLinea
             this.setErrors(apoderado.sendWeb(3));
             this.setErrors(cadete.sendWeb(3));
             this.setErrors(usuario.sendWeb(3));
+            
+            if (result.Count() > 0) {
+                result = new List<Error>();
+                dgwErrores.DataSource = result;
+            }
+            
 
             if (result.Count() > 0) {
                 dgwErrores.DataSource = result;

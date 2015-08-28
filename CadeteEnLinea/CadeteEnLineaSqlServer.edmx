@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="cadeteenlineaModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="cadeteenlineaModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="cadeteenlineaModelStoreContainer">
           <EntitySet Name="apoderado" EntityType="cadeteenlineaModel.Store.apoderado" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="asignatura" EntityType="cadeteenlineaModel.Store.asignatura" store:Type="Tables" Schema="dbo" />
@@ -14,6 +14,8 @@
           <EntitySet Name="ingles_tae" EntityType="cadeteenlineaModel.Store.ingles_tae" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="notas_finales" EntityType="cadeteenlineaModel.Store.notas_finales" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="notas_parciales" EntityType="cadeteenlineaModel.Store.notas_parciales" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="proceso" EntityType="cadeteenlineaModel.Store.proceso" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tarea" EntityType="cadeteenlineaModel.Store.tarea" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="transaccion" EntityType="cadeteenlineaModel.Store.transaccion" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="usuario" EntityType="cadeteenlineaModel.Store.usuario" store:Type="Tables" Schema="dbo" />
           <AssociationSet Name="FK_apoderado_usuario" Association="cadeteenlineaModel.Store.FK_apoderado_usuario">
@@ -55,6 +57,10 @@
           <AssociationSet Name="FK_notas_parciales_cadete1" Association="cadeteenlineaModel.Store.FK_notas_parciales_cadete1">
             <End Role="cadete" EntitySet="cadete" />
             <End Role="notas_parciales" EntitySet="notas_parciales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tarea_proceso" Association="cadeteenlineaModel.Store.FK_tarea_proceso">
+            <End Role="proceso" EntitySet="proceso" />
+            <End Role="tarea" EntitySet="tarea" />
           </AssociationSet>
           <AssociationSet Name="FK_transaccion_cadete" Association="cadeteenlineaModel.Store.FK_transaccion_cadete">
             <End Role="cadete" EntitySet="cadete" />
@@ -181,6 +187,25 @@
           <Property Name="tipo" Type="nvarchar" MaxLength="1" />
           <Property Name="nNota" Type="numeric" Precision="2" />
           <Property Name="estado" Type="int" />
+        </EntityType>
+        <EntityType Name="proceso">
+          <Key>
+            <PropertyRef Name="idproceso" />
+          </Key>
+          <Property Name="idproceso" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="descripción" Type="text" Nullable="false" />
+          <Property Name="nombre_package_etl" Type="varchar" Nullable="false" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="tarea">
+          <Key>
+            <PropertyRef Name="idtarea" />
+          </Key>
+          <Property Name="idtarea" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="fecha" Type="date" Nullable="false" />
+          <Property Name="hora" Type="time" Nullable="false" />
+          <Property Name="estado" Type="int" Nullable="false" />
+          <Property Name="proceso_idproceso" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="transaccion">
           <Key>
@@ -327,6 +352,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_tarea_proceso">
+          <End Role="proceso" Type="cadeteenlineaModel.Store.proceso" Multiplicity="1" />
+          <End Role="tarea" Type="cadeteenlineaModel.Store.tarea" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="proceso">
+              <PropertyRef Name="idproceso" />
+            </Principal>
+            <Dependent Role="tarea">
+              <PropertyRef Name="proceso_idproceso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_transaccion_cadete">
           <End Role="cadete" Type="cadeteenlineaModel.Store.cadete" Multiplicity="0..1" />
           <End Role="transaccion" Type="cadeteenlineaModel.Store.transaccion" Multiplicity="*" />
@@ -339,8 +376,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="cadeteenlineaModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -399,7 +435,13 @@
             <End Role="cadete" EntitySet="cadete" />
             <End Role="transaccion" EntitySet="transaccion" />
           </AssociationSet>
-        </EntityContainer>
+          <EntitySet Name="proceso" EntityType="cadeteenlineaModel.proceso" />
+          <EntitySet Name="tarea" EntityType="cadeteenlineaModel.tarea" />
+          <AssociationSet Name="FK_tarea_proceso" Association="cadeteenlineaModel.FK_tarea_proceso">
+            <End Role="proceso" EntitySet="proceso" />
+            <End Role="tarea" EntitySet="tarea" />
+          </AssociationSet>
+          </EntityContainer>
         <EntityType Name="apoderado">
           <Key>
             <PropertyRef Name="rut" />
@@ -700,7 +742,40 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        <EntityType Name="proceso">
+          <Key>
+            <PropertyRef Name="idproceso" />
+          </Key>
+          <Property Type="Int32" Name="idproceso" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="nombre" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tarea" Relationship="cadeteenlineaModel.FK_tarea_proceso" FromRole="proceso" ToRole="tarea" />
+          <Property Type="String" Name="descripción" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="nombre_package_etl" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tarea">
+          <Key>
+            <PropertyRef Name="idtarea" />
+          </Key>
+          <Property Type="Int32" Name="idtarea" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="fecha" Nullable="false" Precision="0" />
+          <Property Type="Time" Name="hora" Nullable="false" Precision="7" />
+          <Property Type="Int32" Name="estado" Nullable="false" />
+          <Property Type="Int32" Name="proceso_idproceso" Nullable="false" />
+          <NavigationProperty Name="proceso" Relationship="cadeteenlineaModel.FK_tarea_proceso" FromRole="tarea" ToRole="proceso" />
+        </EntityType>
+        <Association Name="FK_tarea_proceso">
+          <End Type="cadeteenlineaModel.proceso" Role="proceso" Multiplicity="1" />
+          <End Type="cadeteenlineaModel.tarea" Role="tarea" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="proceso">
+              <PropertyRef Name="idproceso" />
+            </Principal>
+            <Dependent Role="tarea">
+              <PropertyRef Name="proceso_idproceso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -859,6 +934,27 @@
                 <ScalarProperty Name="password_2" ColumnName="password_2" />
                 <ScalarProperty Name="perfil" ColumnName="perfil" />
                 <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="proceso">
+            <EntityTypeMapping TypeName="cadeteenlineaModel.proceso">
+              <MappingFragment StoreEntitySet="proceso">
+                <ScalarProperty Name="nombre_package_etl" ColumnName="nombre_package_etl" />
+                <ScalarProperty Name="descripción" ColumnName="descripción" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="idproceso" ColumnName="idproceso" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tarea">
+            <EntityTypeMapping TypeName="cadeteenlineaModel.tarea">
+              <MappingFragment StoreEntitySet="tarea">
+                <ScalarProperty Name="proceso_idproceso" ColumnName="proceso_idproceso" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="hora" ColumnName="hora" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="idtarea" ColumnName="idtarea" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
