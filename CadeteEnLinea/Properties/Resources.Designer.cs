@@ -61,12 +61,12 @@ namespace CadeteEnLinea.Properties {
         }
         
         /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        ///   Busca un recurso adaptado de tipo System.Drawing.Icon similar a (Icono).
         /// </summary>
-        internal static System.Drawing.Bitmap loading {
+        internal static System.Drawing.Icon anclas64x64 {
             get {
-                object obj = ResourceManager.GetObject("loading", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                object obj = ResourceManager.GetObject("anclas64x64", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
     }

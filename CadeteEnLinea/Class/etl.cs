@@ -12,16 +12,19 @@ namespace CadeteEnLinea
     public class etl
     {
         private string urlPackage;
+        private proceso _pro;
 
         public etl(proceso pro) {
-            switch (pro.idproceso)
+            _pro = pro;
+            this.urlPackage = _pro.nombre_package_etl;
+            /*switch (pro.idproceso)
             {
                 case 1:
                     this.urlPackage = @"C:\" + pro.nombre_package_etl;
                     break;
                 case 2:
                     break;
-            }
+            }*/
         }
 
 
@@ -30,14 +33,21 @@ namespace CadeteEnLinea
             {
                 //Creamos una aplicación para realizar la ejecución
                 Microsoft.SqlServer.Dts.Runtime.Application app = new Microsoft.SqlServer.Dts.Runtime.Application();
+
                 //Creamos un paquete y le asignamos el que queremos ejecutar
                 //Package package = app.LoadPackage(@"C:\Package_Usuario.dtsx", null);
                 Package package = app.LoadPackage(this.urlPackage, null);
+                
+                //package.Variables
+                Microsoft.SqlServer.Dts.Runtime.Variables variables = package.Variables;
+
+                variables["proceso"].Value = _pro.idproceso;
+
                 //Ejecutamos el paquete
-                DTSExecResult resultEtl = package.Execute();
+                DTSExecResult resultEtl = package.Execute(null, variables, null, null, null);
                 //Imprimimos el resultado de la ejecución
                 //Console.WriteLine("Resultado de la ejecución: {0}", result.ToString());
-                if (resultEtl.ToString() != "success")
+                if (resultEtl != Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Success)
                 {
                     return false;
                 }
