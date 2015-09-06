@@ -71,5 +71,14 @@ namespace CadeteEnLinea
             }
             conexion.SaveChanges();
         }
+
+        /*******Ejecuta la secuencia de actualización de transacciones*************/
+        public static void actualizacionWeb()
+        {
+            usuario.actualizacionWeb();
+            transaccion.sendWeb(1);
+            transaccion.sendWeb(2);
+            transaccion.sendWeb(3);
+        }
     }
 }

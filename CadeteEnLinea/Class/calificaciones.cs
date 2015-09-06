@@ -75,5 +75,14 @@ namespace CadeteEnLinea
             }
             conexion.SaveChanges();
         }
+
+        /*******Ejecuta la secuencia de actualización de calificaciones*************/
+        public static void actualizacionWeb()
+        {
+            usuario.actualizacionWeb();
+            calificaciones.sendWeb(1);
+            calificaciones.sendWeb(2);
+            calificaciones.sendWeb(3);
+        }
     }
 }

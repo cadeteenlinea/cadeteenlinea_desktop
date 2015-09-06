@@ -17,14 +17,6 @@ namespace CadeteEnLinea
         public etl(proceso pro) {
             _pro = pro;
             this.urlPackage = _pro.nombre_package_etl;
-            /*switch (pro.idproceso)
-            {
-                case 1:
-                    this.urlPackage = @"C:\" + pro.nombre_package_etl;
-                    break;
-                case 2:
-                    break;
-            }*/
         }
 
 

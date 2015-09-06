@@ -72,5 +72,14 @@ namespace CadeteEnLinea
             }
             conexion.SaveChanges();
         }
+
+        /*******Ejecuta la secuencia de actualización de notas de ingles_tae*************/
+        public static void actualizacionWeb()
+        {
+            usuario.actualizacionWeb();
+            ingles_tae.sendWeb(1);
+            ingles_tae.sendWeb(2);
+            ingles_tae.sendWeb(3);
+        }
     }
 }

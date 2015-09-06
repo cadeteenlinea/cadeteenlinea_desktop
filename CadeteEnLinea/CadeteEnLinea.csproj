@@ -215,6 +215,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Content\cadeteenlinea.7z" />
+    <None Include="Content\Package.dtsx" />
     <None Include="Service References\Service_CadeteEnLinea\SiteController.wsdl" />
   </ItemGroup>
   <ItemGroup>

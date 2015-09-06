@@ -71,5 +71,18 @@ namespace CadeteEnLinea
             }
             conexion.SaveChanges();
         }
+
+        /*******Ejecuta la secuencia de actualización de notas finales*************/
+        public static void actualizacionWeb()
+        {
+            usuario.actualizacionWeb();
+            asignatura.sendWeb(1);
+            asignatura.sendWeb(2);
+            notas_finales.sendWeb(1);
+            notas_finales.sendWeb(2);
+            notas_finales.sendWeb(3);
+            notas_parciales.sendWeb(3);
+            asignatura.sendWeb(3);
+        }
     }
 }

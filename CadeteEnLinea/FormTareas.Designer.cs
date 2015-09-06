@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.dgvTareas = new System.Windows.Forms.DataGridView();
-            this.dtmFecha = new System.Windows.Forms.DateTimePicker();
             this.idtarea = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtmFecha = new System.Windows.Forms.DateTimePicker();
             this.dtmHora = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.cmbProcesos = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTareas)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -56,17 +56,6 @@
             this.dgvTareas.Name = "dgvTareas";
             this.dgvTareas.Size = new System.Drawing.Size(677, 251);
             this.dgvTareas.TabIndex = 0;
-            // 
-            // dtmFecha
-            // 
-            this.dtmFecha.CustomFormat = "dd-MM-yyyy";
-            this.dtmFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtmFecha.Location = new System.Drawing.Point(69, 30);
-            this.dtmFecha.Name = "dtmFecha";
-            this.dtmFecha.Size = new System.Drawing.Size(117, 20);
-            this.dtmFecha.TabIndex = 1;
-            this.dtmFecha.Value = new System.DateTime(2015, 9, 1, 11, 24, 19, 0);
-            this.dtmFecha.ValueChanged += new System.EventHandler(this.dtmFecha_ValueChanged);
             // 
             // idtarea
             // 
@@ -93,6 +82,17 @@
             this.estado.HeaderText = "estado";
             this.estado.Name = "estado";
             // 
+            // dtmFecha
+            // 
+            this.dtmFecha.CustomFormat = "dd-MM-yyyy";
+            this.dtmFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtmFecha.Location = new System.Drawing.Point(69, 30);
+            this.dtmFecha.Name = "dtmFecha";
+            this.dtmFecha.Size = new System.Drawing.Size(117, 20);
+            this.dtmFecha.TabIndex = 1;
+            this.dtmFecha.Value = new System.DateTime(2015, 9, 1, 11, 24, 19, 0);
+            this.dtmFecha.ValueChanged += new System.EventHandler(this.dtmFecha_ValueChanged);
+            // 
             // dtmHora
             // 
             this.dtmHora.Format = System.Windows.Forms.DateTimePickerFormat.Time;
@@ -116,16 +116,16 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Nueva Tarea";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // label1
+            // cmbProcesos
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(26, 36);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Fecha";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.cmbProcesos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbProcesos.FormattingEnabled = true;
+            this.cmbProcesos.Location = new System.Drawing.Point(356, 28);
+            this.cmbProcesos.Name = "cmbProcesos";
+            this.cmbProcesos.Size = new System.Drawing.Size(179, 21);
+            this.cmbProcesos.TabIndex = 5;
             // 
             // label2
             // 
@@ -136,14 +136,15 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Proceso";
             // 
-            // cmbProcesos
+            // label1
             // 
-            this.cmbProcesos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbProcesos.FormattingEnabled = true;
-            this.cmbProcesos.Location = new System.Drawing.Point(356, 28);
-            this.cmbProcesos.Name = "cmbProcesos";
-            this.cmbProcesos.Size = new System.Drawing.Size(179, 21);
-            this.cmbProcesos.TabIndex = 5;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(26, 36);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(37, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Fecha";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // FormTareas
             // 

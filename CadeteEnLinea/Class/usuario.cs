@@ -68,5 +68,20 @@ namespace CadeteEnLinea
             conexion.SaveChanges();
         }
 
+        /*******Ejecuta la secuencia de actualización de usuarios*************/
+        public static void actualizacionWeb() {
+            usuario.sendWeb(1);
+            usuario.sendWeb(2);
+            cadete.sendWeb(1);
+            cadete.sendWeb(2);
+            apoderado.sendWeb(1);
+            apoderado.sendWeb(2);
+            cadete_apoderado.sendWeb(1);
+            cadete_apoderado.sendWeb(2);
+            cadete_apoderado.sendWeb(3);
+            apoderado.sendWeb(3);
+            cadete.sendWeb(3);
+            usuario.sendWeb(3);
+        }
     }
 }

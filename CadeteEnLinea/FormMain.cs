@@ -12,7 +12,7 @@ namespace CadeteEnLinea
 {
     public partial class FormMain : Form
     {
-
+        public static NotifyIcon icono; 
         public FormMain()
         {
             InitializeComponent();
@@ -38,7 +38,7 @@ namespace CadeteEnLinea
 
         private void FormMain_Load(object sender, EventArgs e)
         {
-
+            proceso.icono = notifyIcon;
             hilo.reiniciarHilo();
 
             // tmr = new Timer(tar.)
