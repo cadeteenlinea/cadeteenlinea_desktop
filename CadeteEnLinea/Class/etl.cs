@@ -33,7 +33,7 @@ namespace CadeteEnLinea
                 //package.Variables
                 Microsoft.SqlServer.Dts.Runtime.Variables variables = package.Variables;
 
-                variables["proceso"].Value = _pro.idproceso;
+                variables["proceso"].Value = this.pro.idproceso;
 
                 //Ejecutamos el paquete
                 DTSExecResult resultEtl = package.Execute(null, variables, null, null, null);
