@@ -12,11 +12,11 @@ namespace CadeteEnLinea
     public class etl
     {
         private string urlPackage;
-        private proceso _pro;
+        private proceso pro;
 
         public etl(proceso pro) {
-            _pro = pro;
-            this.urlPackage = _pro.nombre_package_etl;
+            this.pro = pro;
+            this.urlPackage = this.pro.nombre_package_etl;
         }
 
 

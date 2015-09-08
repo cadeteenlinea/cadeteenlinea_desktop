@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="file:///C:/PROGRAM FILES/MICROSOFT VISUAL STUDIO 11.0/COMMON7/IDE/EXTENSIONS/MICROSOFT/ARCHITECTURE TOOLS/EXTENSIBILITY/Logging/ReverseEngineeringLog.xslt"?>
+<Log xmlns="http://schemas.microsoft.com/VisualStudio/2010/CodeGen.RE.Log" Label="Registro de generación de código/transformación de texto">
+  <MessageClass Name="Message" Label="Mensaje" Option="Mostrar mensajes informativos" />
+  <MessageClass Name="Warning" Label="Advertencia" Option="Mostrar advertencias" />
+  <MessageClass Name="Error" Label="Error" Option="Mostrar errores" />
+  <MessageClass Name="Property" Label="Propiedad" Option="Mostrar metadatos" />
+  <MessageClass Name="Diagnostic" Label="Mensaje" Option="Mostrar mensajes de diagnóstico" />
+  <Message Timestamp="2015-09-08T11:47:07" Importance="High" Text="Se inició la ingeniería inversa." />
+  <Error Timestamp="2015-09-08T11:47:08" Importance="High" Text="El proceso de ingeniería inversa de La longitud no puede ser inferior a cero.&#xD;&#xA;Nombre del parámetro: length se detuvo." />
+  <Message Timestamp="2015-09-08T11:47:08" Importance="Diagnostic" Text="Se realizó ingeniería inversa del elemento en el modelo UML: 'd0c7062a-1829-421f-a03c-7cbef046a174' -  (ClassifierTemplateParameter)" />
+  <Message Timestamp="2015-09-08T11:47:08" Importance="Diagnostic" Text="Se realizó ingeniería inversa del elemento en el modelo UML: 'DiagramadeComponentes::CadeteEnLinea' -  (Package)" />
+  <Message Timestamp="2015-09-08T11:47:08" Importance="Diagnostic" Text="Se realizó ingeniería inversa del elemento en el modelo UML: 'DiagramadeComponentes::CadeteEnLinea::proceso' -  (Class)  (ingeniería inversa parcial, definición no actualizada) " />
+  <Message Timestamp="2015-09-08T11:47:08" Importance="Diagnostic" Text="Se realizó ingeniería inversa del elemento en el modelo UML: 'DiagramadeComponentes::CadeteEnLinea::proceso::actualizacion' -  (Operation)" />
+  <Message Timestamp="2015-09-08T11:47:08" Importance="Diagnostic" Text="Se realizó ingeniería inversa del elemento en el modelo UML: 'DiagramadeComponentes::CadeteEnLinea::proceso::getAllProcesos' -  (Operation)" />
+  <Message Timestamp="2015-09-08T11:47:08" Importance="Diagnostic" Text="Se realizó ingeniería inversa del elemento en el modelo UML: 'DiagramadeComponentes::CadeteEnLinea::proceso::idproceso' -  (Property)" />
+  <Message Timestamp="2015-09-08T11:47:08" Importance="Diagnostic" Text="Se realizó ingeniería inversa del elemento en el modelo UML: 'DiagramadeComponentes::CadeteEnLinea::proceso::nombre' -  (Property)" />
+  <Message Timestamp="2015-09-08T11:47:08" Importance="Diagnostic" Text="Se realizó ingeniería inversa del elemento en el modelo UML: 'DiagramadeComponentes::CadeteEnLinea::proceso::proceso' -  (Operation)" />
+  <Message Timestamp="2015-09-08T11:47:08" Importance="Diagnostic" Text="Se realizó ingeniería inversa del elemento en el modelo UML: 'DiagramadeComponentes::System' -  (Package)" />
+  <Message Timestamp="2015-09-08T11:47:08" Importance="Diagnostic" Text="Se realizó ingeniería inversa del elemento en el modelo UML: 'DiagramadeComponentes::System::Collections' -  (Package)" />
+  <Message Timestamp="2015-09-08T11:47:08" Importance="Diagnostic" Text="Se realizó ingeniería inversa del elemento en el modelo UML: 'DiagramadeComponentes::System::Collections::Generic' -  (Package)" />
+  <Message Timestamp="2015-09-08T11:47:08" Importance="Diagnostic" Text="Se realizó ingeniería inversa del elemento en el modelo UML: 'DiagramadeComponentes::System::Collections::Generic::List' -  (Class)  (ingeniería inversa parcial, definición no actualizada) " />
+  <Message Timestamp="2015-09-08T11:47:08" Importance="Diagnostic" Text="Se realizó ingeniería inversa del elemento en el modelo UML: 'DiagramadeComponentes::System::Collections::Generic::List&lt;proceso‎&gt;' -  (Class)  (ingeniería inversa parcial, definición no actualizada) " />
+  <Message Timestamp="2015-09-08T11:47:08" Importance="Diagnostic" Text="Se realizó ingeniería inversa del elemento en el modelo UML: 'Integer' -  (PrimitiveType)" />
+  <Message Timestamp="2015-09-08T11:47:08" Importance="Diagnostic" Text="Se realizó ingeniería inversa del elemento en el modelo UML: 'String' -  (PrimitiveType)" />
+  <Message Timestamp="2015-09-08T11:47:08" Importance="High" Text="Se realizó ingeniería inversa total de los siguientes tipos: (0)." />
+  <Message Timestamp="2015-09-08T11:47:08" Importance="High" Text="Se realizó ingeniería inversa parcial de los siguientes tipos: (3). Estos tipos no se incluyeron en la selección original, por lo que no se realizó ingeniería inversa de sus definiciones completas. En su lugar, esta operación superficial se limita a asegurarse de que estos tipos existen en el modelo UML porque son necesarios para describir a otros elementos por completo." />
+  <Message Timestamp="2015-09-08T11:47:08" Importance="High" Text="La operación de ingeniería inversa se completó con (1) errores y (0) advertencias." />
+</Log>
