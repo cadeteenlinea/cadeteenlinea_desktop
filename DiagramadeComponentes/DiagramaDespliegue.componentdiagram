@@ -22,10 +22,16 @@
   </profileInstances>
   <packagedElements>
     <componentModelHasComponents>
-      <component Id="6c713cdc-1213-4c7e-ae23-d040d911b0f2" name="Servidor Armada" isAbstract="false" isLeaf="false" isActiveClass="false">
+      <component Id="6c713cdc-1213-4c7e-ae23-d040d911b0f2" name="Red Armada" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="94d946d3-47f0-4b24-9658-fb22d167a397" />
+        <suppliersInternal>
+          <dependency Id="6bc9f945-8f26-4630-b211-00dc0ce0be87">
+            <componentMoniker Id="c30d4039-cce5-436c-922e-f100eb811f79" LastKnownName="Router" />
+            <elementDefinition Id="7d3b269c-839a-4528-bf0d-c68efa1b763e" />
+          </dependency>
+        </suppliersInternal>
         <ownedAttributesInternal>
-          <part Id="bc310091-7ac9-4998-8727-7f49393040d8" name="db.cobol" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="true">
+          <part Id="bc310091-7ac9-4998-8727-7f49393040d8" name="Servidor db.cobol" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="true">
             <elementDefinition Id="759ce469-c281-403f-9783-2c9bca138328" />
             <type_NamedElement>
               <componentMoniker Id="22a65ef0-e00d-4a27-9ca0-dd955cd6a8de" LastKnownName="Component1" />
@@ -42,6 +48,12 @@
     <componentModelHasComponents>
       <component Id="abfea9b2-462a-4f08-a70c-578a9170ecb1" name="Hosting" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="2aa71801-57e7-4986-980f-e9185d29df0a" />
+        <suppliersInternal>
+          <dependency Id="388f64a0-2586-445f-aff1-d75b2d107325">
+            <componentMoniker Id="e273439a-c9dd-42a1-adeb-0166a91d53f5" LastKnownName="Firewall" />
+            <elementDefinition Id="80d70893-371f-4445-98bd-72b4b9b77cad" />
+          </dependency>
+        </suppliersInternal>
         <ownedAttributesInternal>
           <part Id="105f4acd-5cbc-400a-9bf7-752d246641a7" name="Cadete en Línea" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="true">
             <elementDefinition Id="17e290f6-4dfd-4fde-b42d-02556e23d790" />
@@ -58,13 +70,76 @@
       </component>
     </componentModelHasComponents>
     <componentModelHasComponents>
-      <component Id="c30d4039-cce5-436c-922e-f100eb811f79" name="Component3" isAbstract="false" isLeaf="false" isActiveClass="false">
+      <component Id="c30d4039-cce5-436c-922e-f100eb811f79" name="Router" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="75541de4-3339-452b-869d-b4c7387e3787" />
+        <suppliersInternal>
+          <dependency Id="265cdd78-b013-47cd-8d97-1dabed958362">
+            <componentMoniker Id="e273439a-c9dd-42a1-adeb-0166a91d53f5" LastKnownName="Firewall" />
+            <elementDefinition Id="0a07b998-1d58-494b-905b-54b7933a61af" />
+          </dependency>
+        </suppliersInternal>
       </component>
     </componentModelHasComponents>
     <componentModelHasComponents>
-      <component Id="e273439a-c9dd-42a1-adeb-0166a91d53f5" name="Component4" isAbstract="false" isLeaf="false" isActiveClass="false">
+      <component Id="e273439a-c9dd-42a1-adeb-0166a91d53f5" name="Firewall" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="5768f864-8e39-4615-a743-caa2f1b7d2fe" />
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="589d792f-abe6-4512-9363-f898dbfc2270" name="Red Escuela Naval" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="f57b860a-26d2-4d9d-89f3-181b449f5f3d" />
+        <suppliersInternal>
+          <dependency Id="8fe9eb32-c829-44ed-9ba6-0554fa169585">
+            <componentMoniker Id="c30d4039-cce5-436c-922e-f100eb811f79" LastKnownName="Router" />
+            <elementDefinition Id="7a6458f9-3c1c-406c-a326-25d0c31a858b" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <part Id="42058783-eb03-4306-a423-ffa55436942e" name="Equipo trabajo -  Programador de tareas" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="true">
+            <elementDefinition Id="ab722848-8c06-41fe-9099-0e490111efcf" />
+            <type_NamedElement>
+              <componentMoniker Id="63c20a43-9048-43ae-a836-0c95aac55948" LastKnownName="Component3" />
+            </type_NamedElement>
+          </part>
+          <part Id="1254365f-a9a0-4ef7-90c6-5e99007f8401" name="Equipo trabajo - Informática 1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="true">
+            <elementDefinition Id="f3bdda39-70c4-4595-a633-10f6f94268c4" />
+            <type_NamedElement>
+              <componentMoniker Id="fae62955-cd27-480f-afd2-e5f72ca30a01" LastKnownName="Component4" />
+            </type_NamedElement>
+          </part>
+          <part Id="31a4ad06-5f56-4ead-9eee-5cf71d0f0956" name="Equipo trabajo - Informática N" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="true">
+            <elementDefinition Id="2f66e559-765e-4b6d-b39e-932bd49f662f" />
+            <type_NamedElement>
+              <componentMoniker Id="c0a10cc8-9ca5-4cca-8d20-94872b831097" LastKnownName="Component5" />
+            </type_NamedElement>
+          </part>
+        </ownedAttributesInternal>
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="63c20a43-9048-43ae-a836-0c95aac55948" name="Component3" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="c713f4de-ca8a-4af6-9dfe-61ef402d2956" />
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="fae62955-cd27-480f-afd2-e5f72ca30a01" name="Component4" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="09a1288d-63de-49c1-bd0a-c2b616323f10" />
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="02c89528-5b31-4baa-882a-529768aeb39d" name="Usuario" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="63a457e3-f363-4339-aea4-3d90e9993a23" />
+        <suppliersInternal>
+          <dependency Id="14e1d08c-5507-46ce-9af7-a3bc78880d0b">
+            <componentMoniker Id="abfea9b2-462a-4f08-a70c-578a9170ecb1" LastKnownName="Hosting" />
+            <elementDefinition Id="a2d29c90-bc09-466d-850e-60e0ad14ee57" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="c0a10cc8-9ca5-4cca-8d20-94872b831097" name="Component5" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="be615265-b693-4aca-a799-593b4c9c51b6" />
       </component>
     </componentModelHasComponents>
   </packagedElements>
