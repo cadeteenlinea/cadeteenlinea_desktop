@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<componentModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="6850d828-99bf-495c-907a-f2e2d7d6dc69" name="UMLComponentDiagram1" linkedPackageId="80636bd6-34b8-445f-bcc9-41b6229de9ee" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="36c1cb86-9018-4603-979c-f01c4b14c8f2">
+      <profileInstance Id="05d0e227-480d-479b-bdc1-fa4ab336b053" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="83bf4209-c96c-4cbe-a40e-15feb5f02fe0">
+      <profileInstance Id="d33bfa04-48ff-40bc-9f4e-f785bcb0d199" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="a03ba993-34b7-4683-962f-3957830edbe4">
+      <profileInstance Id="adf60f3e-ceb6-4d59-8662-66cd9036e8d9" name="CSharpProfile">
+        <elementDefinition Id="25b85c41-7b37-467d-9ea1-6adac62864b0" />
+      </profileInstance>
+      <elementDefinition Id="ea4bff44-3ade-4a3d-b9d5-85a9b495de01" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <componentModelHasComponents>
+      <component Id="6c713cdc-1213-4c7e-ae23-d040d911b0f2" name="Servidor Armada" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="94d946d3-47f0-4b24-9658-fb22d167a397" />
+        <ownedAttributesInternal>
+          <part Id="bc310091-7ac9-4998-8727-7f49393040d8" name="db.cobol" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="true">
+            <elementDefinition Id="759ce469-c281-403f-9783-2c9bca138328" />
+            <type_NamedElement>
+              <componentMoniker Id="22a65ef0-e00d-4a27-9ca0-dd955cd6a8de" LastKnownName="Component1" />
+            </type_NamedElement>
+          </part>
+        </ownedAttributesInternal>
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="22a65ef0-e00d-4a27-9ca0-dd955cd6a8de" name="Component1" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="6f30185d-8bcf-4e80-845f-074e51e4c1fb" />
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="abfea9b2-462a-4f08-a70c-578a9170ecb1" name="Hosting" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="2aa71801-57e7-4986-980f-e9185d29df0a" />
+        <ownedAttributesInternal>
+          <part Id="105f4acd-5cbc-400a-9bf7-752d246641a7" name="Cadete en Línea" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="true">
+            <elementDefinition Id="17e290f6-4dfd-4fde-b42d-02556e23d790" />
+            <type_NamedElement>
+              <componentMoniker Id="ef65b8ff-19dd-4612-8aa5-cbc0cea87e67" LastKnownName="Component2" />
+            </type_NamedElement>
+          </part>
+        </ownedAttributesInternal>
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="ef65b8ff-19dd-4612-8aa5-cbc0cea87e67" name="Component2" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="300a83be-661d-4970-9da5-f87110faa3c5" />
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="c30d4039-cce5-436c-922e-f100eb811f79" name="Component3" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="75541de4-3339-452b-869d-b4c7387e3787" />
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="e273439a-c9dd-42a1-adeb-0166a91d53f5" name="Component4" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="5768f864-8e39-4615-a743-caa2f1b7d2fe" />
+      </component>
+    </componentModelHasComponents>
+  </packagedElements>
+  <package Id="80636bd6-34b8-445f-bcc9-41b6229de9ee" name="DiagramadeComponentes">
+    <elementDefinition Id="fc8b166f-2f49-4565-b6c0-31fc70243b13" />
+  </package>
+</componentModel>

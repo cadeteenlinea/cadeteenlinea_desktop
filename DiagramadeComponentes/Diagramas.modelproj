@@ -50,12 +50,12 @@
     <Content Include="ModelDefinition\Package_1034.uml">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="UMLComponentDiagram1.componentdiagram">
+    <Content Include="DiagramaDespliegue.componentdiagram">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="UMLComponentDiagram1.componentdiagram.layout">
+    <Content Include="DiagramaDespliegue.componentdiagram.layout">
       <SubType>Content</SubType>
-      <DependentUpon>UMLComponentDiagram1.componentdiagram</DependentUpon>
+      <DependentUpon>DiagramaDespliegue.componentdiagram</DependentUpon>
     </Content>
     <Folder Include="ModelDefinition\" />
     <Content Include="ModelDefinition\DiagramadeComponentes.uml">
