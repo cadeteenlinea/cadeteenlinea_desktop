@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
-  Id="fc8b166f-2f49-4565-b6c0-31fc70243b13"
-  name="DiagramadeComponentes" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  Id="fa3c8fb2-0183-43d0-9096-f8b7b54f57bc"
+  name="DiagramasUML" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
   <profileInstances>
     <packageHasProfileInstances
       Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
@@ -17,24 +17,31 @@
         name="StandardProfileL3" />
     </packageHasProfileInstances>
     <packageHasProfileInstances
-      Id="ea4bff44-3ade-4a3d-b9d5-85a9b495de01">
+      Id="13d7ff5d-6912-4b48-895b-8254106bfd32">
       <profileInstance
-        Id="25b85c41-7b37-467d-9ea1-6adac62864b0"
+        Id="7fe79758-3637-466c-a608-5a9ea016d016"
         name="CSharpProfile" />
     </packageHasProfileInstances>
   </profileInstances>
   <packagedElements>
     <packageHasNamedElement>
       <packageMoniker
-        Id="0438ba22-73c0-4679-9199-630fe08d650a"
+        Id="21d461e2-9c9c-4990-8dae-5364f61f1805"
         LastKnownName="CadeteEnLinea"
-        LastKnownLocation="Package_1033.uml" />
+        LastKnownLocation="Package_1149.uml" />
     </packageHasNamedElement>
     <packageHasNamedElement>
       <packageMoniker
-        Id="c0b76d18-9ee0-4cf1-b387-3a45a7981e12"
+        Id="8896cecf-a781-4ae7-b8b7-2602bc864a4b"
         LastKnownName="System"
-        LastKnownLocation="Package1_1033.uml" />
+        LastKnownLocation="Package1_1149.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="b85e54a6-70a2-4572-9a34-5b6c5717ba35"
+        name="Interface1"
+        isAbstract="false"
+        isLeaf="false" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

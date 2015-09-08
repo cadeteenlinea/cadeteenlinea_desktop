@@ -58,7 +58,7 @@
             <End Role="cadete" EntitySet="cadete" />
             <End Role="notas_parciales" EntitySet="notas_parciales" />
           </AssociationSet>
-          <AssociationSet Name="FK_tarea_proceso" Association="cadeteenlineaModel.Store.FK_tarea_proceso">
+          <AssociationSet Name="FK_tarea_proceso1" Association="cadeteenlineaModel.Store.FK_tarea_proceso1">
             <End Role="proceso" EntitySet="proceso" />
             <End Role="tarea" EntitySet="tarea" />
           </AssociationSet>
@@ -352,7 +352,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_tarea_proceso">
+        <Association Name="FK_tarea_proceso1">
           <End Role="proceso" Type="cadeteenlineaModel.Store.proceso" Multiplicity="1" />
           <End Role="tarea" Type="cadeteenlineaModel.Store.tarea" Multiplicity="*" />
           <ReferentialConstraint>

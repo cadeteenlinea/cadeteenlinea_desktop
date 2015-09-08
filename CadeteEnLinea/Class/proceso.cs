@@ -12,6 +12,8 @@ namespace CadeteEnLinea
     {
         private static cadeteenlineaEntities conexion = new cadeteenlineaEntities();
         public static NotifyIcon icono = null;
+        private etl etl;
+
         public static List<proceso> getAllProcesos()
         {
             var procesos = conexion.proceso.ToList();
@@ -24,8 +26,8 @@ namespace CadeteEnLinea
             proceso.icono.BalloonTipIcon = ToolTipIcon.Info;
             proceso.icono.ShowBalloonTip(7000);
 
-            etl e = new etl(this);
-            if (e.ejecutar() == true)
+            this.etl = new etl(this);
+            if (this.etl.ejecutar() == true)
             {
                 switch (this.idproceso)
                 {

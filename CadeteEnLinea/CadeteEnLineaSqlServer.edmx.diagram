@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="6d80f54f9ea648d7ac0fb756343fcdd9" Name="Diagrama1" ZoomLevel="127">
+      <Diagram DiagramId="6d80f54f9ea648d7ac0fb756343fcdd9" Name="Diagrama1" ZoomLevel="86">
         <EntityTypeShape EntityType="cadeteenlineaModel.apoderado" Width="1.5" PointX="3" PointY="6.125" IsExpanded="true" />
         <EntityTypeShape EntityType="cadeteenlineaModel.asignatura" Width="1.5" PointX="6" PointY="23" IsExpanded="true" />
         <EntityTypeShape EntityType="cadeteenlineaModel.cadete" Width="1.5" PointX="3" PointY="12.875" IsExpanded="true" />
@@ -26,8 +26,8 @@
         <AssociationConnector Association="cadeteenlineaModel.FK_notas_finales_cadete" ManuallyRouted="false" />
         <AssociationConnector Association="cadeteenlineaModel.FK_notas_parciales_cadete1" ManuallyRouted="false" />
         <AssociationConnector Association="cadeteenlineaModel.FK_transaccion_cadete" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="cadeteenlineaModel.proceso" Width="1.5" PointX="12" PointY="7.625" />
-        <EntityTypeShape EntityType="cadeteenlineaModel.tarea" Width="1.5" PointX="3.5291271468294445" PointY="8.5155260602550236" />
+        <EntityTypeShape EntityType="cadeteenlineaModel.proceso" Width="1.5" PointX="9.5" PointY="7.25" />
+        <EntityTypeShape EntityType="cadeteenlineaModel.tarea" Width="1.5" PointX="6.5" PointY="6.625" />
         <AssociationConnector Association="cadeteenlineaModel.FK_tarea_proceso" />
         </Diagram>
     </edmx:Diagrams>

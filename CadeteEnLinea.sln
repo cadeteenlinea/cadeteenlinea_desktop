@@ -5,7 +5,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadeteEnLinea", "CadeteEnLi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PruebasUnitarias", "PruebasUnitarias\PruebasUnitarias.csproj", "{52F3F6BE-4D12-424F-8041-663540137631}"
 EndProject
-Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "Diagramas", "DiagramadeComponentes\Diagramas.modelproj", "{0EC89764-901E-4547-A6CD-69027EB82E22}"
+Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "DiagramasUML", "DiagramasUML\DiagramasUML.modelproj", "{94FDFD35-0ADD-4389-BD71-666B5908BD3E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,10 +21,10 @@ Global
 		{52F3F6BE-4D12-424F-8041-663540137631}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52F3F6BE-4D12-424F-8041-663540137631}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{52F3F6BE-4D12-424F-8041-663540137631}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0EC89764-901E-4547-A6CD-69027EB82E22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0EC89764-901E-4547-A6CD-69027EB82E22}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0EC89764-901E-4547-A6CD-69027EB82E22}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0EC89764-901E-4547-A6CD-69027EB82E22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94FDFD35-0ADD-4389-BD71-666B5908BD3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94FDFD35-0ADD-4389-BD71-666B5908BD3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94FDFD35-0ADD-4389-BD71-666B5908BD3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94FDFD35-0ADD-4389-BD71-666B5908BD3E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
