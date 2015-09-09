@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner"
   dslVersion="1.0.0.0"
   Id="fc8b166f-2f49-4565-b6c0-31fc70243b13"
   name="DiagramadeComponentes" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -43,15 +43,6 @@
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
-        <suppliersInternal>
-          <dependency
-            Id="7d3b269c-839a-4528-bf0d-c68efa1b763e">
-            <componentMoniker
-              Id="75541de4-3339-452b-869d-b4c7387e3787"
-              LastKnownName="Router"
-              LastKnownLocation="DiagramadeComponentes.uml" />
-          </dependency>
-        </suppliersInternal>
         <ownedAttributesInternal>
           <part
             Id="759ce469-c281-403f-9783-2c9bca138328"
@@ -70,6 +61,57 @@
                 LastKnownLocation="DiagramadeComponentes.uml" />
             </type_NamedElement>
           </part>
+          <part
+            Id="aea8318c-31b0-4e7b-839f-21c435d4d61e"
+            name="Equipo Informática - Programador de tareas"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="Composite"
+            isComposite="true">
+            <type_NamedElement>
+              <componentMoniker
+                Id="d84abce2-f63c-4025-9247-0d13a3ab7a46"
+                LastKnownName="Component6"
+                LastKnownLocation="DiagramadeComponentes.uml" />
+            </type_NamedElement>
+          </part>
+          <part
+            Id="dc75b0b8-dfe1-45a2-917b-37fd94631e45"
+            name="Equipo Informatica 1"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="Composite"
+            isComposite="true">
+            <type_NamedElement>
+              <componentMoniker
+                Id="18e95ac0-d64d-4fad-97b7-83e1c32abdb1"
+                LastKnownName="Component7"
+                LastKnownLocation="DiagramadeComponentes.uml" />
+            </type_NamedElement>
+          </part>
+          <part
+            Id="fa5ac00e-c1a3-4dd7-a44e-b9a50c4bdd82"
+            name="Equipo Informatica N"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="Composite"
+            isComposite="true">
+            <type_NamedElement>
+              <componentMoniker
+                Id="ac7475c1-1f98-45f3-9d01-f08fdb96fc9f"
+                LastKnownName="Component8"
+                LastKnownLocation="DiagramadeComponentes.uml" />
+            </type_NamedElement>
+          </part>
         </ownedAttributesInternal>
       </component>
     </packageHasNamedElement>
@@ -79,7 +121,29 @@
         name="Component1"
         isAbstract="false"
         isLeaf="false"
-        isActiveClass="false" />
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <requiredInterface
+            Id="8bf087be-0044-4bdd-92fd-476f70adc707"
+            name="Port1"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false"
+            isService="false"
+            isBehavior="false">
+            <type_NamedElement>
+              <interfaceMoniker
+                Id="addbd7ef-7590-4293-b39f-ee31043503e4"
+                LastKnownName="Interface2"
+                LastKnownLocation="DiagramadeComponentes.uml" />
+            </type_NamedElement>
+          </requiredInterface>
+        </ownedAttributesInternal>
+      </component>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <component
@@ -159,15 +223,6 @@
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
-        <suppliersInternal>
-          <dependency
-            Id="7a6458f9-3c1c-406c-a326-25d0c31a858b">
-            <componentMoniker
-              Id="75541de4-3339-452b-869d-b4c7387e3787"
-              LastKnownName="Router"
-              LastKnownLocation="DiagramadeComponentes.uml" />
-          </dependency>
-        </suppliersInternal>
         <ownedAttributesInternal>
           <part
             Id="ab722848-8c06-41fe-9099-0e490111efcf"
@@ -261,6 +316,661 @@
       <component
         Id="be615265-b693-4aca-a799-593b4c9c51b6"
         name="Component5"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="d84abce2-f63c-4025-9247-0d13a3ab7a46"
+        name="Component6"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <requiredInterface
+            Id="3f5866ad-d203-40ab-af9e-07f565614e2e"
+            name="Port1"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false"
+            isService="false"
+            isBehavior="false">
+            <type_NamedElement>
+              <interfaceMoniker
+                Id="afbfe2b2-0eaa-4f1e-8075-395d3d46a462"
+                LastKnownName="Interface3"
+                LastKnownLocation="DiagramadeComponentes.uml" />
+            </type_NamedElement>
+          </requiredInterface>
+        </ownedAttributesInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="18e95ac0-d64d-4fad-97b7-83e1c32abdb1"
+        name="Component7"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <requiredInterface
+            Id="0575deee-bad1-4d35-a5e3-60642181bfc1"
+            name="Port1"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false"
+            isService="false"
+            isBehavior="false">
+            <type_NamedElement>
+              <interfaceMoniker
+                Id="a9097eff-adaa-4e69-bd8b-ae406f853e59"
+                LastKnownName="Interface4"
+                LastKnownLocation="DiagramadeComponentes.uml" />
+            </type_NamedElement>
+          </requiredInterface>
+        </ownedAttributesInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="ac7475c1-1f98-45f3-9d01-f08fdb96fc9f"
+        name="Component8"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="f73e979d-c1b2-49c2-a85a-0a8e735a31ee"
+        name="Component9"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="a055cfe0-3690-4681-957f-2fced4008e60"
+        name="Interface1"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="addbd7ef-7590-4293-b39f-ee31043503e4"
+        name="Interface2"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="afbfe2b2-0eaa-4f1e-8075-395d3d46a462"
+        name="Interface3"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="a9097eff-adaa-4e69-bd8b-ae406f853e59"
+        name="Interface4"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="392ddd21-851b-4786-aba1-281ff78394f6"
+        name="Capa Presentación"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="cd192100-cd41-4b30-b81b-79ca97cd97ab">
+            <componentMoniker
+              Id="57c6bffd-b5a8-4aaf-966a-219222613e7b"
+              LastKnownName="Capa Negocio"
+              LastKnownLocation="DiagramadeComponentes.uml" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <part
+            Id="acb0eda8-f504-48f8-85cd-23d2d52bad1a"
+            name="FormMain"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="Composite"
+            isComposite="true">
+            <type_NamedElement>
+              <componentMoniker
+                Id="3a6051ca-d59c-452e-a3a6-06d324383051"
+                LastKnownName="Component10"
+                LastKnownLocation="DiagramadeComponentes.uml" />
+            </type_NamedElement>
+          </part>
+          <part
+            Id="74d938f8-018d-4df4-a35f-63d4ae7a3281"
+            name="FormProcesoManual"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="Composite"
+            isComposite="true">
+            <type_NamedElement>
+              <componentMoniker
+                Id="975fef89-a39e-492f-9bac-0e2ce46a23fa"
+                LastKnownName="Component11"
+                LastKnownLocation="DiagramadeComponentes.uml" />
+            </type_NamedElement>
+          </part>
+          <part
+            Id="5f154383-3e66-48b5-9786-1ceb34256429"
+            name="FormTareas"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="Composite"
+            isComposite="true">
+            <type_NamedElement>
+              <componentMoniker
+                Id="530e7b84-209a-4472-8a41-95fceff5a9e7"
+                LastKnownName="Component12"
+                LastKnownLocation="DiagramadeComponentes.uml" />
+            </type_NamedElement>
+          </part>
+        </ownedAttributesInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="3a6051ca-d59c-452e-a3a6-06d324383051"
+        name="Component10"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="975fef89-a39e-492f-9bac-0e2ce46a23fa"
+        name="Component11"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="530e7b84-209a-4472-8a41-95fceff5a9e7"
+        name="Component12"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="57c6bffd-b5a8-4aaf-966a-219222613e7b"
+        name="Capa Negocio"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="aa2cdef5-d801-4bfd-9e86-c4aeea60a5cf">
+            <componentMoniker
+              Id="bcb5bbdc-bcd4-40ba-81a4-0112be2f3b20"
+              LastKnownName="Capa Datos"
+              LastKnownLocation="DiagramadeComponentes.uml" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <part
+            Id="a562b885-0e5e-49d4-ae1f-9f6c5925b84f"
+            name="apoderado"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="Composite"
+            isComposite="true">
+            <type_NamedElement>
+              <componentMoniker
+                Id="52facd8b-71da-4332-885c-98c9691b2d82"
+                LastKnownName="Component13"
+                LastKnownLocation="DiagramadeComponentes.uml" />
+            </type_NamedElement>
+          </part>
+          <part
+            Id="c639ef3a-cc51-4aef-a537-055035169346"
+            name="asignatura"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="Composite"
+            isComposite="true">
+            <type_NamedElement>
+              <componentMoniker
+                Id="339c5a5f-9b6c-4734-87df-587b483b7109"
+                LastKnownName="Component14"
+                LastKnownLocation="DiagramadeComponentes.uml" />
+            </type_NamedElement>
+          </part>
+          <part
+            Id="9baa4d99-73b9-4052-80f0-d5039c6fc2c5"
+            name="cadete"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="Composite"
+            isComposite="true">
+            <type_NamedElement>
+              <componentMoniker
+                Id="3192a4be-7447-4f02-bbd0-b80ca601bc5f"
+                LastKnownName="Component15"
+                LastKnownLocation="DiagramadeComponentes.uml" />
+            </type_NamedElement>
+          </part>
+          <part
+            Id="e3fb52b6-56dd-46f6-80ff-9dce5a8cc7c9"
+            name="cadete_apoderado"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="Composite"
+            isComposite="true">
+            <type_NamedElement>
+              <componentMoniker
+                Id="1d67b539-406e-450d-8148-71e64b703eb9"
+                LastKnownName="Component16"
+                LastKnownLocation="DiagramadeComponentes.uml" />
+            </type_NamedElement>
+          </part>
+          <part
+            Id="51642f46-cb08-496b-b6b6-ec67acfc9470"
+            name="calificaciones"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="Composite"
+            isComposite="true">
+            <type_NamedElement>
+              <componentMoniker
+                Id="1dfcec9c-d535-445d-ad99-a40dfd94a614"
+                LastKnownName="Component17"
+                LastKnownLocation="DiagramadeComponentes.uml" />
+            </type_NamedElement>
+          </part>
+          <part
+            Id="c3cd90da-7595-4d70-b7c9-698d2339cc50"
+            name="Error"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="Composite"
+            isComposite="true">
+            <type_NamedElement>
+              <componentMoniker
+                Id="efb2e67d-d4f0-4c07-b002-371842c59f28"
+                LastKnownName="Component18"
+                LastKnownLocation="DiagramadeComponentes.uml" />
+            </type_NamedElement>
+          </part>
+          <part
+            Id="e35d2ac2-4938-4550-8ed8-ecf6b6f838e7"
+            name="etl"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="Composite"
+            isComposite="true">
+            <type_NamedElement>
+              <componentMoniker
+                Id="1b9a61e5-616f-4c9d-9c2a-a9e7c6a962ec"
+                LastKnownName="Component19"
+                LastKnownLocation="DiagramadeComponentes.uml" />
+            </type_NamedElement>
+          </part>
+          <part
+            Id="b5a79f75-61e1-48a3-bfdd-0e268919f660"
+            name="hilo"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="Composite"
+            isComposite="true">
+            <type_NamedElement>
+              <componentMoniker
+                Id="51f64218-41b8-4342-84a6-d43bcbfbfa42"
+                LastKnownName="Component20"
+                LastKnownLocation="DiagramadeComponentes.uml" />
+            </type_NamedElement>
+          </part>
+          <part
+            Id="7052702f-de92-4175-bcad-36140d479b6f"
+            name="ingles_tae"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="Composite"
+            isComposite="true">
+            <type_NamedElement>
+              <componentMoniker
+                Id="f47ea644-8153-4f13-a037-2d6c9f4a51e7"
+                LastKnownName="Component21"
+                LastKnownLocation="DiagramadeComponentes.uml" />
+            </type_NamedElement>
+          </part>
+          <part
+            Id="57f88900-874d-45c7-9d21-766632014937"
+            name="notas_finales"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="Composite"
+            isComposite="true">
+            <type_NamedElement>
+              <componentMoniker
+                Id="e09730ad-98b4-493e-8cda-344e2f9d35fd"
+                LastKnownName="Component22"
+                LastKnownLocation="DiagramadeComponentes.uml" />
+            </type_NamedElement>
+          </part>
+          <part
+            Id="8df69eb1-9cb9-4af7-ab4a-bbb0a3dd3757"
+            name="notas_parciales"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="Composite"
+            isComposite="true">
+            <type_NamedElement>
+              <componentMoniker
+                Id="dbed61cc-a8c7-4ef5-8ba0-7d37e50ffa56"
+                LastKnownName="Component23"
+                LastKnownLocation="DiagramadeComponentes.uml" />
+            </type_NamedElement>
+          </part>
+          <part
+            Id="626eb1ff-4bc2-4e96-8e17-ebb2079ccb00"
+            name="proceso"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="Composite"
+            isComposite="true">
+            <type_NamedElement>
+              <componentMoniker
+                Id="ee611d9b-0037-42b2-957f-5d7b68f6efe9"
+                LastKnownName="Component24"
+                LastKnownLocation="DiagramadeComponentes.uml" />
+            </type_NamedElement>
+          </part>
+          <part
+            Id="368e30d9-68da-4499-8ab4-a1b9295714b2"
+            name="tarea"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="Composite"
+            isComposite="true">
+            <type_NamedElement>
+              <componentMoniker
+                Id="b41f7b9a-dec6-4d93-952c-8e098d6d5b74"
+                LastKnownName="Component25"
+                LastKnownLocation="DiagramadeComponentes.uml" />
+            </type_NamedElement>
+          </part>
+          <part
+            Id="858ae988-2636-459c-b738-3f7d2234ec73"
+            name="transaccion"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="Composite"
+            isComposite="true">
+            <type_NamedElement>
+              <componentMoniker
+                Id="9dc1f2ee-fd6f-484f-8f39-e70148ac06e9"
+                LastKnownName="Component26"
+                LastKnownLocation="DiagramadeComponentes.uml" />
+            </type_NamedElement>
+          </part>
+          <part
+            Id="b97e828c-4c26-47e9-9879-1afd2ac19279"
+            name="usuario"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="Composite"
+            isComposite="true">
+            <type_NamedElement>
+              <componentMoniker
+                Id="290a9a62-2ee5-48ad-9c2e-ad92d532c603"
+                LastKnownName="Component27"
+                LastKnownLocation="DiagramadeComponentes.uml" />
+            </type_NamedElement>
+          </part>
+        </ownedAttributesInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="52facd8b-71da-4332-885c-98c9691b2d82"
+        name="Component13"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="339c5a5f-9b6c-4734-87df-587b483b7109"
+        name="Component14"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="3192a4be-7447-4f02-bbd0-b80ca601bc5f"
+        name="Component15"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="1d67b539-406e-450d-8148-71e64b703eb9"
+        name="Component16"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="1dfcec9c-d535-445d-ad99-a40dfd94a614"
+        name="Component17"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="efb2e67d-d4f0-4c07-b002-371842c59f28"
+        name="Component18"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="1b9a61e5-616f-4c9d-9c2a-a9e7c6a962ec"
+        name="Component19"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="51f64218-41b8-4342-84a6-d43bcbfbfa42"
+        name="Component20"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="f47ea644-8153-4f13-a037-2d6c9f4a51e7"
+        name="Component21"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="e09730ad-98b4-493e-8cda-344e2f9d35fd"
+        name="Component22"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="dbed61cc-a8c7-4ef5-8ba0-7d37e50ffa56"
+        name="Component23"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="ee611d9b-0037-42b2-957f-5d7b68f6efe9"
+        name="Component24"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="b41f7b9a-dec6-4d93-952c-8e098d6d5b74"
+        name="Component25"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="9dc1f2ee-fd6f-484f-8f39-e70148ac06e9"
+        name="Component26"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="290a9a62-2ee5-48ad-9c2e-ad92d532c603"
+        name="Component27"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="bcb5bbdc-bcd4-40ba-81a4-0112be2f3b20"
+        name="Capa Datos"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <part
+            Id="a4ca3eea-e419-4804-8a00-ba3d03a9c185"
+            name="SQLServer"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="Composite"
+            isComposite="true">
+            <type_NamedElement>
+              <componentMoniker
+                Id="9afdfdf1-4627-4b88-9885-b005f0ee142a"
+                LastKnownName="Component28"
+                LastKnownLocation="DiagramadeComponentes.uml" />
+            </type_NamedElement>
+          </part>
+          <part
+            Id="c3994939-d3f2-4c32-817a-cb19d24920b5"
+            name="ETL"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="Composite"
+            isComposite="true">
+            <type_NamedElement>
+              <componentMoniker
+                Id="4d71e8e1-bdf8-43c0-b64d-1849b6fe3cef"
+                LastKnownName="Component29"
+                LastKnownLocation="DiagramadeComponentes.uml" />
+            </type_NamedElement>
+          </part>
+        </ownedAttributesInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="9afdfdf1-4627-4b88-9885-b005f0ee142a"
+        name="Component28"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="4d71e8e1-bdf8-43c0-b64d-1849b6fe3cef"
+        name="Component29"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false" />

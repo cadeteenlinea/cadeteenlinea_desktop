@@ -57,6 +57,13 @@
       <SubType>Content</SubType>
       <DependentUpon>DiagramaDespliegue.componentdiagram</DependentUpon>
     </Content>
+    <Content Include="DiagramaComponentes.componentdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="DiagramaComponentes.componentdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>DiagramaComponentes.componentdiagram</DependentUpon>
+    </Content>
     <Folder Include="ModelDefinition\" />
     <Content Include="ModelDefinition\DiagramadeComponentes.uml">
       <SubType>Content</SubType>

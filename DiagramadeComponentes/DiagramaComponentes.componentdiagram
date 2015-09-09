@@ -1,0 +1,281 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<componentModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" dslVersion="1.0.0.0" Id="dda4ba78-9f29-48c9-824b-663260abac34" name="UMLComponentDiagram1" linkedPackageId="ae9e5125-c1e4-4a78-9e5f-361c7d475d71" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="0a873ffd-bee8-4a1f-b082-772956d95b35">
+      <profileInstance Id="8c78193f-2504-4c67-a3ae-7fff9f008330" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="2216d970-7c05-413d-95a8-6d2769e3d7f6">
+      <profileInstance Id="e96af9e4-5e5c-4563-a678-751023b6f3f5" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="2ff664d9-17e0-412b-b8f6-a42b446586ea">
+      <profileInstance Id="59e38f60-5c16-4b21-994f-56c9ab9e87dc" name="CSharpProfile">
+        <elementDefinition Id="25b85c41-7b37-467d-9ea1-6adac62864b0" />
+      </profileInstance>
+      <elementDefinition Id="ea4bff44-3ade-4a3d-b9d5-85a9b495de01" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <componentModelHasComponents>
+      <component Id="ce5f2cb1-5820-4ebb-9c22-857cf148475a" name="Capa Presentación" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="392ddd21-851b-4786-aba1-281ff78394f6" />
+        <suppliersInternal>
+          <dependency Id="af485808-2db6-4deb-a8be-94747e879158">
+            <componentMoniker Id="f631aa88-13a8-4816-a7dc-8bc03ca33aa0" LastKnownName="Capa Negocio" />
+            <elementDefinition Id="cd192100-cd41-4b30-b81b-79ca97cd97ab" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <part Id="17d7882b-16a5-40a2-a8bf-0690a0d63a1e" name="FormMain" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="true">
+            <elementDefinition Id="acb0eda8-f504-48f8-85cd-23d2d52bad1a" />
+            <type_NamedElement>
+              <componentMoniker Id="4a646b91-d0d5-4ff1-803f-cb90a682c76e" LastKnownName="Component10" />
+            </type_NamedElement>
+          </part>
+          <part Id="c59621cc-8727-4210-9a14-ff8845609861" name="FormProcesoManual" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="true">
+            <elementDefinition Id="74d938f8-018d-4df4-a35f-63d4ae7a3281" />
+            <type_NamedElement>
+              <componentMoniker Id="6ec153e0-d1dc-415b-8fee-f515e58bc823" LastKnownName="Component11" />
+            </type_NamedElement>
+          </part>
+          <part Id="929bf1ac-353e-4ea7-8bbb-9d0a5e1206ed" name="FormTareas" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="true">
+            <elementDefinition Id="5f154383-3e66-48b5-9786-1ceb34256429" />
+            <type_NamedElement>
+              <componentMoniker Id="6dd1b21c-f7d6-4cb3-a8a3-f262cac93b13" LastKnownName="Component12" />
+            </type_NamedElement>
+          </part>
+        </ownedAttributesInternal>
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="4a646b91-d0d5-4ff1-803f-cb90a682c76e" name="Component10" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="3a6051ca-d59c-452e-a3a6-06d324383051" />
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="6ec153e0-d1dc-415b-8fee-f515e58bc823" name="Component11" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="975fef89-a39e-492f-9bac-0e2ce46a23fa" />
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="6dd1b21c-f7d6-4cb3-a8a3-f262cac93b13" name="Component12" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="530e7b84-209a-4472-8a41-95fceff5a9e7" />
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="f631aa88-13a8-4816-a7dc-8bc03ca33aa0" name="Capa Negocio" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="57c6bffd-b5a8-4aaf-966a-219222613e7b" />
+        <suppliersInternal>
+          <dependency Id="153a5162-ca97-4484-8e7f-683ade58d29d">
+            <componentMoniker Id="bb75c88b-3f60-4fb4-8eb5-e4c52b277a49" LastKnownName="Capa Datos" />
+            <elementDefinition Id="aa2cdef5-d801-4bfd-9e86-c4aeea60a5cf" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <part Id="3cb68aef-3498-43b5-af84-bef83a2b79f8" name="apoderado" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="true">
+            <elementDefinition Id="a562b885-0e5e-49d4-ae1f-9f6c5925b84f" />
+            <type_NamedElement>
+              <componentMoniker Id="826497d4-1b37-483f-90d0-583b4fcd062c" LastKnownName="Component13" />
+            </type_NamedElement>
+          </part>
+          <part Id="b4c48dd9-1451-4a23-83f8-56285109aa77" name="asignatura" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="true">
+            <elementDefinition Id="c639ef3a-cc51-4aef-a537-055035169346" />
+            <type_NamedElement>
+              <componentMoniker Id="d1c6cc8e-5e0c-4073-86a5-023f5b98bccf" LastKnownName="Component14" />
+            </type_NamedElement>
+          </part>
+          <part Id="1fb24dd6-371f-4cb6-a61f-83dca209bbaf" name="cadete" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="true">
+            <elementDefinition Id="9baa4d99-73b9-4052-80f0-d5039c6fc2c5" />
+            <type_NamedElement>
+              <componentMoniker Id="bab779bf-8aec-472d-9a93-32744efa59d9" LastKnownName="Component15" />
+            </type_NamedElement>
+          </part>
+          <part Id="1984852f-14c7-4f41-8b6c-9b3aab265d0e" name="cadete_apoderado" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="true">
+            <elementDefinition Id="e3fb52b6-56dd-46f6-80ff-9dce5a8cc7c9" />
+            <type_NamedElement>
+              <componentMoniker Id="8a8b81de-d22b-418e-a8b4-bdbbe8b47c93" LastKnownName="Component16" />
+            </type_NamedElement>
+          </part>
+          <part Id="3c3e33d2-6640-41e8-8b7e-174727062384" name="calificaciones" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="true">
+            <elementDefinition Id="51642f46-cb08-496b-b6b6-ec67acfc9470" />
+            <type_NamedElement>
+              <componentMoniker Id="2e79414e-6443-43af-94f5-5a8e4476c7c9" LastKnownName="Component17" />
+            </type_NamedElement>
+          </part>
+          <part Id="a9cfdf0e-0081-4c33-b463-0a426087283f" name="Error" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="true">
+            <elementDefinition Id="c3cd90da-7595-4d70-b7c9-698d2339cc50" />
+            <type_NamedElement>
+              <componentMoniker Id="37c2e898-c963-4b79-8870-84b687a3390a" LastKnownName="Component18" />
+            </type_NamedElement>
+          </part>
+          <part Id="70751558-4711-461f-adad-b00b26bf2829" name="etl" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="true">
+            <elementDefinition Id="e35d2ac2-4938-4550-8ed8-ecf6b6f838e7" />
+            <type_NamedElement>
+              <componentMoniker Id="17e224ff-0fd2-4b61-89ee-3460bfed0acf" LastKnownName="Component19" />
+            </type_NamedElement>
+          </part>
+          <part Id="5e370a93-d708-468b-84a6-209b6b63881d" name="hilo" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="true">
+            <elementDefinition Id="b5a79f75-61e1-48a3-bfdd-0e268919f660" />
+            <type_NamedElement>
+              <componentMoniker Id="4c77a532-2892-4b85-a8e1-487f8b88e3b4" LastKnownName="Component20" />
+            </type_NamedElement>
+          </part>
+          <part Id="20c5bcad-aebb-41c0-afcb-92b7c80dbb15" name="ingles_tae" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="true">
+            <elementDefinition Id="7052702f-de92-4175-bcad-36140d479b6f" />
+            <type_NamedElement>
+              <componentMoniker Id="00435893-a458-4fcf-9c74-db84dda24892" LastKnownName="Component21" />
+            </type_NamedElement>
+          </part>
+          <part Id="22e9b3d4-b486-461d-b331-b088930f15a6" name="notas_finales" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="true">
+            <elementDefinition Id="57f88900-874d-45c7-9d21-766632014937" />
+            <type_NamedElement>
+              <componentMoniker Id="cee7f4a3-bc15-4c35-abe6-4d1c20849af0" LastKnownName="Component22" />
+            </type_NamedElement>
+          </part>
+          <part Id="13666a41-8ad6-498e-82b0-d820f1cd5ecd" name="notas_parciales" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="true">
+            <elementDefinition Id="8df69eb1-9cb9-4af7-ab4a-bbb0a3dd3757" />
+            <type_NamedElement>
+              <componentMoniker Id="3b1761a3-999c-439e-a08f-7b9c9d34907a" LastKnownName="Component23" />
+            </type_NamedElement>
+          </part>
+          <part Id="7e520eab-2771-41cc-b805-36536da73284" name="proceso" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="true">
+            <elementDefinition Id="626eb1ff-4bc2-4e96-8e17-ebb2079ccb00" />
+            <type_NamedElement>
+              <componentMoniker Id="02471d0c-acfb-4cef-8822-88b7313c77b6" LastKnownName="Component24" />
+            </type_NamedElement>
+          </part>
+          <part Id="dce3b3c6-3b1d-4638-944e-4681aea909f0" name="tarea" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="true">
+            <elementDefinition Id="368e30d9-68da-4499-8ab4-a1b9295714b2" />
+            <type_NamedElement>
+              <componentMoniker Id="b13c9cb4-08d5-4af8-87df-96bd772a1728" LastKnownName="Component25" />
+            </type_NamedElement>
+          </part>
+          <part Id="4a4822f8-653a-4885-8355-438441c9fc5b" name="transaccion" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="true">
+            <elementDefinition Id="858ae988-2636-459c-b738-3f7d2234ec73" />
+            <type_NamedElement>
+              <componentMoniker Id="62296e06-05b6-493c-a2fe-8c280aa5020e" LastKnownName="Component26" />
+            </type_NamedElement>
+          </part>
+          <part Id="23280509-4f33-44d9-a8f6-5385e6286a12" name="usuario" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="true">
+            <elementDefinition Id="b97e828c-4c26-47e9-9879-1afd2ac19279" />
+            <type_NamedElement>
+              <componentMoniker Id="ca24366f-d083-44c0-885d-6840ceed59bf" LastKnownName="Component27" />
+            </type_NamedElement>
+          </part>
+        </ownedAttributesInternal>
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="826497d4-1b37-483f-90d0-583b4fcd062c" name="Component13" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="52facd8b-71da-4332-885c-98c9691b2d82" />
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="d1c6cc8e-5e0c-4073-86a5-023f5b98bccf" name="Component14" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="339c5a5f-9b6c-4734-87df-587b483b7109" />
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="bab779bf-8aec-472d-9a93-32744efa59d9" name="Component15" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="3192a4be-7447-4f02-bbd0-b80ca601bc5f" />
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="8a8b81de-d22b-418e-a8b4-bdbbe8b47c93" name="Component16" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="1d67b539-406e-450d-8148-71e64b703eb9" />
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="2e79414e-6443-43af-94f5-5a8e4476c7c9" name="Component17" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="1dfcec9c-d535-445d-ad99-a40dfd94a614" />
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="37c2e898-c963-4b79-8870-84b687a3390a" name="Component18" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="efb2e67d-d4f0-4c07-b002-371842c59f28" />
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="17e224ff-0fd2-4b61-89ee-3460bfed0acf" name="Component19" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="1b9a61e5-616f-4c9d-9c2a-a9e7c6a962ec" />
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="4c77a532-2892-4b85-a8e1-487f8b88e3b4" name="Component20" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="51f64218-41b8-4342-84a6-d43bcbfbfa42" />
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="00435893-a458-4fcf-9c74-db84dda24892" name="Component21" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="f47ea644-8153-4f13-a037-2d6c9f4a51e7" />
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="cee7f4a3-bc15-4c35-abe6-4d1c20849af0" name="Component22" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="e09730ad-98b4-493e-8cda-344e2f9d35fd" />
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="3b1761a3-999c-439e-a08f-7b9c9d34907a" name="Component23" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="dbed61cc-a8c7-4ef5-8ba0-7d37e50ffa56" />
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="02471d0c-acfb-4cef-8822-88b7313c77b6" name="Component24" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="ee611d9b-0037-42b2-957f-5d7b68f6efe9" />
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="b13c9cb4-08d5-4af8-87df-96bd772a1728" name="Component25" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="b41f7b9a-dec6-4d93-952c-8e098d6d5b74" />
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="62296e06-05b6-493c-a2fe-8c280aa5020e" name="Component26" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="9dc1f2ee-fd6f-484f-8f39-e70148ac06e9" />
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="ca24366f-d083-44c0-885d-6840ceed59bf" name="Component27" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="290a9a62-2ee5-48ad-9c2e-ad92d532c603" />
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="bb75c88b-3f60-4fb4-8eb5-e4c52b277a49" name="Capa Datos" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="bcb5bbdc-bcd4-40ba-81a4-0112be2f3b20" />
+        <ownedAttributesInternal>
+          <part Id="ad93d019-ac6a-40c3-8f14-1ddff795fad9" name="SQLServer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="true">
+            <elementDefinition Id="a4ca3eea-e419-4804-8a00-ba3d03a9c185" />
+            <type_NamedElement>
+              <componentMoniker Id="10c738b3-10c5-4322-af31-0bd5947bf0d3" LastKnownName="Component28" />
+            </type_NamedElement>
+          </part>
+          <part Id="004782de-514c-4314-baf2-f7e3886511e0" name="ETL" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="true">
+            <elementDefinition Id="c3994939-d3f2-4c32-817a-cb19d24920b5" />
+            <type_NamedElement>
+              <componentMoniker Id="1d2bcda8-514f-41c3-8205-90ecc16782c6" LastKnownName="Component29" />
+            </type_NamedElement>
+          </part>
+        </ownedAttributesInternal>
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="10c738b3-10c5-4322-af31-0bd5947bf0d3" name="Component28" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="9afdfdf1-4627-4b88-9885-b005f0ee142a" />
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="1d2bcda8-514f-41c3-8205-90ecc16782c6" name="Component29" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="4d71e8e1-bdf8-43c0-b64d-1849b6fe3cef" />
+      </component>
+    </componentModelHasComponents>
+  </packagedElements>
+  <package Id="ae9e5125-c1e4-4a78-9e5f-361c7d475d71" name="DiagramadeComponentes">
+    <elementDefinition Id="fc8b166f-2f49-4565-b6c0-31fc70243b13" />
+  </package>
+</componentModel>

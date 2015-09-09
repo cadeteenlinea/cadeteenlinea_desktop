@@ -1,40 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<componentModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="6850d828-99bf-495c-907a-f2e2d7d6dc69" name="UMLComponentDiagram1" linkedPackageId="80636bd6-34b8-445f-bcc9-41b6229de9ee" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner">
-  <profileInstances>
-    <packageHasProfileInstances Id="36c1cb86-9018-4603-979c-f01c4b14c8f2">
-      <profileInstance Id="05d0e227-480d-479b-bdc1-fa4ab336b053" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="83bf4209-c96c-4cbe-a40e-15feb5f02fe0">
-      <profileInstance Id="d33bfa04-48ff-40bc-9f4e-f785bcb0d199" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="a03ba993-34b7-4683-962f-3957830edbe4">
-      <profileInstance Id="adf60f3e-ceb6-4d59-8662-66cd9036e8d9" name="CSharpProfile">
-        <elementDefinition Id="25b85c41-7b37-467d-9ea1-6adac62864b0" />
-      </profileInstance>
-      <elementDefinition Id="ea4bff44-3ade-4a3d-b9d5-85a9b495de01" />
-    </packageHasProfileInstances>
-  </profileInstances>
+<componentModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" dslVersion="1.0.0.0" Id="6850d828-99bf-495c-907a-f2e2d7d6dc69" name="UMLComponentDiagram1" linkedPackageId="80636bd6-34b8-445f-bcc9-41b6229de9ee" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner">
   <packagedElements>
     <componentModelHasComponents>
       <component Id="6c713cdc-1213-4c7e-ae23-d040d911b0f2" name="Red Armada" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="94d946d3-47f0-4b24-9658-fb22d167a397" />
-        <suppliersInternal>
-          <dependency Id="6bc9f945-8f26-4630-b211-00dc0ce0be87">
-            <componentMoniker Id="c30d4039-cce5-436c-922e-f100eb811f79" LastKnownName="Router" />
-            <elementDefinition Id="7d3b269c-839a-4528-bf0d-c68efa1b763e" />
-          </dependency>
-        </suppliersInternal>
         <ownedAttributesInternal>
           <part Id="bc310091-7ac9-4998-8727-7f49393040d8" name="Servidor db.cobol" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="true">
             <elementDefinition Id="759ce469-c281-403f-9783-2c9bca138328" />
             <type_NamedElement>
               <componentMoniker Id="22a65ef0-e00d-4a27-9ca0-dd955cd6a8de" LastKnownName="Component1" />
+            </type_NamedElement>
+          </part>
+          <part Id="bc9f1fab-0cf4-48ae-9a67-b16faee624d1" name="Equipo Informática - Programador de tareas" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="true">
+            <elementDefinition Id="aea8318c-31b0-4e7b-839f-21c435d4d61e" />
+            <type_NamedElement>
+              <componentMoniker Id="edd9649c-70fa-43ed-8c9a-99c1f481f6a2" LastKnownName="Component6" />
+            </type_NamedElement>
+          </part>
+          <part Id="ffd9790c-ad55-459e-91ed-8b0161482fd3" name="Equipo Informatica 1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="true">
+            <elementDefinition Id="dc75b0b8-dfe1-45a2-917b-37fd94631e45" />
+            <type_NamedElement>
+              <componentMoniker Id="604f3378-20c8-4aea-82f3-0affeb875837" LastKnownName="Component7" />
+            </type_NamedElement>
+          </part>
+          <part Id="cb4f78d9-bbbd-41ba-9719-70d2a0f910d0" name="Equipo Informatica N" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="true">
+            <elementDefinition Id="fa5ac00e-c1a3-4dd7-a44e-b9a50c4bdd82" />
+            <type_NamedElement>
+              <componentMoniker Id="f9ec5c0d-f222-4949-bffc-686ff6846847" LastKnownName="Component8" />
             </type_NamedElement>
           </part>
         </ownedAttributesInternal>
@@ -43,6 +35,14 @@
     <componentModelHasComponents>
       <component Id="22a65ef0-e00d-4a27-9ca0-dd955cd6a8de" name="Component1" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="6f30185d-8bcf-4e80-845f-074e51e4c1fb" />
+        <ownedAttributesInternal>
+          <requiredInterface Id="93451281-6e0d-4118-a0de-84592a937487" name="Port1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <elementDefinition Id="8bf087be-0044-4bdd-92fd-476f70adc707" />
+            <type_NamedElement>
+              <interfaceMoniker Id="c652431d-f1e3-447f-8843-a53607b8ac42" LastKnownName="Interface2" />
+            </type_NamedElement>
+          </requiredInterface>
+        </ownedAttributesInternal>
       </component>
     </componentModelHasComponents>
     <componentModelHasComponents>
@@ -86,47 +86,6 @@
       </component>
     </componentModelHasComponents>
     <componentModelHasComponents>
-      <component Id="589d792f-abe6-4512-9363-f898dbfc2270" name="Red Escuela Naval" isAbstract="false" isLeaf="false" isActiveClass="false">
-        <elementDefinition Id="f57b860a-26d2-4d9d-89f3-181b449f5f3d" />
-        <suppliersInternal>
-          <dependency Id="8fe9eb32-c829-44ed-9ba6-0554fa169585">
-            <componentMoniker Id="c30d4039-cce5-436c-922e-f100eb811f79" LastKnownName="Router" />
-            <elementDefinition Id="7a6458f9-3c1c-406c-a326-25d0c31a858b" />
-          </dependency>
-        </suppliersInternal>
-        <ownedAttributesInternal>
-          <part Id="42058783-eb03-4306-a423-ffa55436942e" name="Equipo trabajo -  Programador de tareas" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="true">
-            <elementDefinition Id="ab722848-8c06-41fe-9099-0e490111efcf" />
-            <type_NamedElement>
-              <componentMoniker Id="63c20a43-9048-43ae-a836-0c95aac55948" LastKnownName="Component3" />
-            </type_NamedElement>
-          </part>
-          <part Id="1254365f-a9a0-4ef7-90c6-5e99007f8401" name="Equipo trabajo - Informática 1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="true">
-            <elementDefinition Id="f3bdda39-70c4-4595-a633-10f6f94268c4" />
-            <type_NamedElement>
-              <componentMoniker Id="fae62955-cd27-480f-afd2-e5f72ca30a01" LastKnownName="Component4" />
-            </type_NamedElement>
-          </part>
-          <part Id="31a4ad06-5f56-4ead-9eee-5cf71d0f0956" name="Equipo trabajo - Informática N" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="true">
-            <elementDefinition Id="2f66e559-765e-4b6d-b39e-932bd49f662f" />
-            <type_NamedElement>
-              <componentMoniker Id="c0a10cc8-9ca5-4cca-8d20-94872b831097" LastKnownName="Component5" />
-            </type_NamedElement>
-          </part>
-        </ownedAttributesInternal>
-      </component>
-    </componentModelHasComponents>
-    <componentModelHasComponents>
-      <component Id="63c20a43-9048-43ae-a836-0c95aac55948" name="Component3" isAbstract="false" isLeaf="false" isActiveClass="false">
-        <elementDefinition Id="c713f4de-ca8a-4af6-9dfe-61ef402d2956" />
-      </component>
-    </componentModelHasComponents>
-    <componentModelHasComponents>
-      <component Id="fae62955-cd27-480f-afd2-e5f72ca30a01" name="Component4" isAbstract="false" isLeaf="false" isActiveClass="false">
-        <elementDefinition Id="09a1288d-63de-49c1-bd0a-c2b616323f10" />
-      </component>
-    </componentModelHasComponents>
-    <componentModelHasComponents>
       <component Id="02c89528-5b31-4baa-882a-529768aeb39d" name="Usuario" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="63a457e3-f363-4339-aea4-3d90e9993a23" />
         <suppliersInternal>
@@ -138,12 +97,73 @@
       </component>
     </componentModelHasComponents>
     <componentModelHasComponents>
-      <component Id="c0a10cc8-9ca5-4cca-8d20-94872b831097" name="Component5" isAbstract="false" isLeaf="false" isActiveClass="false">
-        <elementDefinition Id="be615265-b693-4aca-a799-593b4c9c51b6" />
+      <component Id="edd9649c-70fa-43ed-8c9a-99c1f481f6a2" name="Component6" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="d84abce2-f63c-4025-9247-0d13a3ab7a46" />
+        <ownedAttributesInternal>
+          <requiredInterface Id="f165279c-f788-464f-9273-b8a3b5f4d0f7" name="Port1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <elementDefinition Id="3f5866ad-d203-40ab-af9e-07f565614e2e" />
+            <type_NamedElement>
+              <interfaceMoniker Id="9171bb48-57ee-40f8-b330-ab8993790d18" LastKnownName="Interface3" />
+            </type_NamedElement>
+          </requiredInterface>
+        </ownedAttributesInternal>
       </component>
     </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="604f3378-20c8-4aea-82f3-0affeb875837" name="Component7" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="18e95ac0-d64d-4fad-97b7-83e1c32abdb1" />
+        <ownedAttributesInternal>
+          <requiredInterface Id="92c1f1bd-11b0-4097-a50a-14438836136d" name="Port1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <elementDefinition Id="0575deee-bad1-4d35-a5e3-60642181bfc1" />
+            <type_NamedElement>
+              <interfaceMoniker Id="f502a8f5-741f-4d4a-9934-aa826e7a86da" LastKnownName="Interface4" />
+            </type_NamedElement>
+          </requiredInterface>
+        </ownedAttributesInternal>
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="f9ec5c0d-f222-4949-bffc-686ff6846847" name="Component8" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="ac7475c1-1f98-45f3-9d01-f08fdb96fc9f" />
+      </component>
+    </componentModelHasComponents>
+    <modelContainsNamedElements>
+      <Interface Id="c652431d-f1e3-447f-8843-a53607b8ac42" name="Interface2" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="addbd7ef-7590-4293-b39f-ee31043503e4" />
+      </Interface>
+    </modelContainsNamedElements>
+    <modelContainsNamedElements>
+      <Interface Id="9171bb48-57ee-40f8-b330-ab8993790d18" name="Interface3" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="afbfe2b2-0eaa-4f1e-8075-395d3d46a462" />
+      </Interface>
+    </modelContainsNamedElements>
+    <modelContainsNamedElements>
+      <Interface Id="f502a8f5-741f-4d4a-9934-aa826e7a86da" name="Interface4" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="a9097eff-adaa-4e69-bd8b-ae406f853e59" />
+      </Interface>
+    </modelContainsNamedElements>
   </packagedElements>
   <package Id="80636bd6-34b8-445f-bcc9-41b6229de9ee" name="DiagramadeComponentes">
     <elementDefinition Id="fc8b166f-2f49-4565-b6c0-31fc70243b13" />
+    <profileInstances>
+      <packageHasProfileInstances Id="36c1cb86-9018-4603-979c-f01c4b14c8f2">
+        <profileInstance Id="05d0e227-480d-479b-bdc1-fa4ab336b053" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="83bf4209-c96c-4cbe-a40e-15feb5f02fe0">
+        <profileInstance Id="d33bfa04-48ff-40bc-9f4e-f785bcb0d199" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="a03ba993-34b7-4683-962f-3957830edbe4">
+        <profileInstance Id="adf60f3e-ceb6-4d59-8662-66cd9036e8d9" name="CSharpProfile">
+          <elementDefinition Id="25b85c41-7b37-467d-9ea1-6adac62864b0" />
+        </profileInstance>
+        <elementDefinition Id="ea4bff44-3ade-4a3d-b9d5-85a9b495de01" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </componentModel>
