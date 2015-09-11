@@ -77,9 +77,9 @@ namespace CadeteEnLinea
         public static void actualizacionWeb()
         {
             usuario.actualizacionWeb();
-            ingles_tae.sendWeb(1);
-            ingles_tae.sendWeb(2);
-            ingles_tae.sendWeb(3);
+            errores.setErrors(ingles_tae.sendWeb(1));
+            errores.setErrors(ingles_tae.sendWeb(2));
+            errores.setErrors(ingles_tae.sendWeb(3));
         }
     }
 }

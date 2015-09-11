@@ -37,5 +37,6 @@ namespace CadeteEnLinea
         public DbSet<usuario> usuario { get; set; }
         public DbSet<proceso> proceso { get; set; }
         public DbSet<tarea> tarea { get; set; }
+        public DbSet<errores> errores { get; set; }
     }
 }

@@ -11,6 +11,7 @@
           <EntitySet Name="cadete" EntityType="cadeteenlineaModel.Store.cadete" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="cadete_apoderado" EntityType="cadeteenlineaModel.Store.cadete_apoderado" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="calificaciones" EntityType="cadeteenlineaModel.Store.calificaciones" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="errores" EntityType="cadeteenlineaModel.Store.errores" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="ingles_tae" EntityType="cadeteenlineaModel.Store.ingles_tae" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="notas_finales" EntityType="cadeteenlineaModel.Store.notas_finales" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="notas_parciales" EntityType="cadeteenlineaModel.Store.notas_parciales" store:Type="Tables" Schema="dbo" />
@@ -37,6 +38,10 @@
           <AssociationSet Name="FK_calificaciones_cadete" Association="cadeteenlineaModel.Store.FK_calificaciones_cadete">
             <End Role="cadete" EntitySet="cadete" />
             <End Role="calificaciones" EntitySet="calificaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_error_tarea" Association="cadeteenlineaModel.Store.FK_error_tarea">
+            <End Role="tarea" EntitySet="tarea" />
+            <End Role="errores" EntitySet="errores" />
           </AssociationSet>
           <AssociationSet Name="FK_ingles_tae_cadete" Association="cadeteenlineaModel.Store.FK_ingles_tae_cadete">
             <End Role="cadete" EntitySet="cadete" />
@@ -142,6 +147,17 @@
           <Property Name="tenida_orden_aseo" Type="numeric" Precision="4" Scale="2" />
           <Property Name="final" Type="numeric" Precision="4" Scale="2" />
           <Property Name="estado" Type="int" />
+        </EntityType>
+        <EntityType Name="errores">
+          <Key>
+            <PropertyRef Name="iderror" />
+          </Key>
+          <Property Name="iderror" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="codigo" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="idRegistro" Type="int" />
+          <Property Name="tabla" Type="varchar" MaxLength="20" />
+          <Property Name="error" Type="text" Nullable="false" />
+          <Property Name="tarea_idTarea" Type="int" />
         </EntityType>
         <EntityType Name="ingles_tae">
           <Key>
@@ -289,6 +305,18 @@
             </Principal>
             <Dependent Role="calificaciones">
               <PropertyRef Name="cadete_rut" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_error_tarea">
+          <End Role="tarea" Type="cadeteenlineaModel.Store.tarea" Multiplicity="0..1" />
+          <End Role="errores" Type="cadeteenlineaModel.Store.errores" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tarea">
+              <PropertyRef Name="idtarea" />
+            </Principal>
+            <Dependent Role="errores">
+              <PropertyRef Name="tarea_idTarea" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -440,6 +468,11 @@
           <AssociationSet Name="FK_tarea_proceso" Association="cadeteenlineaModel.FK_tarea_proceso">
             <End Role="proceso" EntitySet="proceso" />
             <End Role="tarea" EntitySet="tarea" />
+          </AssociationSet>
+          <EntitySet Name="errores" EntityType="cadeteenlineaModel.errores" />
+          <AssociationSet Name="FK_error_tarea" Association="cadeteenlineaModel.FK_error_tarea">
+            <End Role="tarea" EntitySet="tarea" />
+            <End Role="errores" EntitySet="errores" />
           </AssociationSet>
           </EntityContainer>
         <EntityType Name="apoderado">
@@ -762,6 +795,7 @@
           <Property Type="Int32" Name="estado" Nullable="false" />
           <Property Type="Int32" Name="proceso_idproceso" Nullable="false" />
           <NavigationProperty Name="proceso" Relationship="cadeteenlineaModel.FK_tarea_proceso" FromRole="tarea" ToRole="proceso" />
+          <NavigationProperty Name="errores" Relationship="cadeteenlineaModel.FK_error_tarea" FromRole="tarea" ToRole="errores" />
         </EntityType>
         <Association Name="FK_tarea_proceso">
           <End Type="cadeteenlineaModel.proceso" Role="proceso" Multiplicity="1" />
@@ -772,6 +806,30 @@
             </Principal>
             <Dependent Role="tarea">
               <PropertyRef Name="proceso_idproceso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="errores">
+          <Key>
+            <PropertyRef Name="iderror" />
+          </Key>
+          <Property Type="Int32" Name="iderror" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="codigo" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="idRegistro" />
+          <Property Type="String" Name="tabla" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="error" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="tarea_idTarea" />
+          <NavigationProperty Name="tarea" Relationship="cadeteenlineaModel.FK_error_tarea" FromRole="errores" ToRole="tarea" />
+        </EntityType>
+        <Association Name="FK_error_tarea">
+          <End Type="cadeteenlineaModel.tarea" Role="tarea" Multiplicity="0..1" />
+          <End Type="cadeteenlineaModel.errores" Role="errores" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tarea">
+              <PropertyRef Name="idtarea" />
+            </Principal>
+            <Dependent Role="errores">
+              <PropertyRef Name="tarea_idTarea" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -955,6 +1013,18 @@
                 <ScalarProperty Name="hora" ColumnName="hora" />
                 <ScalarProperty Name="fecha" ColumnName="fecha" />
                 <ScalarProperty Name="idtarea" ColumnName="idtarea" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="errores">
+            <EntityTypeMapping TypeName="cadeteenlineaModel.errores">
+              <MappingFragment StoreEntitySet="errores">
+                <ScalarProperty Name="tarea_idTarea" ColumnName="tarea_idTarea" />
+                <ScalarProperty Name="error" ColumnName="error" />
+                <ScalarProperty Name="tabla" ColumnName="tabla" />
+                <ScalarProperty Name="idRegistro" ColumnName="idRegistro" />
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="iderror" ColumnName="iderror" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -5,13 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Threading;
+using System.Windows.Forms;
 
 namespace CadeteEnLinea
 {
     public partial class tarea
     {
         private static cadeteenlineaEntities conexion = new cadeteenlineaEntities();
-        
+        public static NotifyIcon icono = null;
         public static List<tarea> getAllTareas() {
             var tar = conexion.tarea.Where(p => p.estado == 1).ToList();
             return tar;
@@ -28,21 +29,49 @@ namespace CadeteEnLinea
         }
 
         public void ejecutarTarea() {
-            double sleep = this.diferenciaFecha();
-            /*Instruccion para realizar el sleep para fechas muy grandes,
-             * ya que la isntruccion solo soporta
-             valores en integer*/
-            while (sleep > 2147483647) {
-                sleep -= 2147483647;
-                Thread.Sleep(2147483647);
+            try
+            {
+                double sleep = this.diferenciaFecha();
+                /*Instruccion para realizar el sleep para fechas muy grandes,
+                 * ya que la isntruccion solo soporta
+                 valores en integer*/
+                while (sleep > 2147483647)
+                {
+                    sleep -= 2147483647;
+                    Thread.Sleep(2147483647);
+                }
+                Thread.Sleep(Convert.ToInt32(sleep));
+
+                string mensaje = "Se inicio la ejecución del proceso de actualización de " + this.proceso.nombre;
+                string titulo = "Inicio de Proceso";
+                this.mensajeEnPantalla(1, titulo, mensaje);
+
+                //actualiza el estado de la tarea, para dejar constancia que se está ejecutando un proceso
+                this.actualizarEstado(2);
+                this.proceso.actualizacion();
             }
-            Thread.Sleep(Convert.ToInt32(sleep));
-            
-            //actualiza el estado de la tarea, para dejar constancia que se está ejecutando un proceso
-            this.actualizarEstado(2);
-            this.proceso.actualizacion();
+            catch (Exception e) {
+                errores er = new errores();
+                er.codigo = "-1";
+                er.tarea_idTarea = this.idtarea;
+                er.error = e.ToString();
+                er.guardar();
+            }
             //actualiza estado para identificar que la tarea se ejecuto, independiente si tubo errores.
             this.actualizarEstado(0);
+            if (this.errores.Count() > 0)
+            {
+                string mensaje = "Finalizó la ejecución del proceso de actualización de " + this.proceso.nombre
+                    + "\n" + "Cantidad de errores: " + this.errores.Count().ToString();
+                string titulo = "Fin de Proceso";
+                this.mensajeEnPantalla(2, titulo, mensaje);
+            }
+            else {
+                string mensaje = "Finalizó exitosamente la ejecución del proceso de actualización de " + this.proceso.nombre;
+                string titulo = "Fin de Proceso";
+                this.mensajeEnPantalla(1, titulo, mensaje);
+            }
+
             //se llama nuevamente al proceso de reiniciarHilo, para poder instanciar una nueva tarea
             hilo.reiniciarHilo();
         }
@@ -73,17 +102,42 @@ namespace CadeteEnLinea
 
         /*retorna respuesta de acuerdo a si existe una tarea en ejecución, estado = 2
           true = tarea en ejecución, false = no hay tarea en ejecución*/
-        public static bool tareaEnEjecucion() {
+        public static tarea tareaEnEjecucion() {
             var tar = conexion.tarea.Where(p => p.estado == 2).FirstOrDefault();
             if (tar == null) {
-                return false;
+                return null;
             }
-            return true;
+            return tar;
         }
 
         public void insertar() {
             conexion.tarea.Add(this);
             conexion.SaveChanges();
+        }
+
+        /*despliega mensaje por pantalla (burbuja) indicando el estado de la tarea*/
+        public void mensajeEnPantalla(int estado,string titulo, string mensaje) {
+            tarea.icono.BalloonTipTitle = titulo;
+            tarea.icono.BalloonTipText = mensaje;
+            switch (estado) {
+                // para burbuja sin formato
+                case 0:
+                    tarea.icono.BalloonTipIcon = ToolTipIcon.None;
+                    break;
+                //para burbuja de info
+                case 1:
+                    tarea.icono.BalloonTipIcon = ToolTipIcon.Info;
+                    break;
+                //para burbuja de error
+                case 2:
+                    tarea.icono.BalloonTipIcon = ToolTipIcon.Error;
+                    break;
+                //para burbuja de warning
+                case 3:
+                    tarea.icono.BalloonTipIcon = ToolTipIcon.Warning;
+                    break;
+            }
+            tarea.icono.ShowBalloonTip(7000);
         }
     }
 }

@@ -15,7 +15,7 @@ namespace CadeteEnLinea
 {
     public partial class FormProcesoManual : Form
     {
-        List<Error> result = new List<Error>();
+        List<errores> result = new List<errores>();
         JavaScriptSerializer jss = new JavaScriptSerializer();
 
         public FormProcesoManual()
@@ -42,7 +42,7 @@ namespace CadeteEnLinea
             this.setErrors(usuario.sendWeb(3));
             
             if (result.Count() > 0) {
-                result = new List<Error>();
+                result = new List<errores>();
                 dgwErrores.DataSource = result;
             }
             
@@ -60,7 +60,7 @@ namespace CadeteEnLinea
         {
             if (result.Count() > 0)
             {
-                result = new List<Error>();
+                result = new List<errores>();
                 dgwErrores.DataSource = result;
             }
             this.enableBtn(false);
@@ -83,7 +83,7 @@ namespace CadeteEnLinea
         {
             if (result.Count() > 0)
             {
-                result = new List<Error>();
+                result = new List<errores>();
                 dgwErrores.DataSource = result;
             }
             this.enableBtn(false);
@@ -111,7 +111,7 @@ namespace CadeteEnLinea
         {
             if (result.Count() > 0)
             {
-                result = new List<Error>();
+                result = new List<errores>();
                 dgwErrores.DataSource = result;
             }
             this.enableBtn(false);
@@ -135,7 +135,7 @@ namespace CadeteEnLinea
         {
             if (result.Count() > 0)
             {
-                result = new List<Error>();
+                result = new List<errores>();
                 dgwErrores.DataSource = result;
             }
             this.enableBtn(false);
@@ -163,7 +163,7 @@ namespace CadeteEnLinea
         {
             if (result.Count() > 0)
             {
-                result = new List<Error>();
+                result = new List<errores>();
                 dgwErrores.DataSource = result;
             }
             this.enableBtn(false);
@@ -201,7 +201,7 @@ namespace CadeteEnLinea
             {
                 if (re != " \\")
                 {
-                    result.AddRange(jss.Deserialize<List<Error>>(errores));
+                    result.AddRange(jss.Deserialize<List<errores>>(errores));
                 }
             }
         }

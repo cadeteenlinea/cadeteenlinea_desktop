@@ -113,7 +113,7 @@
     <Compile Include="Class\cadete.cs" />
     <Compile Include="Class\cadete_apoderado.cs" />
     <Compile Include="Class\calificaciones.cs" />
-    <Compile Include="Class\Error.cs" />
+    <Compile Include="Class\errores.cs" />
     <Compile Include="Class\etl.cs" />
     <Compile Include="Class\hilo.cs" />
     <Compile Include="Class\ingles_tae.cs" />
@@ -123,6 +123,9 @@
     <Compile Include="Class\tarea.cs" />
     <Compile Include="Class\transaccion.cs" />
     <Compile Include="Class\usuario.cs" />
+    <Compile Include="errores.cs">
+      <DependentUpon>CadeteEnLineaSqlServer.tt</DependentUpon>
+    </Compile>
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>

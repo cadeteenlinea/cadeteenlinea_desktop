@@ -80,9 +80,9 @@ namespace CadeteEnLinea
         public static void actualizacionWeb()
         {
             usuario.actualizacionWeb();
-            calificaciones.sendWeb(1);
-            calificaciones.sendWeb(2);
-            calificaciones.sendWeb(3);
+            errores.setErrors(calificaciones.sendWeb(1));
+            errores.setErrors(calificaciones.sendWeb(2));
+            errores.setErrors(calificaciones.sendWeb(3));
         }
     }
 }

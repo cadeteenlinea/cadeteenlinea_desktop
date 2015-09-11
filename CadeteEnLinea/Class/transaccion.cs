@@ -76,9 +76,9 @@ namespace CadeteEnLinea
         public static void actualizacionWeb()
         {
             usuario.actualizacionWeb();
-            transaccion.sendWeb(1);
-            transaccion.sendWeb(2);
-            transaccion.sendWeb(3);
+            errores.setErrors(transaccion.sendWeb(1));
+            errores.setErrors(transaccion.sendWeb(2));
+            errores.setErrors(transaccion.sendWeb(3));
         }
     }
 }

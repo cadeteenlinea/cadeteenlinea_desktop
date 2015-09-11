@@ -38,7 +38,7 @@ namespace CadeteEnLinea
 
         private void FormMain_Load(object sender, EventArgs e)
         {
-            proceso.icono = notifyIcon;
+            tarea.icono = notifyIcon;
             hilo.reiniciarHilo();
 
             // tmr = new Timer(tar.)

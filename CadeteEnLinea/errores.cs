@@ -12,20 +12,15 @@ namespace CadeteEnLinea
     using System;
     using System.Collections.Generic;
     
-    public partial class tarea
+    public partial class errores
     {
-        public tarea()
-        {
-            this.errores = new HashSet<errores>();
-        }
+        public int iderror { get; set; }
+        public string codigo { get; set; }
+        public Nullable<int> idRegistro { get; set; }
+        public string tabla { get; set; }
+        public string error { get; set; }
+        public Nullable<int> tarea_idTarea { get; set; }
     
-        public int idtarea { get; set; }
-        public System.DateTime fecha { get; set; }
-        public System.TimeSpan hora { get; set; }
-        public int estado { get; set; }
-        public int proceso_idproceso { get; set; }
-    
-        public virtual proceso proceso { get; set; }
-        public virtual ICollection<errores> errores { get; set; }
+        public virtual tarea tarea { get; set; }
     }
 }

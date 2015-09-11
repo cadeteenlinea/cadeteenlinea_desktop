@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+
 
 
 namespace CadeteEnLinea
@@ -11,7 +11,7 @@ namespace CadeteEnLinea
     public partial class proceso
     {
         private static cadeteenlineaEntities conexion = new cadeteenlineaEntities();
-        public static NotifyIcon icono = null;
+        
         private etl etl;
 
         public static List<proceso> getAllProcesos()
@@ -20,12 +20,8 @@ namespace CadeteEnLinea
             return procesos;
         }
 
+        /*Proceso de actualización de registros, el proceso seleccionado*/
         public void actualizacion(){
-            proceso.icono.BalloonTipTitle = "Inicio de Proceso";
-            proceso.icono.BalloonTipText = "Se inicio la ejecución del proceso de actualización de " + this.nombre;
-            proceso.icono.BalloonTipIcon = ToolTipIcon.Info;
-            proceso.icono.ShowBalloonTip(7000);
-
             this.etl = new etl(this);
             if (this.etl.ejecutar() == true)
             {
@@ -51,10 +47,7 @@ namespace CadeteEnLinea
                         break;
                 }
             }
-            proceso.icono.BalloonTipTitle = "Fin de Proceso";
-            proceso.icono.BalloonTipText = "Finalizó la ejecución del proceso de actualización de " + this.nombre;
-            proceso.icono.BalloonTipIcon = ToolTipIcon.Info;
-            proceso.icono.ShowBalloonTip(7000);
+            
         }
 
     }
