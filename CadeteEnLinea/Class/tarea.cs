@@ -124,7 +124,7 @@ namespace CadeteEnLinea
         }
 
         private bool validarHora() {
-            var tarea = conexion.tarea.Where(p => p.fecha == this.fecha && p.hora == this.hora).FirstOrDefault();
+            var tarea = conexion.tarea.Where(p => p.fecha == this.fecha && p.hora == this.hora && p.estado == 1).FirstOrDefault();
             if (tarea != null)
             {
                 return false;

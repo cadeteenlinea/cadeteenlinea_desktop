@@ -16,8 +16,8 @@ namespace CadeteEnLinea
         {
             InitializeComponent();
             dtmFecha.CustomFormat = "MM/dd/yyyy hh:mm:ss tt";
-            dtmFecha.Value = this.getFechaActual();
-            dtmHora.Value = this.getFechaActual();
+            dtmFecha.Value = DateTime.Now;
+            dtmHora.Value = DateTime.Now;
         }
 
         private void FormTareas_Load(object sender, EventArgs e)
@@ -71,8 +71,8 @@ namespace CadeteEnLinea
             else {
                 MessageBox.Show("No puede existir dos tareas en la misma hora");
             }
-            this.actualizarDgv();
             hilo.reiniciarHilo();
+            this.actualizarDgv();
         }
 
         private void actualizarDgv() {
@@ -84,17 +84,5 @@ namespace CadeteEnLinea
         {
             
         }
-
-        private DateTime getFechaActual()
-        {
-            int anio, dia, mes;
-            DateTime dtFecha;
-            anio = DateTime.Today.Year;
-            mes = DateTime.Today.Month;
-            dia = DateTime.Today.Day;
-            dtFecha = new DateTime(anio, mes, dia);
-            return dtFecha;
-        }
-
     }
 }

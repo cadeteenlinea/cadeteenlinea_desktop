@@ -79,7 +79,7 @@
             this.dtmHora.Name = "dtmHora";
             this.dtmHora.Size = new System.Drawing.Size(69, 20);
             this.dtmHora.TabIndex = 2;
-            this.dtmHora.Value = new System.DateTime(2015, 9, 1, 11, 24, 19, 0);
+            this.dtmHora.Value = new System.DateTime(2015, 9, 22, 16, 13, 15, 0);
             this.dtmHora.ValueChanged += new System.EventHandler(this.dtmHora_ValueChanged);
             // 
             // groupBox1
