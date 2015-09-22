@@ -16,6 +16,7 @@
           <EntitySet Name="notas_finales" EntityType="cadeteenlineaModel.Store.notas_finales" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="notas_parciales" EntityType="cadeteenlineaModel.Store.notas_parciales" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="proceso" EntityType="cadeteenlineaModel.Store.proceso" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sysdiagrams" EntityType="cadeteenlineaModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tarea" EntityType="cadeteenlineaModel.Store.tarea" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="transaccion" EntityType="cadeteenlineaModel.Store.transaccion" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="usuario" EntityType="cadeteenlineaModel.Store.usuario" store:Type="Tables" Schema="dbo" />
@@ -213,6 +214,16 @@
           <Property Name="descripción" Type="text" Nullable="false" />
           <Property Name="nombre_package_etl" Type="varchar" Nullable="false" MaxLength="150" />
         </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
         <EntityType Name="tarea">
           <Key>
             <PropertyRef Name="idtarea" />
@@ -404,6 +415,44 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <!--Se encontraron errores durante la generación:
+      advertencia 6013: La tabla o vista 'cadeteenlinea.dbo.notas_fin' no tiene una clave principal definida y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+      
+      <EntityType Name="notas_fin">
+        <Property Name="rut" Type="numeric" Precision="10" />
+        <Property Name="codigo" Type="nvarchar" MaxLength="6" />
+        <Property Name="ano" Type="numeric" Precision="4" />
+        <Property Name="nota_presentacion" Type="numeric" Precision="6" Scale="3" />
+        <Property Name="nota_examen" Type="numeric" Precision="6" Scale="3" />
+        <Property Name="nota_examen_repeticion" Type="numeric" Precision="6" Scale="3" />
+        <Property Name="nota_final" Type="numeric" Precision="6" Scale="3" />
+        <Property Name="estado" Type="nvarchar" MaxLength="1" />
+        <Property Name="nota_final_repeticion" Type="numeric" Precision="6" Scale="3" />
+      </EntityType>
+      Se encontraron errores durante la generación:
+      advertencia 6013: La tabla o vista 'cadeteenlinea.dbo.notas_parciales_paso' no tiene una clave principal definida y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+      
+      <EntityType Name="notas_parciales_paso">
+        <Property Name="rut" Type="numeric" Precision="10" />
+        <Property Name="codigo" Type="nvarchar" MaxLength="6" />
+        <Property Name="ano" Type="numeric" Precision="4" />
+        <Property Name="mes" Type="numeric" Precision="2" />
+        <Property Name="dia" Type="numeric" Precision="2" />
+        <Property Name="nNota" Type="numeric" Precision="2" />
+        <Property Name="tipo" Type="nvarchar" MaxLength="1" />
+        <Property Name="nota" Type="numeric" Precision="3" Scale="1" />
+        <Property Name="semestre" Type="numeric" Precision="1" />
+      </EntityType>
+      Se encontraron errores durante la generación:
+      advertencia 6013: La tabla o vista 'cadeteenlinea.dbo.resumen' no tiene una clave principal definida y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+      
+      <EntityType Name="resumen">
+        <Property Name="rut" Type="numeric" Precision="10" />
+        <Property Name="nCadete" Type="numeric" Precision="3" />
+        <Property Name="curso" Type="numeric" Precision="1" />
+        <Property Name="ano" Type="numeric" Precision="4" />
+        <Property Name="especialidad" Type="nvarchar" MaxLength="1" />
+      </EntityType>-->
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -474,6 +523,7 @@
             <End Role="tarea" EntitySet="tarea" />
             <End Role="errores" EntitySet="errores" />
           </AssociationSet>
+          <EntitySet Name="sysdiagrams" EntityType="cadeteenlineaModel.sysdiagrams" />
           </EntityContainer>
         <EntityType Name="apoderado">
           <Key>
@@ -833,6 +883,16 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Type="String" Name="name" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="principal_id" Nullable="false" />
+          <Property Type="Int32" Name="diagram_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="version" />
+          <Property Type="Binary" Name="definition" MaxLength="Max" FixedLength="false" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1025,6 +1085,17 @@
                 <ScalarProperty Name="idRegistro" ColumnName="idRegistro" />
                 <ScalarProperty Name="codigo" ColumnName="codigo" />
                 <ScalarProperty Name="iderror" ColumnName="iderror" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="cadeteenlineaModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

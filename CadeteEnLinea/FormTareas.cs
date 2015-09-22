@@ -20,7 +20,9 @@ namespace CadeteEnLinea
 
         private void FormTareas_Load(object sender, EventArgs e)
         {
-            dgvTareas.DataSource = tarea.getAllTareas();
+            // TODO: esta línea de código carga datos en la tabla 'cadeteenlineaDataSet.tarea' Puede moverla o quitarla según sea necesario.
+            this.tareaTableAdapter.Fill(this.cadeteenlineaDataSet.tarea);
+            //dgvTareas.DataSource = tarea.getAllTareas();
             cmbProcesos.DataSource = proceso.getAllProcesos();
             cmbProcesos.ValueMember = "idproceso";
             cmbProcesos.DisplayMember = "nombre";
@@ -44,6 +46,16 @@ namespace CadeteEnLinea
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            tarea tablatarea = new tarea();
+            
+            tablatarea.fecha = dtmFecha.Value.Date;
+            tablatarea.hora =  dtmHora.Value.Hour;
+            tablatarea.estado = 0;
+            tablatarea.proceso_idproceso = Convert.ToInt32(cmbProcesos.SelectedValue);
         }
     }
 }

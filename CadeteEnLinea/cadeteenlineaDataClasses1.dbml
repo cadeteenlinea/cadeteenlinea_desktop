@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="cadeteenlinea" Class="cadeteenlineaDataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=MARCO;Initial Catalog=cadeteenlinea;Persist Security Info=True;User ID=sa" SettingsObjectName="CadeteEnLinea.Properties.Settings" SettingsPropertyName="cadeteenlineaConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tarea" Member="tarea">
+    <Type Name="tarea">
+      <Column Name="idtarea" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="fecha" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="hora" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Column Name="estado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="proceso_idproceso" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

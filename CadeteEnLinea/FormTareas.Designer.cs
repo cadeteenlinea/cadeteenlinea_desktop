@@ -28,59 +28,45 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dgvTareas = new System.Windows.Forms.DataGridView();
-            this.idtarea = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtmFecha = new System.Windows.Forms.DateTimePicker();
             this.dtmHora = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cmbProcesos = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.cadeteenlineaDataSet = new CadeteEnLinea.cadeteenlineaDataSet();
+            this.tareaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tareaTableAdapter = new CadeteEnLinea.cadeteenlineaDataSetTableAdapters.tareaTableAdapter();
+            this.idtareaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.horaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.procesoidprocesoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTareas)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cadeteenlineaDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tareaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvTareas
             // 
             this.dgvTareas.AllowUserToAddRows = false;
+            this.dgvTareas.AutoGenerateColumns = false;
             this.dgvTareas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTareas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idtarea,
-            this.fecha,
-            this.hora,
-            this.estado});
+            this.idtareaDataGridViewTextBoxColumn,
+            this.fechaDataGridViewTextBoxColumn,
+            this.horaDataGridViewTextBoxColumn,
+            this.estadoDataGridViewTextBoxColumn,
+            this.procesoidprocesoDataGridViewTextBoxColumn});
+            this.dgvTareas.DataSource = this.tareaBindingSource;
             this.dgvTareas.Location = new System.Drawing.Point(12, 169);
             this.dgvTareas.Name = "dgvTareas";
             this.dgvTareas.Size = new System.Drawing.Size(677, 251);
             this.dgvTareas.TabIndex = 0;
-            // 
-            // idtarea
-            // 
-            this.idtarea.DataPropertyName = "idtarea";
-            this.idtarea.HeaderText = "idtarea";
-            this.idtarea.Name = "idtarea";
-            this.idtarea.Visible = false;
-            // 
-            // fecha
-            // 
-            this.fecha.DataPropertyName = "fecha";
-            this.fecha.HeaderText = "fecha";
-            this.fecha.Name = "fecha";
-            // 
-            // hora
-            // 
-            this.hora.DataPropertyName = "hora";
-            this.hora.HeaderText = "hora";
-            this.hora.Name = "hora";
-            // 
-            // estado
-            // 
-            this.estado.DataPropertyName = "estado";
-            this.estado.HeaderText = "estado";
-            this.estado.Name = "estado";
             // 
             // dtmFecha
             // 
@@ -105,6 +91,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.cmbProcesos);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
@@ -146,6 +133,61 @@
             this.label1.Text = "Fecha";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // cadeteenlineaDataSet
+            // 
+            this.cadeteenlineaDataSet.DataSetName = "cadeteenlineaDataSet";
+            this.cadeteenlineaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tareaBindingSource
+            // 
+            this.tareaBindingSource.DataMember = "tarea";
+            this.tareaBindingSource.DataSource = this.cadeteenlineaDataSet;
+            // 
+            // tareaTableAdapter
+            // 
+            this.tareaTableAdapter.ClearBeforeFill = true;
+            // 
+            // idtareaDataGridViewTextBoxColumn
+            // 
+            this.idtareaDataGridViewTextBoxColumn.DataPropertyName = "idtarea";
+            this.idtareaDataGridViewTextBoxColumn.HeaderText = "idtarea";
+            this.idtareaDataGridViewTextBoxColumn.Name = "idtareaDataGridViewTextBoxColumn";
+            this.idtareaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fechaDataGridViewTextBoxColumn
+            // 
+            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "fecha";
+            this.fechaDataGridViewTextBoxColumn.HeaderText = "fecha";
+            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
+            // 
+            // horaDataGridViewTextBoxColumn
+            // 
+            this.horaDataGridViewTextBoxColumn.DataPropertyName = "hora";
+            this.horaDataGridViewTextBoxColumn.HeaderText = "hora";
+            this.horaDataGridViewTextBoxColumn.Name = "horaDataGridViewTextBoxColumn";
+            // 
+            // estadoDataGridViewTextBoxColumn
+            // 
+            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "estado";
+            this.estadoDataGridViewTextBoxColumn.HeaderText = "estado";
+            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
+            // 
+            // procesoidprocesoDataGridViewTextBoxColumn
+            // 
+            this.procesoidprocesoDataGridViewTextBoxColumn.DataPropertyName = "proceso_idproceso";
+            this.procesoidprocesoDataGridViewTextBoxColumn.HeaderText = "proceso_idproceso";
+            this.procesoidprocesoDataGridViewTextBoxColumn.Name = "procesoidprocesoDataGridViewTextBoxColumn";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(261, 78);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Agregar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FormTareas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -159,6 +201,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvTareas)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cadeteenlineaDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tareaBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -167,14 +211,19 @@
 
         private System.Windows.Forms.DataGridView dgvTareas;
         private System.Windows.Forms.DateTimePicker dtmFecha;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idtarea;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fecha;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hora;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estado;
         private System.Windows.Forms.DateTimePicker dtmHora;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbProcesos;
         private System.Windows.Forms.Label label2;
+        private cadeteenlineaDataSet cadeteenlineaDataSet;
+        private System.Windows.Forms.BindingSource tareaBindingSource;
+        private cadeteenlineaDataSetTableAdapters.tareaTableAdapter tareaTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idtareaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn horaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estadoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn procesoidprocesoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -31,6 +31,7 @@
         <AssociationConnector Association="cadeteenlineaModel.FK_tarea_proceso" />
         <EntityTypeShape EntityType="cadeteenlineaModel.errores" Width="1.5" PointX="2.6906094656747812" PointY="21.578686619912595" />
         <AssociationConnector Association="cadeteenlineaModel.FK_error_tarea" />
+        <EntityTypeShape EntityType="cadeteenlineaModel.sysdiagrams" Width="1.5" PointX="3.5354045161676613" PointY="31.670573130096574" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
