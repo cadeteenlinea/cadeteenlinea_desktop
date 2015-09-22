@@ -14,7 +14,8 @@ namespace CadeteEnLinea
         private static cadeteenlineaEntities conexion = new cadeteenlineaEntities();
         public static NotifyIcon icono = null;
         public static List<tarea> getAllTareas() {
-            var tar = conexion.tarea.Where(p => p.estado == 1).ToList();
+            //var tar = conexion.tarea.Where(p => p.estado == 1).ToList();
+            var tar = conexion.tarea.ToList();
             return tar;
         }
 
@@ -110,9 +111,27 @@ namespace CadeteEnLinea
             return tar;
         }
 
-        public void insertar() {
-            conexion.tarea.Add(this);
-            conexion.SaveChanges();
+        public bool insertar() {
+            if (this.validarHora())
+            {
+                conexion.tarea.Add(this);
+                conexion.SaveChanges();
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+
+        private bool validarHora() {
+            var tarea = conexion.tarea.Where(p => p.fecha == this.fecha && p.hora == this.hora).FirstOrDefault();
+            if (tarea != null)
+            {
+                return false;
+            }
+            else { 
+                return true;
+            }
         }
 
         /*despliega mensaje por pantalla (burbuja) indicando el estado de la tarea*/

@@ -68,5 +68,10 @@ namespace CadeteEnLinea
             notifyIcon.Visible = true;
         }
 
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
     }
 }
