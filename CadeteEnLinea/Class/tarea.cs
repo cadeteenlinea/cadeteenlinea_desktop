@@ -11,17 +11,29 @@ namespace CadeteEnLinea
 {
     public partial class tarea
     {
-        private static cadeteenlineaEntities conexion = new cadeteenlineaEntities();
+        private cadeteenlineaEntities conexion = new cadeteenlineaEntities();
         public static NotifyIcon icono = null;
-        public static List<tarea> getAllTareas() {
+        public List<dynamic> getAllTareas()
+        {
             //var tar = conexion.tarea.Where(p => p.estado == 1).ToList();
             var tar = conexion.tarea.ToList();
-            return tar;
+
+            var tarea = conexion.tarea.Select(p => new
+            {
+                idtarea = p.idtarea,
+                fecha = p.fecha,
+                hora = p.hora,
+                proceso = p.proceso.nombre,
+                estado = p.estadoTarea.nombre,
+                errores = p.errores.Count,
+            }).ToList();
+
+            return tarea.ToList<dynamic>();
         }
 
         /* retorna la proxima tarea a realizar
          * ordena por fecha y luego hora*/
-        public static tarea getProximaTarea() {
+        public tarea getProximaTarea() {
             var tar = conexion.tarea.Where(p => p.estado == 1).OrderBy(p => p.fecha).ThenBy(p => p.hora).FirstOrDefault();
             if (tar == null) {
                 return null;
@@ -103,7 +115,7 @@ namespace CadeteEnLinea
 
         /*retorna respuesta de acuerdo a si existe una tarea en ejecución, estado = 2
           true = tarea en ejecución, false = no hay tarea en ejecución*/
-        public static tarea tareaEnEjecucion() {
+        public tarea tareaEnEjecucion() {
             var tar = conexion.tarea.Where(p => p.estado == 2).FirstOrDefault();
             if (tar == null) {
                 return null;
@@ -116,8 +128,7 @@ namespace CadeteEnLinea
             {
                 conexion.tarea.Add(this);
                 conexion.SaveChanges();
-                
-                this.proceso = proceso.buscar(this.proceso_idproceso);
+                //this.proceso = proceso.buscar(this.proceso_idproceso);
                 return true;
             }
             else {
@@ -126,7 +137,7 @@ namespace CadeteEnLinea
         }
 
         private bool validarHora() {
-            var tarea = conexion.tarea.Where(p => p.fecha == this.fecha && p.hora == this.hora && p.estado == 1).FirstOrDefault();
+            var tarea = conexion.tarea.Where(p => p.fecha == this.fecha && p.hora == this.hora && p.estado != 0).FirstOrDefault();
             if (tarea != null)
             {
                 return false;
@@ -160,5 +171,30 @@ namespace CadeteEnLinea
             }
             tarea.icono.ShowBalloonTip(7000);
         }
+
+        public static tarea buscar(int idtarea) {
+            cadeteenlineaEntities conexion = new cadeteenlineaEntities();
+            tarea tr = conexion.tarea.Where(em => em.idtarea == idtarea).First();
+            return tr;
+        }
+
+
+        public bool eliminar() {
+            try
+            {
+                if (this.estado == 0 || this.estado == 2) {
+                    return false;
+                }
+
+                var tarea = conexion.tarea.Where(p => p.idtarea == this.idtarea).FirstOrDefault();
+
+                conexion.tarea.Remove(tarea);
+                conexion.SaveChanges();
+                return true;
+            }catch(Exception e){
+                return false;
+            }
+        }
+
     }
 }

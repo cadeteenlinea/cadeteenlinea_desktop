@@ -12,6 +12,7 @@
           <EntitySet Name="cadete_apoderado" EntityType="cadeteenlineaModel.Store.cadete_apoderado" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="calificaciones" EntityType="cadeteenlineaModel.Store.calificaciones" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="errores" EntityType="cadeteenlineaModel.Store.errores" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="estadoTarea" EntityType="cadeteenlineaModel.Store.estadoTarea" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="ingles_tae" EntityType="cadeteenlineaModel.Store.ingles_tae" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="notas_finales" EntityType="cadeteenlineaModel.Store.notas_finales" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="notas_parciales" EntityType="cadeteenlineaModel.Store.notas_parciales" store:Type="Tables" Schema="dbo" />
@@ -63,6 +64,10 @@
           <AssociationSet Name="FK_notas_parciales_cadete1" Association="cadeteenlineaModel.Store.FK_notas_parciales_cadete1">
             <End Role="cadete" EntitySet="cadete" />
             <End Role="notas_parciales" EntitySet="notas_parciales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tarea_estadoTarea" Association="cadeteenlineaModel.Store.FK_tarea_estadoTarea">
+            <End Role="estadoTarea" EntitySet="estadoTarea" />
+            <End Role="tarea" EntitySet="tarea" />
           </AssociationSet>
           <AssociationSet Name="FK_tarea_proceso1" Association="cadeteenlineaModel.Store.FK_tarea_proceso1">
             <End Role="proceso" EntitySet="proceso" />
@@ -159,6 +164,13 @@
           <Property Name="tabla" Type="varchar" MaxLength="20" />
           <Property Name="error" Type="text" Nullable="false" />
           <Property Name="tarea_idTarea" Type="int" />
+        </EntityType>
+        <EntityType Name="estadoTarea">
+          <Key>
+            <PropertyRef Name="idestado" />
+          </Key>
+          <Property Name="idestado" Type="int" Nullable="false" />
+          <Property Name="nombre" Type="varchar" Nullable="false" MaxLength="50" />
         </EntityType>
         <EntityType Name="ingles_tae">
           <Key>
@@ -391,6 +403,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_tarea_estadoTarea">
+          <End Role="estadoTarea" Type="cadeteenlineaModel.Store.estadoTarea" Multiplicity="1" />
+          <End Role="tarea" Type="cadeteenlineaModel.Store.tarea" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="estadoTarea">
+              <PropertyRef Name="idestado" />
+            </Principal>
+            <Dependent Role="tarea">
+              <PropertyRef Name="estado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_tarea_proceso1">
           <End Role="proceso" Type="cadeteenlineaModel.Store.proceso" Multiplicity="1" />
           <End Role="tarea" Type="cadeteenlineaModel.Store.tarea" Multiplicity="*" />
@@ -415,44 +439,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <!--Se encontraron errores durante la generación:
-      advertencia 6013: La tabla o vista 'cadeteenlinea.dbo.notas_fin' no tiene una clave principal definida y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
-      
-      <EntityType Name="notas_fin">
-        <Property Name="rut" Type="numeric" Precision="10" />
-        <Property Name="codigo" Type="nvarchar" MaxLength="6" />
-        <Property Name="ano" Type="numeric" Precision="4" />
-        <Property Name="nota_presentacion" Type="numeric" Precision="6" Scale="3" />
-        <Property Name="nota_examen" Type="numeric" Precision="6" Scale="3" />
-        <Property Name="nota_examen_repeticion" Type="numeric" Precision="6" Scale="3" />
-        <Property Name="nota_final" Type="numeric" Precision="6" Scale="3" />
-        <Property Name="estado" Type="nvarchar" MaxLength="1" />
-        <Property Name="nota_final_repeticion" Type="numeric" Precision="6" Scale="3" />
-      </EntityType>
-      Se encontraron errores durante la generación:
-      advertencia 6013: La tabla o vista 'cadeteenlinea.dbo.notas_parciales_paso' no tiene una clave principal definida y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
-      
-      <EntityType Name="notas_parciales_paso">
-        <Property Name="rut" Type="numeric" Precision="10" />
-        <Property Name="codigo" Type="nvarchar" MaxLength="6" />
-        <Property Name="ano" Type="numeric" Precision="4" />
-        <Property Name="mes" Type="numeric" Precision="2" />
-        <Property Name="dia" Type="numeric" Precision="2" />
-        <Property Name="nNota" Type="numeric" Precision="2" />
-        <Property Name="tipo" Type="nvarchar" MaxLength="1" />
-        <Property Name="nota" Type="numeric" Precision="3" Scale="1" />
-        <Property Name="semestre" Type="numeric" Precision="1" />
-      </EntityType>
-      Se encontraron errores durante la generación:
-      advertencia 6013: La tabla o vista 'cadeteenlinea.dbo.resumen' no tiene una clave principal definida y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
-      
-      <EntityType Name="resumen">
-        <Property Name="rut" Type="numeric" Precision="10" />
-        <Property Name="nCadete" Type="numeric" Precision="3" />
-        <Property Name="curso" Type="numeric" Precision="1" />
-        <Property Name="ano" Type="numeric" Precision="4" />
-        <Property Name="especialidad" Type="nvarchar" MaxLength="1" />
-      </EntityType>-->
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -524,6 +510,11 @@
             <End Role="errores" EntitySet="errores" />
           </AssociationSet>
           <EntitySet Name="sysdiagrams" EntityType="cadeteenlineaModel.sysdiagrams" />
+          <EntitySet Name="estadoTarea" EntityType="cadeteenlineaModel.estadoTarea" />
+          <AssociationSet Name="FK_tarea_estadoTarea" Association="cadeteenlineaModel.FK_tarea_estadoTarea">
+            <End Role="estadoTarea" EntitySet="estadoTarea" />
+            <End Role="tarea" EntitySet="tarea" />
+          </AssociationSet>
           </EntityContainer>
         <EntityType Name="apoderado">
           <Key>
@@ -846,6 +837,7 @@
           <Property Type="Int32" Name="proceso_idproceso" Nullable="false" />
           <NavigationProperty Name="proceso" Relationship="cadeteenlineaModel.FK_tarea_proceso" FromRole="tarea" ToRole="proceso" />
           <NavigationProperty Name="errores" Relationship="cadeteenlineaModel.FK_error_tarea" FromRole="tarea" ToRole="errores" />
+          <NavigationProperty Name="estadoTarea" Relationship="cadeteenlineaModel.FK_tarea_estadoTarea" FromRole="tarea" ToRole="estadoTarea" />
         </EntityType>
         <Association Name="FK_tarea_proceso">
           <End Type="cadeteenlineaModel.proceso" Role="proceso" Multiplicity="1" />
@@ -893,6 +885,26 @@
           <Property Type="Int32" Name="version" />
           <Property Type="Binary" Name="definition" MaxLength="Max" FixedLength="false" />
         </EntityType>
+        <EntityType Name="estadoTarea">
+          <Key>
+            <PropertyRef Name="idestado" />
+          </Key>
+          <Property Type="Int32" Name="idestado" Nullable="false" />
+          <Property Type="String" Name="nombre" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tarea" Relationship="cadeteenlineaModel.FK_tarea_estadoTarea" FromRole="estadoTarea" ToRole="tarea" />
+        </EntityType>
+        <Association Name="FK_tarea_estadoTarea">
+          <End Type="cadeteenlineaModel.estadoTarea" Role="estadoTarea" Multiplicity="1" />
+          <End Type="cadeteenlineaModel.tarea" Role="tarea" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="estadoTarea">
+              <PropertyRef Name="idestado" />
+            </Principal>
+            <Dependent Role="tarea">
+              <PropertyRef Name="estado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1096,6 +1108,14 @@
                 <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
                 <ScalarProperty Name="principal_id" ColumnName="principal_id" />
                 <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="estadoTarea">
+            <EntityTypeMapping TypeName="cadeteenlineaModel.estadoTarea">
+              <MappingFragment StoreEntitySet="estadoTarea">
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="idestado" ColumnName="idestado" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

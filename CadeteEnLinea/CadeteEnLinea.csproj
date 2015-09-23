@@ -131,6 +131,15 @@
     <Compile Include="errores.cs">
       <DependentUpon>CadeteEnLineaSqlServer.tt</DependentUpon>
     </Compile>
+    <Compile Include="estadoTarea.cs">
+      <DependentUpon>CadeteEnLineaSqlServer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FormDetalleTarea.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDetalleTarea.Designer.cs">
+      <DependentUpon>FormDetalleTarea.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,6 +189,9 @@
     <Compile Include="usuario.cs">
       <DependentUpon>CadeteEnLineaSqlServer.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FormDetalleTarea.resx">
+      <DependentUpon>FormDetalleTarea.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>

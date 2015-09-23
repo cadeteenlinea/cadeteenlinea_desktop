@@ -39,5 +39,6 @@ namespace CadeteEnLinea
         public DbSet<tarea> tarea { get; set; }
         public DbSet<errores> errores { get; set; }
         public DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public DbSet<estadoTarea> estadoTarea { get; set; }
     }
 }

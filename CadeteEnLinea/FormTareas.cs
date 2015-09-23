@@ -13,8 +13,7 @@ namespace CadeteEnLinea
 {
     public partial class FormTareas : Form
     {
-        private cadeteenlineaEntities tar = new cadeteenlineaEntities();
-        
+        int indexTarea = -1;
         public FormTareas()
         {
             InitializeComponent();
@@ -62,7 +61,6 @@ namespace CadeteEnLinea
         private void button1_Click(object sender, EventArgs e)
         {
             tarea tablatarea = new tarea();
-            
             tablatarea.fecha = dtmFecha.Value.Date;
             tablatarea.hora = new  TimeSpan(dtmHora.Value.Hour, dtmHora.Value.Minute, 0);
             tablatarea.estado = 1;
@@ -72,27 +70,60 @@ namespace CadeteEnLinea
             if (tablatarea.insertar())
             {
                 MessageBox.Show("Tarea Ingresada");
+                hilo.reiniciarHilo();
+                this.actualizarDgv();
             }
             else {
                 MessageBox.Show("No puede existir dos tareas en la misma hora");
             }
-            //hilo.reiniciarHilo();
-            this.actualizarDgv();
         }
 
         private void actualizarDgv() {
             dgvTareas.DataSource = null;
+            tarea tarea = new tarea();
             dgvTareas.DataSource = tarea.getAllTareas();
+            dgvTareas.ClearSelection();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            DataGridViewRow fila = dgvTareas.CurrentRow;
-            int iddgv = Convert.ToInt32(fila.Cells["idtarea"].Value);
+            if (this.indexTarea > -1)
+            {
+                int idtarea = Convert.ToInt32(dgvTareas.Rows[this.indexTarea].Cells[0].Value.ToString());
 
-            tarea tr = tar.tarea.Where(em => em.idtarea == iddgv).First();
-            tar.DeleteObject(tr);
-            tar.SaveChanges();
+
+                tarea tar = tarea.buscar(idtarea);
+                if (tar.eliminar())
+                {
+                    MessageBox.Show("tarea eliminada");
+                }
+                else
+                {
+                    MessageBox.Show("tarea ya ejecutadas o en proceso de ejecución no pueden ser eliminadas");
+                }
+            }
+            else {
+                MessageBox.Show("Seleccione un registro a eliminar");
+            }
+            this.actualizarDgv();
+        }
+
+        private void dgvTareas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+        private void dgvTareas_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            this.indexTarea = e.RowIndex;
+
+            var senderGrid = (DataGridView)sender;
+            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
+            {
+                int idtarea = Convert.ToInt32(dgvTareas.Rows[this.indexTarea].Cells[0].Value.ToString());
+
+                FormDetalleTarea formulario = new FormDetalleTarea(tarea.buscar(idtarea));
+                formulario.ShowDialog();
+            }
         }
     }
 }

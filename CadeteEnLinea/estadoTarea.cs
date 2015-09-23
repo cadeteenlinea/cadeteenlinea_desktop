@@ -12,21 +12,16 @@ namespace CadeteEnLinea
     using System;
     using System.Collections.Generic;
     
-    public partial class tarea
+    public partial class estadoTarea
     {
-        public tarea()
+        public estadoTarea()
         {
-            this.errores = new HashSet<errores>();
+            this.tarea = new HashSet<tarea>();
         }
     
-        public int idtarea { get; set; }
-        public System.DateTime fecha { get; set; }
-        public System.TimeSpan hora { get; set; }
-        public int estado { get; set; }
-        public int proceso_idproceso { get; set; }
+        public int idestado { get; set; }
+        public string nombre { get; set; }
     
-        public virtual proceso proceso { get; set; }
-        public virtual ICollection<errores> errores { get; set; }
-        public virtual estadoTarea estadoTarea { get; set; }
+        public virtual ICollection<tarea> tarea { get; set; }
     }
 }

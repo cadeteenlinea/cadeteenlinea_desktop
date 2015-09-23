@@ -32,6 +32,7 @@ namespace CadeteEnLinea
                 {
                     result.AddRange(jss.Deserialize<List<errores>>(errores));
                 }
+                tarea tarea = new tarea();
                 tarea tar = tarea.tareaEnEjecucion();
                 foreach (errores s in result)
                 {
@@ -40,6 +41,22 @@ namespace CadeteEnLinea
                     conexion.SaveChanges();
                 }
             }
+        }
+
+        public static List<dynamic> getAllErroresTarea(int idtarea)
+        {
+            //var tar = conexion.tarea.Where(p => p.estado == 1).ToList();
+
+            var tarea = conexion.errores.Where(p=> p.tarea_idTarea == idtarea).Select(p => new
+            {
+                //idtarea = p.codigo,
+                codigo = p.codigo,
+                tabla = p.tabla,
+                registro = p.idRegistro,
+                error = p.error
+            }).ToList();
+
+            return tarea.ToList<dynamic>();
         }
         
         /*guarda el error instanciado*/

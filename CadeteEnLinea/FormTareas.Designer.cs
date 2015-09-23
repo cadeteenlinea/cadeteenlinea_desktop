@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             this.dgvTareas = new System.Windows.Forms.DataGridView();
+            this.idtareaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.horaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.procesoidprocesoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.detalle = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dtmFecha = new System.Windows.Forms.DateTimePicker();
             this.dtmHora = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -37,11 +43,6 @@
             this.cmbProcesos = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.idtareaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.horaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.procesoidprocesoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTareas)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -49,17 +50,70 @@
             // dgvTareas
             // 
             this.dgvTareas.AllowUserToAddRows = false;
+            this.dgvTareas.AllowUserToDeleteRows = false;
             this.dgvTareas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTareas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idtareaDataGridViewTextBoxColumn,
             this.fechaDataGridViewTextBoxColumn,
             this.horaDataGridViewTextBoxColumn,
             this.estadoDataGridViewTextBoxColumn,
-            this.procesoidprocesoDataGridViewTextBoxColumn});
+            this.procesoidprocesoDataGridViewTextBoxColumn,
+            this.detalle});
             this.dgvTareas.Location = new System.Drawing.Point(12, 169);
+            this.dgvTareas.MultiSelect = false;
             this.dgvTareas.Name = "dgvTareas";
-            this.dgvTareas.Size = new System.Drawing.Size(568, 251);
+            this.dgvTareas.ReadOnly = true;
+            this.dgvTareas.Size = new System.Drawing.Size(694, 302);
             this.dgvTareas.TabIndex = 0;
+            this.dgvTareas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTareas_CellClick);
+            // 
+            // idtareaDataGridViewTextBoxColumn
+            // 
+            this.idtareaDataGridViewTextBoxColumn.DataPropertyName = "idtarea";
+            this.idtareaDataGridViewTextBoxColumn.HeaderText = "idtarea";
+            this.idtareaDataGridViewTextBoxColumn.Name = "idtareaDataGridViewTextBoxColumn";
+            this.idtareaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idtareaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // fechaDataGridViewTextBoxColumn
+            // 
+            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "fecha";
+            this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
+            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
+            this.fechaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fechaDataGridViewTextBoxColumn.Width = 110;
+            // 
+            // horaDataGridViewTextBoxColumn
+            // 
+            this.horaDataGridViewTextBoxColumn.DataPropertyName = "hora";
+            this.horaDataGridViewTextBoxColumn.HeaderText = "Hora";
+            this.horaDataGridViewTextBoxColumn.Name = "horaDataGridViewTextBoxColumn";
+            this.horaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // estadoDataGridViewTextBoxColumn
+            // 
+            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "estado";
+            this.estadoDataGridViewTextBoxColumn.HeaderText = "Estado";
+            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
+            this.estadoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.estadoDataGridViewTextBoxColumn.Width = 140;
+            // 
+            // procesoidprocesoDataGridViewTextBoxColumn
+            // 
+            this.procesoidprocesoDataGridViewTextBoxColumn.DataPropertyName = "proceso";
+            this.procesoidprocesoDataGridViewTextBoxColumn.HeaderText = "Proceso";
+            this.procesoidprocesoDataGridViewTextBoxColumn.Name = "procesoidprocesoDataGridViewTextBoxColumn";
+            this.procesoidprocesoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.procesoidprocesoDataGridViewTextBoxColumn.Width = 160;
+            // 
+            // detalle
+            // 
+            this.detalle.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.detalle.DataPropertyName = "errores";
+            this.detalle.HeaderText = "Errores";
+            this.detalle.Name = "detalle";
+            this.detalle.ReadOnly = true;
+            this.detalle.Text = "ver errores";
             // 
             // dtmFecha
             // 
@@ -93,7 +147,7 @@
             this.groupBox1.Controls.Add(this.dtmHora);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(568, 111);
+            this.groupBox1.Size = new System.Drawing.Size(694, 111);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Nueva Tarea";
@@ -147,46 +201,15 @@
             this.label1.Text = "Fecha";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // idtareaDataGridViewTextBoxColumn
-            // 
-            this.idtareaDataGridViewTextBoxColumn.DataPropertyName = "idtarea";
-            this.idtareaDataGridViewTextBoxColumn.HeaderText = "idtarea";
-            this.idtareaDataGridViewTextBoxColumn.Name = "idtareaDataGridViewTextBoxColumn";
-            this.idtareaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idtareaDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // fechaDataGridViewTextBoxColumn
-            // 
-            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "fecha";
-            this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
-            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
-            // 
-            // horaDataGridViewTextBoxColumn
-            // 
-            this.horaDataGridViewTextBoxColumn.DataPropertyName = "hora";
-            this.horaDataGridViewTextBoxColumn.HeaderText = "Hora";
-            this.horaDataGridViewTextBoxColumn.Name = "horaDataGridViewTextBoxColumn";
-            // 
-            // estadoDataGridViewTextBoxColumn
-            // 
-            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "estado";
-            this.estadoDataGridViewTextBoxColumn.HeaderText = "Estado";
-            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
-            // 
-            // procesoidprocesoDataGridViewTextBoxColumn
-            // 
-            this.procesoidprocesoDataGridViewTextBoxColumn.DataPropertyName = "proceso_idproceso";
-            this.procesoidprocesoDataGridViewTextBoxColumn.HeaderText = "Proceso";
-            this.procesoidprocesoDataGridViewTextBoxColumn.Name = "procesoidprocesoDataGridViewTextBoxColumn";
-            // 
             // FormTareas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(594, 432);
+            this.ClientSize = new System.Drawing.Size(718, 483);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvTareas);
             this.Name = "FormTareas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tareas";
             this.Load += new System.EventHandler(this.FormTareas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTareas)).EndInit();
@@ -212,5 +235,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn horaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn estadoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn procesoidprocesoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewButtonColumn detalle;
     }
 }

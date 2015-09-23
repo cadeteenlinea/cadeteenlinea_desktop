@@ -16,11 +16,12 @@ namespace CadeteEnLinea
             si existe una tarea en ejecución, se espera 1 min para volver a consultar
          */
         public static  void reiniciarHilo() {
+            tarea tarea = new tarea();
             if (tarea.tareaEnEjecucion() != null)
             {
-                //MessageBox.Show("Exisste una tarea en ejecución");
-                Thread.Sleep(60000);
-                hilo.reiniciarHilo();
+                MessageBox.Show("Existe una tarea en ejecución");
+                //Thread.Sleep(60000);
+                //hilo.reiniciarHilo();
             }
             else
             {
