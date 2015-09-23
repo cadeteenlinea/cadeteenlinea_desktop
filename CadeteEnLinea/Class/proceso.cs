@@ -50,5 +50,9 @@ namespace CadeteEnLinea
             
         }
 
+        public static proceso buscar(int idproceso) {
+            var proceso = conexion.proceso.Where(p => p.idproceso == idproceso).FirstOrDefault();
+            return proceso;
+        }
     }
 }

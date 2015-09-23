@@ -116,6 +116,8 @@ namespace CadeteEnLinea
             {
                 conexion.tarea.Add(this);
                 conexion.SaveChanges();
+                
+                this.proceso = proceso.buscar(this.proceso_idproceso);
                 return true;
             }
             else {

@@ -64,6 +64,8 @@ namespace CadeteEnLinea
             tablatarea.hora = new  TimeSpan(dtmHora.Value.Hour, dtmHora.Value.Minute, 0);
             tablatarea.estado = 1;
             tablatarea.proceso_idproceso = Convert.ToInt32(cmbProcesos.SelectedValue);
+            //tablatarea.proceso.idproceso = Convert.ToInt32(cmbProcesos.SelectedValue);
+
             if (tablatarea.insertar())
             {
                 MessageBox.Show("Tarea Ingresada");
@@ -71,7 +73,7 @@ namespace CadeteEnLinea
             else {
                 MessageBox.Show("No puede existir dos tareas en la misma hora");
             }
-            hilo.reiniciarHilo();
+            //hilo.reiniciarHilo();
             this.actualizarDgv();
         }
 
