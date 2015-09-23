@@ -8,10 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace CadeteEnLinea
 {
     public partial class FormTareas : Form
     {
+        private cadeteenlineaEntities tar = new cadeteenlineaEntities();
+        
         public FormTareas()
         {
             InitializeComponent();
@@ -23,8 +26,8 @@ namespace CadeteEnLinea
         private void FormTareas_Load(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'cadeteenlineaDataSet.tarea' Puede moverla o quitarla según sea necesario.
-            //this.tareaTableAdapter.Fill(this.cadeteenlineaDataSet.tarea);
-            //dgvTareas.DataSource = tarea.getAllTareas();
+            // this.tareaTableAdapter.Fill(this.cadeteenlineaDataSet.tarea);
+            // dgvTareas.DataSource = tarea.getAllTareas();
 
 
             dgvTareas.AutoGenerateColumns = false;
@@ -82,7 +85,12 @@ namespace CadeteEnLinea
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            
+            DataGridViewRow fila = dgvTareas.CurrentRow;
+            int iddgv = Convert.ToInt32(fila.Cells["idtarea"].Value);
+
+            tarea tr = tar.tarea.Where(em => em.idtarea == iddgv).First();
+            tar.DeleteObject(tr);
+            tar.SaveChanges();
         }
     }
 }
