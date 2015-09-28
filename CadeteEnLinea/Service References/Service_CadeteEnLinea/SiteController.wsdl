@@ -218,7 +218,7 @@
   </wsdl:binding>
   <wsdl:service name="SiteControllerService">
     <wsdl:port name="SiteControllerPort" binding="tns:SiteControllerBinding">
-      <soap:address location="http://localhost/cadeteenlinea/site/cadeteEnLineaDesktop?ws=1" />
+      <soap:address location="http://200.54.198.54/pruebas/cadeteenlinea/site/cadeteEnLineaDesktop?ws=1" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

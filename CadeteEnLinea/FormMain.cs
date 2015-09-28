@@ -39,6 +39,8 @@ namespace CadeteEnLinea
         private void FormMain_Load(object sender, EventArgs e)
         {
             tarea.icono = notifyIcon;
+            notifyIcon.Visible = true;
+            Hide();
             hilo.reiniciarHilo();
 
             // tmr = new Timer(tar.)
@@ -51,7 +53,7 @@ namespace CadeteEnLinea
         {
             if (FormWindowState.Minimized == WindowState) {
                 Hide();
-                notifyIcon.Visible = true;
+                //notifyIcon.Visible = true;
             }
         }
 
@@ -59,7 +61,7 @@ namespace CadeteEnLinea
         {
             Show();
             WindowState = FormWindowState.Normal;
-            notifyIcon.Visible = false;
+            //notifyIcon.Visible = false;
         }
 
         private void minimizarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -71,6 +73,12 @@ namespace CadeteEnLinea
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
+        }
+
+        private void abrirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Show();
+            WindowState = FormWindowState.Normal;
         }
 
     }
