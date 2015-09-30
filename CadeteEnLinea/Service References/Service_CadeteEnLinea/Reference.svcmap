@@ -22,7 +22,7 @@
     <MetadataSource Address="http://200.54.198.54/pruebas/cadeteenlinea/site/cadeteEnLineaDesktop" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="SiteController.wsdl" MetadataType="Wsdl" ID="e477c805-2545-4ab9-839f-871763f0ccc2" SourceId="1" SourceUrl="http://200.54.198.54/pruebas/cadeteenlinea/site/cadeteEnLineaDesktop" />
+    <MetadataFile FileName="SiteController.wsdl" MetadataType="Wsdl" ID="2d50975d-b332-4128-925d-5e990169bfaf" SourceId="1" SourceUrl="http://200.54.198.54/pruebas/cadeteenlinea/site/cadeteEnLineaDesktop" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
