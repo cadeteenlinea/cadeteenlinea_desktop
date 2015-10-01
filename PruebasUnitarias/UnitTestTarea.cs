@@ -14,14 +14,14 @@ namespace PruebasUnitarias
         [TestMethod]
         public void TestProximaTareaTrue()
         {
-            tarea tar = tarea.getProximaTarea();
-            Assert.IsNotNull(tar);
+            tarea tar = new tarea();
+            Assert.IsNotNull(tar.getProximaTarea());
         }
 
         [TestMethod]
         public void TestTareaEnEjecucion()
         {
-            tarea tar = tarea.getProximaTarea();
+            tarea tar = 
             Assert.IsNotNull(tar);
 
             

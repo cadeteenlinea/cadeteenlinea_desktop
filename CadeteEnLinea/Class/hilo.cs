@@ -19,7 +19,7 @@ namespace CadeteEnLinea
             tarea tarea = new tarea();
             if (tarea.tareaEnEjecucion() != null)
             {
-                MessageBox.Show("Existe una tarea en ejecución");
+                //MessageBox.Show("Existe una tarea en ejecución");
                 //Thread.Sleep(60000);
                 //hilo.reiniciarHilo();
             }

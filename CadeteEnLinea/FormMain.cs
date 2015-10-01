@@ -13,6 +13,7 @@ namespace CadeteEnLinea
     public partial class FormMain : Form
     {
         public static NotifyIcon icono; 
+
         public FormMain()
         {
             InitializeComponent();
@@ -79,6 +80,12 @@ namespace CadeteEnLinea
         {
             Show();
             WindowState = FormWindowState.Normal;
+        }
+
+        private void mantenedorTareasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormTareas form = new FormTareas();
+            form.Show();
         }
 
     }

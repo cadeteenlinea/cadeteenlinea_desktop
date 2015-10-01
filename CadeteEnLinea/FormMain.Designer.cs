@@ -42,6 +42,7 @@
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.abrirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mantenedorTareasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.contextMenuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -86,7 +87,7 @@
             // fechasToolStripMenuItem
             // 
             this.fechasToolStripMenuItem.Name = "fechasToolStripMenuItem";
-            this.fechasToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.fechasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.fechasToolStripMenuItem.Text = "Mantenedor";
             this.fechasToolStripMenuItem.Click += new System.EventHandler(this.fechasToolStripMenuItem_Click);
             // 
@@ -131,9 +132,10 @@
             // contextMenuStrip
             // 
             this.contextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.abrirToolStripMenuItem});
+            this.abrirToolStripMenuItem,
+            this.mantenedorTareasToolStripMenuItem});
             this.contextMenuStrip.Name = "contextMenuStrip";
-            this.contextMenuStrip.Size = new System.Drawing.Size(188, 26);
+            this.contextMenuStrip.Size = new System.Drawing.Size(188, 70);
             // 
             // abrirToolStripMenuItem
             // 
@@ -141,6 +143,13 @@
             this.abrirToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
             this.abrirToolStripMenuItem.Text = "Abrir Cadete en Línea";
             this.abrirToolStripMenuItem.Click += new System.EventHandler(this.abrirToolStripMenuItem_Click);
+            // 
+            // mantenedorTareasToolStripMenuItem
+            // 
+            this.mantenedorTareasToolStripMenuItem.Name = "mantenedorTareasToolStripMenuItem";
+            this.mantenedorTareasToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.mantenedorTareasToolStripMenuItem.Text = "Mantenedor Tareas";
+            this.mantenedorTareasToolStripMenuItem.Click += new System.EventHandler(this.mantenedorTareasToolStripMenuItem_Click);
             // 
             // FormMain
             // 
@@ -183,5 +192,6 @@
         private System.Windows.Forms.ToolStripMenuItem minimizarToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem abrirToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mantenedorTareasToolStripMenuItem;
     }
 }

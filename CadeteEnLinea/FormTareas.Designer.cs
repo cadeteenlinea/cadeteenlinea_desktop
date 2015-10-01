@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dgvTareas = new System.Windows.Forms.DataGridView();
             this.idtareaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,6 +44,8 @@
             this.cmbProcesos = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.timer = new System.Windows.Forms.Timer(this.components);
+            this.btnRefresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTareas)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -135,9 +138,12 @@
             this.dtmHora.TabIndex = 2;
             this.dtmHora.Value = new System.DateTime(2015, 9, 22, 16, 13, 15, 0);
             this.dtmHora.ValueChanged += new System.EventHandler(this.dtmHora_ValueChanged);
+            this.dtmHora.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dtmHora_KeyPress);
+            this.dtmHora.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dtmHora_KeyUp);
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnRefresh);
             this.groupBox1.Controls.Add(this.btnEliminar);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.cmbProcesos);
@@ -201,6 +207,21 @@
             this.label1.Text = "Fecha";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // timer
+            // 
+            this.timer.Interval = 30000;
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(29, 72);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(75, 23);
+            this.btnRefresh.TabIndex = 8;
+            this.btnRefresh.Text = "refrescar";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // FormTareas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -211,6 +232,7 @@
             this.Name = "FormTareas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tareas";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormTareas_FormClosing);
             this.Load += new System.EventHandler(this.FormTareas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTareas)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -236,5 +258,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn estadoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn procesoidprocesoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewButtonColumn detalle;
+        private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }
