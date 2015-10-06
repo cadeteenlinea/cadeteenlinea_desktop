@@ -104,6 +104,15 @@ namespace CadeteEnLinea.Service_CadeteEnLinea {
         [System.ServiceModel.OperationContractAttribute(Action="urn:SiteControllerwsdl#transacciones", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<string> transaccionesAsync(string transaccionesJson, string estado);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:SiteControllerwsdl#notasFisicos", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        string notasFisicos(string notasFisicoJson, string estado);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:SiteControllerwsdl#notasFisicos", ReplyAction="*")]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        System.Threading.Tasks.Task<string> notasFisicosAsync(string notasFisicoJson, string estado);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -211,6 +220,14 @@ namespace CadeteEnLinea.Service_CadeteEnLinea {
         
         public System.Threading.Tasks.Task<string> transaccionesAsync(string transaccionesJson, string estado) {
             return base.Channel.transaccionesAsync(transaccionesJson, estado);
+        }
+        
+        public string notasFisicos(string notasFisicoJson, string estado) {
+            return base.Channel.notasFisicos(notasFisicoJson, estado);
+        }
+        
+        public System.Threading.Tasks.Task<string> notasFisicosAsync(string notasFisicoJson, string estado) {
+            return base.Channel.notasFisicosAsync(notasFisicoJson, estado);
         }
     }
 }

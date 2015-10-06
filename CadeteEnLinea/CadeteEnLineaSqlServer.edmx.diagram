@@ -32,8 +32,10 @@
         <EntityTypeShape EntityType="cadeteenlineaModel.errores" Width="1.5" PointX="2.6906094656747812" PointY="21.578686619912595" />
         <AssociationConnector Association="cadeteenlineaModel.FK_error_tarea" />
         <EntityTypeShape EntityType="cadeteenlineaModel.sysdiagrams" Width="1.5" PointX="3.5354045161676613" PointY="31.670573130096574" />
-        <EntityTypeShape EntityType="cadeteenlineaModel.estadoTarea" Width="1.5" PointX="4.57981826764523" PointY="14.017891368837045" />
+        <EntityTypeShape EntityType="cadeteenlineaModel.estadoTarea" Width="1.5" PointX="2.5" PointY="10.5" />
         <AssociationConnector Association="cadeteenlineaModel.FK_tarea_estadoTarea" />
+        <EntityTypeShape EntityType="cadeteenlineaModel.notas_fisico" Width="1.5" PointX="9.125" PointY="19.625" />
+        <AssociationConnector Association="cadeteenlineaModel.FK_notas_fisico_cadete" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

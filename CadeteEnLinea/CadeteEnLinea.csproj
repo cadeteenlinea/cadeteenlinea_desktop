@@ -123,6 +123,7 @@
     <Compile Include="Class\hilo.cs" />
     <Compile Include="Class\ingles_tae.cs" />
     <Compile Include="Class\notas_finales.cs" />
+    <Compile Include="Class\notas_fisico.cs" />
     <Compile Include="Class\notas_parciales.cs" />
     <Compile Include="Class\proceso.cs" />
     <Compile Include="Class\tarea.cs" />
@@ -162,6 +163,9 @@
       <DependentUpon>CadeteEnLineaSqlServer.tt</DependentUpon>
     </Compile>
     <Compile Include="notas_finales.cs">
+      <DependentUpon>CadeteEnLineaSqlServer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="notas_fisico.cs">
       <DependentUpon>CadeteEnLineaSqlServer.tt</DependentUpon>
     </Compile>
     <Compile Include="notas_parciales.cs">
@@ -251,7 +255,7 @@
     </Compile>
     <None Include="Content\cadeteenlinea.7z" />
     <None Include="Content\Package.dtsx" />
-    <None Include="Service References\Service_CadeteEnLinea\SiteController.wsdl" />
+    <None Include="Service References\Service_CadeteEnLinea\SiteController1.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

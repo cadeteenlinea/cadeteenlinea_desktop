@@ -89,7 +89,7 @@ namespace CadeteEnLinea
             hilo.reiniciarHilo();
         }
 
-        private void actualizarEstado(int estado) {
+        public void actualizarEstado(int estado) {
             conexion.tarea
                 .Where(p => p.idtarea == this.idtarea)
                 .ToList()

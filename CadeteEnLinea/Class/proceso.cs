@@ -45,6 +45,9 @@ namespace CadeteEnLinea
                     case 6:
                         notas_finales.actualizacionWeb();
                         break;
+                    case 7:
+                        notas_fisico.actualizacionWeb();
+                        break;
                 }
             }
             

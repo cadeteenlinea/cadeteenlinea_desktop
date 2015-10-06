@@ -22,6 +22,7 @@ namespace CadeteEnLinea
             this.notas_finales = new HashSet<notas_finales>();
             this.notas_parciales = new HashSet<notas_parciales>();
             this.transaccion = new HashSet<transaccion>();
+            this.notas_fisico = new HashSet<notas_fisico>();
         }
     
         public decimal rut { get; set; }
@@ -47,5 +48,6 @@ namespace CadeteEnLinea
         public virtual ICollection<notas_finales> notas_finales { get; set; }
         public virtual ICollection<notas_parciales> notas_parciales { get; set; }
         public virtual ICollection<transaccion> transaccion { get; set; }
+        public virtual ICollection<notas_fisico> notas_fisico { get; set; }
     }
 }

@@ -19,10 +19,10 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://200.54.198.54/pruebas/cadeteenlinea/site/cadeteEnLineaDesktop" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost/cadeteenlinea/site/cadeteEnLineaDesktop" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="SiteController.wsdl" MetadataType="Wsdl" ID="2d50975d-b332-4128-925d-5e990169bfaf" SourceId="1" SourceUrl="http://200.54.198.54/pruebas/cadeteenlinea/site/cadeteEnLineaDesktop" />
+    <MetadataFile FileName="SiteController1.wsdl" MetadataType="Wsdl" ID="a606e1b7-d96e-40ae-97c5-07f04e497a9e" SourceId="1" SourceUrl="http://localhost/cadeteenlinea/site/cadeteEnLineaDesktop" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
