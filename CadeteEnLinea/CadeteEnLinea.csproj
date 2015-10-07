@@ -47,7 +47,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>anclas64x64.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework">
@@ -86,11 +87,6 @@
     </Compile>
     <Compile Include="cadete.cs">
       <DependentUpon>CadeteEnLineaSqlServer.tt</DependentUpon>
-    </Compile>
-    <Compile Include="cadeteenlineaDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>cadeteenlineaDataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="CadeteEnLineaSqlServer.Context.cs">
       <AutoGen>True</AutoGen>
@@ -135,28 +131,28 @@
     <Compile Include="estadoTarea.cs">
       <DependentUpon>CadeteEnLineaSqlServer.tt</DependentUpon>
     </Compile>
-    <Compile Include="FormDetalleTarea.cs">
+    <Compile Include="Form\FormDetalleTarea.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormDetalleTarea.Designer.cs">
+    <Compile Include="Form\FormDetalleTarea.Designer.cs">
       <DependentUpon>FormDetalleTarea.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormMain.cs">
+    <Compile Include="Form\FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormMain.Designer.cs">
+    <Compile Include="Form\FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormProcesoManual.cs">
+    <Compile Include="Form\FormProcesoManual.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormProcesoManual.Designer.cs">
+    <Compile Include="Form\FormProcesoManual.Designer.cs">
       <DependentUpon>FormProcesoManual.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormTareas.cs">
+    <Compile Include="Form\FormTareas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormTareas.Designer.cs">
+    <Compile Include="Form\FormTareas.Designer.cs">
       <DependentUpon>FormTareas.cs</DependentUpon>
     </Compile>
     <Compile Include="ingles_tae.cs">
@@ -193,16 +189,16 @@
     <Compile Include="usuario.cs">
       <DependentUpon>CadeteEnLineaSqlServer.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FormDetalleTarea.resx">
+    <EmbeddedResource Include="Form\FormDetalleTarea.resx">
       <DependentUpon>FormDetalleTarea.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormMain.resx">
+    <EmbeddedResource Include="Form\FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormProcesoManual.resx">
+    <EmbeddedResource Include="Form\FormProcesoManual.resx">
       <DependentUpon>FormProcesoManual.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormTareas.resx">
+    <EmbeddedResource Include="Form\FormTareas.resx">
       <DependentUpon>FormTareas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -219,17 +215,6 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>CadeteEnLineaSqlServer.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="cadeteenlineaDataSet1.xsc">
-      <DependentUpon>cadeteenlineaDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="cadeteenlineaDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>cadeteenlineaDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="cadeteenlineaDataSet1.xss">
-      <DependentUpon>cadeteenlineaDataSet1.xsd</DependentUpon>
-    </None>
     <None Include="CadeteEnLineaSqlServer.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>CadeteEnLineaSqlServer.edmx</DependentUpon>
@@ -303,9 +288,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\anclas64x64.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="anclas64x64.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
