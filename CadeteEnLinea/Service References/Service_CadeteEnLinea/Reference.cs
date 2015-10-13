@@ -113,6 +113,24 @@ namespace CadeteEnLinea.Service_CadeteEnLinea {
         [System.ServiceModel.OperationContractAttribute(Action="urn:SiteControllerwsdl#notasFisicos", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<string> notasFisicosAsync(string notasFisicoJson, string estado);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:SiteControllerwsdl#nivelaciones", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        string nivelaciones(string nivelacionJson, string estado);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:SiteControllerwsdl#nivelaciones", ReplyAction="*")]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        System.Threading.Tasks.Task<string> nivelacionesAsync(string nivelacionJson, string estado);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:SiteControllerwsdl#francos", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        string francos(string francosJson, string estado);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:SiteControllerwsdl#francos", ReplyAction="*")]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        System.Threading.Tasks.Task<string> francosAsync(string francosJson, string estado);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -228,6 +246,22 @@ namespace CadeteEnLinea.Service_CadeteEnLinea {
         
         public System.Threading.Tasks.Task<string> notasFisicosAsync(string notasFisicoJson, string estado) {
             return base.Channel.notasFisicosAsync(notasFisicoJson, estado);
+        }
+        
+        public string nivelaciones(string nivelacionJson, string estado) {
+            return base.Channel.nivelaciones(nivelacionJson, estado);
+        }
+        
+        public System.Threading.Tasks.Task<string> nivelacionesAsync(string nivelacionJson, string estado) {
+            return base.Channel.nivelacionesAsync(nivelacionJson, estado);
+        }
+        
+        public string francos(string francosJson, string estado) {
+            return base.Channel.francos(francosJson, estado);
+        }
+        
+        public System.Threading.Tasks.Task<string> francosAsync(string francosJson, string estado) {
+            return base.Channel.francosAsync(francosJson, estado);
         }
     }
 }

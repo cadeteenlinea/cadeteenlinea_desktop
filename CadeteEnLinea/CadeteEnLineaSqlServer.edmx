@@ -13,7 +13,9 @@
           <EntitySet Name="calificaciones" EntityType="cadeteenlineaModel.Store.calificaciones" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="errores" EntityType="cadeteenlineaModel.Store.errores" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="estadoTarea" EntityType="cadeteenlineaModel.Store.estadoTarea" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="francos" EntityType="cadeteenlineaModel.Store.francos" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="ingles_tae" EntityType="cadeteenlineaModel.Store.ingles_tae" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="nivelacion" EntityType="cadeteenlineaModel.Store.nivelacion" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="notas_finales" EntityType="cadeteenlineaModel.Store.notas_finales" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="notas_fisico" EntityType="cadeteenlineaModel.Store.notas_fisico" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="notas_parciales" EntityType="cadeteenlineaModel.Store.notas_parciales" store:Type="Tables" Schema="dbo" />
@@ -46,9 +48,17 @@
             <End Role="tarea" EntitySet="tarea" />
             <End Role="errores" EntitySet="errores" />
           </AssociationSet>
+          <AssociationSet Name="FK_francos_cadete" Association="cadeteenlineaModel.Store.FK_francos_cadete">
+            <End Role="cadete" EntitySet="cadete" />
+            <End Role="francos" EntitySet="francos" />
+          </AssociationSet>
           <AssociationSet Name="FK_ingles_tae_cadete" Association="cadeteenlineaModel.Store.FK_ingles_tae_cadete">
             <End Role="cadete" EntitySet="cadete" />
             <End Role="ingles_tae" EntitySet="ingles_tae" />
+          </AssociationSet>
+          <AssociationSet Name="FK_nivelacion_cadete" Association="cadeteenlineaModel.Store.FK_nivelacion_cadete">
+            <End Role="cadete" EntitySet="cadete" />
+            <End Role="nivelacion" EntitySet="nivelacion" />
           </AssociationSet>
           <AssociationSet Name="FK_notas_finales_asignatura" Association="cadeteenlineaModel.Store.FK_notas_finales_asignatura">
             <End Role="asignatura" EntitySet="asignatura" />
@@ -177,6 +187,19 @@
           <Property Name="idestado" Type="int" Nullable="false" />
           <Property Name="nombre" Type="varchar" Nullable="false" MaxLength="50" />
         </EntityType>
+        <EntityType Name="francos">
+          <Key>
+            <PropertyRef Name="idfrancos" />
+          </Key>
+          <Property Name="idfrancos" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="cadete_rut" Type="numeric" Precision="10" />
+          <Property Name="fecha_salida" Type="varchar" MaxLength="50" />
+          <Property Name="hora_salida" Type="varchar" MaxLength="50" />
+          <Property Name="hora_recogida" Type="varchar" MaxLength="50" />
+          <Property Name="fecha_recogida" Type="varchar" MaxLength="50" />
+          <Property Name="asignatura_bajo" Type="varchar" MaxLength="50" />
+          <Property Name="estado" Type="int" />
+        </EntityType>
         <EntityType Name="ingles_tae">
           <Key>
             <PropertyRef Name="idingles_tae" />
@@ -189,6 +212,38 @@
           <Property Name="understanding" Type="numeric" Precision="11" />
           <Property Name="writing" Type="numeric" Precision="11" />
           <Property Name="average" Type="numeric" Precision="11" />
+          <Property Name="estado" Type="int" />
+        </EntityType>
+        <EntityType Name="nivelacion">
+          <Key>
+            <PropertyRef Name="idnivelacion" />
+          </Key>
+          <Property Name="idnivelacion" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="cadete_rut" Type="numeric" Precision="10" />
+          <Property Name="ano" Type="numeric" Precision="4" />
+          <Property Name="semestre" Type="numeric" Precision="1" />
+          <Property Name="etapa" Type="numeric" Precision="1" />
+          <Property Name="marca_100_mt" Type="numeric" Precision="6" Scale="3" />
+          <Property Name="marca_1000_mt" Type="numeric" Precision="6" Scale="3" />
+          <Property Name="marca_salto_largo" Type="numeric" Precision="6" Scale="3" />
+          <Property Name="marca_bala" Type="numeric" Precision="6" Scale="3" />
+          <Property Name="marca_100_libre" Type="numeric" Precision="6" Scale="3" />
+          <Property Name="marca_bajo_agua" Type="numeric" Precision="6" Scale="3" />
+          <Property Name="marca_trepa" Type="numeric" Precision="6" Scale="3" />
+          <Property Name="marca_abdominales" Type="numeric" Precision="3" />
+          <Property Name="marca_extension_brazos" Type="numeric" Precision="6" Scale="3" />
+          <Property Name="marca_cooper" Type="numeric" Precision="4" />
+          <Property Name="nota_100_mt" Type="numeric" Precision="6" Scale="3" />
+          <Property Name="nota_1000_mt" Type="numeric" Precision="6" Scale="3" />
+          <Property Name="nota_salto_largo" Type="numeric" Precision="6" Scale="3" />
+          <Property Name="nota_bala" Type="numeric" Precision="6" Scale="3" />
+          <Property Name="nota_100_libre" Type="numeric" Precision="6" Scale="3" />
+          <Property Name="nota_bajo_agua" Type="numeric" Precision="6" Scale="3" />
+          <Property Name="nota_trepa" Type="numeric" Precision="6" Scale="3" />
+          <Property Name="nota_abdominales" Type="numeric" Precision="6" Scale="3" />
+          <Property Name="nota_extension_brazos" Type="numeric" Precision="6" Scale="3" />
+          <Property Name="nota_final" Type="numeric" Precision="6" Scale="3" />
+          <Property Name="observacion" Type="nvarchar" MaxLength="30" />
           <Property Name="estado" Type="int" />
         </EntityType>
         <EntityType Name="notas_finales">
@@ -377,6 +432,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_francos_cadete">
+          <End Role="cadete" Type="cadeteenlineaModel.Store.cadete" Multiplicity="0..1" />
+          <End Role="francos" Type="cadeteenlineaModel.Store.francos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cadete">
+              <PropertyRef Name="rut" />
+            </Principal>
+            <Dependent Role="francos">
+              <PropertyRef Name="cadete_rut" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_ingles_tae_cadete">
           <End Role="cadete" Type="cadeteenlineaModel.Store.cadete" Multiplicity="0..1" />
           <End Role="ingles_tae" Type="cadeteenlineaModel.Store.ingles_tae" Multiplicity="*" />
@@ -385,6 +452,18 @@
               <PropertyRef Name="rut" />
             </Principal>
             <Dependent Role="ingles_tae">
+              <PropertyRef Name="cadete_rut" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_nivelacion_cadete">
+          <End Role="cadete" Type="cadeteenlineaModel.Store.cadete" Multiplicity="0..1" />
+          <End Role="nivelacion" Type="cadeteenlineaModel.Store.nivelacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cadete">
+              <PropertyRef Name="rut" />
+            </Principal>
+            <Dependent Role="nivelacion">
               <PropertyRef Name="cadete_rut" />
             </Dependent>
           </ReferentialConstraint>
@@ -566,6 +645,16 @@
             <End Role="cadete" EntitySet="cadete" />
             <End Role="notas_fisico" EntitySet="notas_fisico" />
           </AssociationSet>
+          <EntitySet Name="nivelacion" EntityType="cadeteenlineaModel.nivelacion" />
+          <AssociationSet Name="FK_nivelacion_cadete" Association="cadeteenlineaModel.FK_nivelacion_cadete">
+            <End Role="cadete" EntitySet="cadete" />
+            <End Role="nivelacion" EntitySet="nivelacion" />
+          </AssociationSet>
+          <EntitySet Name="francos" EntityType="cadeteenlineaModel.francos" />
+          <AssociationSet Name="FK_francos_cadete" Association="cadeteenlineaModel.FK_francos_cadete">
+            <End Role="cadete" EntitySet="cadete" />
+            <End Role="francos" EntitySet="francos" />
+          </AssociationSet>
           </EntityContainer>
         <EntityType Name="apoderado">
           <Key>
@@ -624,6 +713,8 @@
           <NavigationProperty Name="notas_parciales" Relationship="cadeteenlineaModel.FK_notas_parciales_cadete1" FromRole="cadete" ToRole="notas_parciales" />
           <NavigationProperty Name="transaccion" Relationship="cadeteenlineaModel.FK_transaccion_cadete" FromRole="cadete" ToRole="transaccion" />
           <NavigationProperty Name="notas_fisico" Relationship="cadeteenlineaModel.FK_notas_fisico_cadete" FromRole="cadete" ToRole="notas_fisico" />
+          <NavigationProperty Name="nivelacion" Relationship="cadeteenlineaModel.FK_nivelacion_cadete" FromRole="cadete" ToRole="nivelacion" />
+          <NavigationProperty Name="francos" Relationship="cadeteenlineaModel.FK_francos_cadete" FromRole="cadete" ToRole="francos" />
         </EntityType>
         <EntityType Name="cadete_apoderado">
           <Key>
@@ -999,6 +1090,77 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="nivelacion">
+          <Key>
+            <PropertyRef Name="idnivelacion" />
+          </Key>
+          <Property Type="Int32" Name="idnivelacion" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Decimal" Name="cadete_rut" Precision="10" Scale="0" />
+          <Property Type="Decimal" Name="ano" Precision="4" Scale="0" />
+          <Property Type="Decimal" Name="semestre" Precision="1" Scale="0" />
+          <Property Type="Decimal" Name="etapa" Precision="1" Scale="0" />
+          <Property Type="Decimal" Name="marca_100_mt" Precision="6" Scale="3" />
+          <Property Type="Decimal" Name="marca_1000_mt" Precision="6" Scale="3" />
+          <Property Type="Decimal" Name="marca_salto_largo" Precision="6" Scale="3" />
+          <Property Type="Decimal" Name="marca_bala" Precision="6" Scale="3" />
+          <Property Type="Decimal" Name="marca_100_libre" Precision="6" Scale="3" />
+          <Property Type="Decimal" Name="marca_bajo_agua" Precision="6" Scale="3" />
+          <Property Type="Decimal" Name="marca_trepa" Precision="6" Scale="3" />
+          <Property Type="Decimal" Name="marca_abdominales" Precision="3" Scale="0" />
+          <Property Type="Decimal" Name="marca_extension_brazos" Precision="6" Scale="3" />
+          <Property Type="Decimal" Name="marca_cooper" Precision="4" Scale="0" />
+          <Property Type="Decimal" Name="nota_100_mt" Precision="6" Scale="3" />
+          <Property Type="Decimal" Name="nota_1000_mt" Precision="6" Scale="3" />
+          <Property Type="Decimal" Name="nota_salto_largo" Precision="6" Scale="3" />
+          <Property Type="Decimal" Name="nota_bala" Precision="6" Scale="3" />
+          <Property Type="Decimal" Name="nota_100_libre" Precision="6" Scale="3" />
+          <Property Type="Decimal" Name="nota_bajo_agua" Precision="6" Scale="3" />
+          <Property Type="Decimal" Name="nota_trepa" Precision="6" Scale="3" />
+          <Property Type="Decimal" Name="nota_abdominales" Precision="6" Scale="3" />
+          <Property Type="Decimal" Name="nota_extension_brazos" Precision="6" Scale="3" />
+          <Property Type="Decimal" Name="nota_final" Precision="6" Scale="3" />
+          <Property Type="String" Name="observacion" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="estado" />
+          <NavigationProperty Name="cadete" Relationship="cadeteenlineaModel.FK_nivelacion_cadete" FromRole="nivelacion" ToRole="cadete" />
+        </EntityType>
+        <Association Name="FK_nivelacion_cadete">
+          <End Type="cadeteenlineaModel.cadete" Role="cadete" Multiplicity="0..1" />
+          <End Type="cadeteenlineaModel.nivelacion" Role="nivelacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cadete">
+              <PropertyRef Name="rut" />
+            </Principal>
+            <Dependent Role="nivelacion">
+              <PropertyRef Name="cadete_rut" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="francos">
+          <Key>
+            <PropertyRef Name="idfrancos" />
+          </Key>
+          <Property Type="Int32" Name="idfrancos" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Decimal" Name="cadete_rut" Precision="10" Scale="0" />
+          <Property Type="String" Name="fecha_salida" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="hora_salida" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="hora_recogida" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="fecha_recogida" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="asignatura_bajo" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="estado" />
+          <NavigationProperty Name="cadete" Relationship="cadeteenlineaModel.FK_francos_cadete" FromRole="francos" ToRole="cadete" />
+        </EntityType>
+        <Association Name="FK_francos_cadete">
+          <End Type="cadeteenlineaModel.cadete" Role="cadete" Multiplicity="0..1" />
+          <End Type="cadeteenlineaModel.francos" Role="francos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cadete">
+              <PropertyRef Name="rut" />
+            </Principal>
+            <Dependent Role="francos">
+              <PropertyRef Name="cadete_rut" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1240,6 +1402,53 @@
                 <ScalarProperty Name="ano" ColumnName="ano" />
                 <ScalarProperty Name="cadete_rut" ColumnName="cadete_rut" />
                 <ScalarProperty Name="idnotas_fisico" ColumnName="idnotas_fisico" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="nivelacion">
+            <EntityTypeMapping TypeName="cadeteenlineaModel.nivelacion">
+              <MappingFragment StoreEntitySet="nivelacion">
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="observacion" ColumnName="observacion" />
+                <ScalarProperty Name="nota_final" ColumnName="nota_final" />
+                <ScalarProperty Name="nota_extension_brazos" ColumnName="nota_extension_brazos" />
+                <ScalarProperty Name="nota_abdominales" ColumnName="nota_abdominales" />
+                <ScalarProperty Name="nota_trepa" ColumnName="nota_trepa" />
+                <ScalarProperty Name="nota_bajo_agua" ColumnName="nota_bajo_agua" />
+                <ScalarProperty Name="nota_100_libre" ColumnName="nota_100_libre" />
+                <ScalarProperty Name="nota_bala" ColumnName="nota_bala" />
+                <ScalarProperty Name="nota_salto_largo" ColumnName="nota_salto_largo" />
+                <ScalarProperty Name="nota_1000_mt" ColumnName="nota_1000_mt" />
+                <ScalarProperty Name="nota_100_mt" ColumnName="nota_100_mt" />
+                <ScalarProperty Name="marca_cooper" ColumnName="marca_cooper" />
+                <ScalarProperty Name="marca_extension_brazos" ColumnName="marca_extension_brazos" />
+                <ScalarProperty Name="marca_abdominales" ColumnName="marca_abdominales" />
+                <ScalarProperty Name="marca_trepa" ColumnName="marca_trepa" />
+                <ScalarProperty Name="marca_bajo_agua" ColumnName="marca_bajo_agua" />
+                <ScalarProperty Name="marca_100_libre" ColumnName="marca_100_libre" />
+                <ScalarProperty Name="marca_bala" ColumnName="marca_bala" />
+                <ScalarProperty Name="marca_salto_largo" ColumnName="marca_salto_largo" />
+                <ScalarProperty Name="marca_1000_mt" ColumnName="marca_1000_mt" />
+                <ScalarProperty Name="marca_100_mt" ColumnName="marca_100_mt" />
+                <ScalarProperty Name="etapa" ColumnName="etapa" />
+                <ScalarProperty Name="semestre" ColumnName="semestre" />
+                <ScalarProperty Name="ano" ColumnName="ano" />
+                <ScalarProperty Name="cadete_rut" ColumnName="cadete_rut" />
+                <ScalarProperty Name="idnivelacion" ColumnName="idnivelacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="francos">
+            <EntityTypeMapping TypeName="cadeteenlineaModel.francos">
+              <MappingFragment StoreEntitySet="francos">
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="asignatura_bajo" ColumnName="asignatura_bajo" />
+                <ScalarProperty Name="fecha_recogida" ColumnName="fecha_recogida" />
+                <ScalarProperty Name="hora_recogida" ColumnName="hora_recogida" />
+                <ScalarProperty Name="hora_salida" ColumnName="hora_salida" />
+                <ScalarProperty Name="fecha_salida" ColumnName="fecha_salida" />
+                <ScalarProperty Name="cadete_rut" ColumnName="cadete_rut" />
+                <ScalarProperty Name="idfrancos" ColumnName="idfrancos" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

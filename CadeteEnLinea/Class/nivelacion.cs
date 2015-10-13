@@ -8,19 +8,20 @@ using CadeteEnLinea.Service_CadeteEnLinea;
 
 namespace CadeteEnLinea
 {
-    public partial class notas_fisico
+    public partial class nivelacion
     {
         private static cadeteenlineaEntities conexion = new cadeteenlineaEntities();
 
         public static string sendWeb(int estado)
         {
             var json = "";
-            var notas_fisicos = conexion.notas_fisico.Where(p => p.estado == estado).Select(p => new
+            var nivelaciones = conexion.nivelacion.Where(p => p.estado == estado).Select(p => new
             {
-                idnotas_fisico = p.idnotas_fisico,
+                idnivelacion = p.idnivelacion,
                 cadete_rut = p.cadete.rut,
                 ano = p.ano,
                 semestre = p.semestre,
+                etapa = p.etapa,
                 marca_100_mt = p.marca_100_mt,
                 marca_1000_mt = p.marca_1000_mt,
                 marca_salto_largo = p.marca_salto_largo,
@@ -30,6 +31,7 @@ namespace CadeteEnLinea
                 marca_trepa = p.marca_trepa,
                 marca_abdominales = p.marca_abdominales,
                 marca_extension_brazos = p.marca_extension_brazos,
+                marca_cooper = p.marca_cooper,
                 nota_100_mt = p.nota_100_mt,
                 nota_1000_mt = p.nota_1000_mt,
                 nota_salto_largo = p.nota_salto_largo,
@@ -40,27 +42,26 @@ namespace CadeteEnLinea
                 nota_abdominales = p.nota_abdominales,
                 nota_extension_brazos = p.nota_extension_brazos,
                 nota_final = p.nota_final,
-
+                observacion = p.observacion,
             }).ToList();
 
             string result = String.Empty;
-            if (notas_fisicos.Count() != 0)
+            if (nivelaciones.Count() != 0)
             {
                 JavaScriptSerializer jss = new JavaScriptSerializer();
-                json = jss.Serialize(notas_fisicos);
+                json = jss.Serialize(nivelaciones);
 
                 Service_CadeteEnLinea.SiteControllerPortTypeClient webService = new SiteControllerPortTypeClient();
-                result = webService.notasFisicos(json, estado.ToString());
-
+                result = webService.nivelaciones(json, estado.ToString());
 
                 if (estado == 3)
                 {
-                    
-                    notas_fisico.deleteEstado(3);
+
+                    nivelacion.deleteEstado(3);
                 }
                 else
                 {
-                    notas_fisico.changeEstado(estado, 0);
+                    nivelacion.changeEstado(estado, 0);
                 }
                 conexion.SaveChanges();
             }
@@ -70,7 +71,7 @@ namespace CadeteEnLinea
         /******Cambia de estado los registros, segun el actual y el despues*****/
         public static void changeEstado(int estadoActual, int estadoDespues)
         {
-            conexion.notas_fisico
+            conexion.nivelacion
                 .Where(p => p.estado == estadoActual)
                 .ToList()
                 .ForEach(p => p.estado = estadoDespues);
@@ -80,22 +81,20 @@ namespace CadeteEnLinea
         /********Elimina los registros que tengan el estado entregado**********/
         public static void deleteEstado(int estado)
         {
-            var trans = conexion.notas_fisico.Where(p => p.estado == estado);
+            var trans = conexion.nivelacion.Where(p => p.estado == estado);
             foreach (var u in trans)
             {
-                conexion.notas_fisico.Remove(u);
+                conexion.nivelacion.Remove(u);
             }
             conexion.SaveChanges();
         }
 
-        /*******Ejecuta la secuencia de actualización de notas fisicas*************/
+        /*******Ejecuta la secuencia de actualización de nivelacion*************/
         public static void actualizacionWeb()
         {
-            usuario.actualizacionWeb();
-            errores.setErrors(notas_fisico.sendWeb(1));
-            errores.setErrors(notas_fisico.sendWeb(2));
-            errores.setErrors(notas_fisico.sendWeb(3));
-            nivelacion.actualizacionWeb();
+            errores.setErrors(nivelacion.sendWeb(1));
+            errores.setErrors(nivelacion.sendWeb(2));
+            errores.setErrors(nivelacion.sendWeb(3));
         }
 
     }

@@ -48,6 +48,9 @@ namespace CadeteEnLinea
                     case 7:
                         notas_fisico.actualizacionWeb();
                         break;
+                    case 8:
+                        francos.actualizacionWeb();
+                        break;
                 }
             }
             

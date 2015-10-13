@@ -41,5 +41,7 @@ namespace CadeteEnLinea
         public DbSet<sysdiagrams> sysdiagrams { get; set; }
         public DbSet<estadoTarea> estadoTarea { get; set; }
         public DbSet<notas_fisico> notas_fisico { get; set; }
+        public DbSet<nivelacion> nivelacion { get; set; }
+        public DbSet<francos> francos { get; set; }
     }
 }

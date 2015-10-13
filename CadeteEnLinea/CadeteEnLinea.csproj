@@ -116,8 +116,10 @@
     <Compile Include="Class\calificaciones.cs" />
     <Compile Include="Class\errores.cs" />
     <Compile Include="Class\etl.cs" />
+    <Compile Include="Class\francos.cs" />
     <Compile Include="Class\hilo.cs" />
     <Compile Include="Class\ingles_tae.cs" />
+    <Compile Include="Class\nivelacion.cs" />
     <Compile Include="Class\notas_finales.cs" />
     <Compile Include="Class\notas_fisico.cs" />
     <Compile Include="Class\notas_parciales.cs" />
@@ -155,7 +157,13 @@
     <Compile Include="Form\FormTareas.Designer.cs">
       <DependentUpon>FormTareas.cs</DependentUpon>
     </Compile>
+    <Compile Include="francos.cs">
+      <DependentUpon>CadeteEnLineaSqlServer.tt</DependentUpon>
+    </Compile>
     <Compile Include="ingles_tae.cs">
+      <DependentUpon>CadeteEnLineaSqlServer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="nivelacion.cs">
       <DependentUpon>CadeteEnLineaSqlServer.tt</DependentUpon>
     </Compile>
     <Compile Include="notas_finales.cs">

@@ -78,6 +78,20 @@
   <wsdl:message name="notasFisicosOut">
     <wsdl:part name="return" type="xsd:string" />
   </wsdl:message>
+  <wsdl:message name="nivelacionesIn">
+    <wsdl:part name="nivelacionJson" type="xsd:string" />
+    <wsdl:part name="estado" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="nivelacionesOut">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="francosIn">
+    <wsdl:part name="francosJson" type="xsd:string" />
+    <wsdl:part name="estado" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="francosOut">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
   <wsdl:portType name="SiteControllerPortType">
     <wsdl:operation name="usuarios">
       <wsdl:documentation />
@@ -133,6 +147,16 @@
       <wsdl:documentation />
       <wsdl:input message="tns:notasFisicosIn" />
       <wsdl:output message="tns:notasFisicosOut" />
+    </wsdl:operation>
+    <wsdl:operation name="nivelaciones">
+      <wsdl:documentation />
+      <wsdl:input message="tns:nivelacionesIn" />
+      <wsdl:output message="tns:nivelacionesOut" />
+    </wsdl:operation>
+    <wsdl:operation name="francos">
+      <wsdl:documentation />
+      <wsdl:input message="tns:francosIn" />
+      <wsdl:output message="tns:francosOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="SiteControllerBinding" type="tns:SiteControllerPortType">
@@ -229,6 +253,24 @@
     </wsdl:operation>
     <wsdl:operation name="notasFisicos">
       <soap:operation soapAction="urn:SiteControllerwsdl#notasFisicos" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:SiteControllerwsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:SiteControllerwsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="nivelaciones">
+      <soap:operation soapAction="urn:SiteControllerwsdl#nivelaciones" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:SiteControllerwsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:SiteControllerwsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="francos">
+      <soap:operation soapAction="urn:SiteControllerwsdl#francos" style="rpc" />
       <wsdl:input>
         <soap:body use="encoded" namespace="urn:SiteControllerwsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
       </wsdl:input>

@@ -36,6 +36,10 @@
         <AssociationConnector Association="cadeteenlineaModel.FK_tarea_estadoTarea" />
         <EntityTypeShape EntityType="cadeteenlineaModel.notas_fisico" Width="1.5" PointX="9.125" PointY="19.625" />
         <AssociationConnector Association="cadeteenlineaModel.FK_notas_fisico_cadete" />
+        <EntityTypeShape EntityType="cadeteenlineaModel.nivelacion" Width="1.5" PointX="11.625" PointY="17.375" />
+        <AssociationConnector Association="cadeteenlineaModel.FK_nivelacion_cadete" />
+        <EntityTypeShape EntityType="cadeteenlineaModel.francos" Width="1.5" PointX="9.5067766930473852" PointY="4.7179787925993928" />
+        <AssociationConnector Association="cadeteenlineaModel.FK_francos_cadete" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
