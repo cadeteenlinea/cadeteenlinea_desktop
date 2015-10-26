@@ -39,6 +39,8 @@
             this.tabla = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.error = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnActualizarNotasFisicas = new System.Windows.Forms.Button();
+            this.btnActualizarSituacionMilitar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgwErrores)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,7 +48,7 @@
             // 
             this.btnActualizarUsuarios.Location = new System.Drawing.Point(12, 12);
             this.btnActualizarUsuarios.Name = "btnActualizarUsuarios";
-            this.btnActualizarUsuarios.Size = new System.Drawing.Size(103, 69);
+            this.btnActualizarUsuarios.Size = new System.Drawing.Size(86, 69);
             this.btnActualizarUsuarios.TabIndex = 0;
             this.btnActualizarUsuarios.Text = "Actualizar Usuarios";
             this.btnActualizarUsuarios.UseVisualStyleBackColor = true;
@@ -54,9 +56,9 @@
             // 
             // btnActualizarTransacciones
             // 
-            this.btnActualizarTransacciones.Location = new System.Drawing.Point(135, 12);
+            this.btnActualizarTransacciones.Location = new System.Drawing.Point(116, 12);
             this.btnActualizarTransacciones.Name = "btnActualizarTransacciones";
-            this.btnActualizarTransacciones.Size = new System.Drawing.Size(103, 69);
+            this.btnActualizarTransacciones.Size = new System.Drawing.Size(88, 69);
             this.btnActualizarTransacciones.TabIndex = 1;
             this.btnActualizarTransacciones.Text = "Actualizar Transacciones";
             this.btnActualizarTransacciones.UseVisualStyleBackColor = true;
@@ -64,9 +66,9 @@
             // 
             // btnActualizarNotasParciales
             // 
-            this.btnActualizarNotasParciales.Location = new System.Drawing.Point(263, 12);
+            this.btnActualizarNotasParciales.Location = new System.Drawing.Point(225, 12);
             this.btnActualizarNotasParciales.Name = "btnActualizarNotasParciales";
-            this.btnActualizarNotasParciales.Size = new System.Drawing.Size(98, 69);
+            this.btnActualizarNotasParciales.Size = new System.Drawing.Size(90, 69);
             this.btnActualizarNotasParciales.TabIndex = 2;
             this.btnActualizarNotasParciales.Text = "Actualizar Notas Parciales";
             this.btnActualizarNotasParciales.UseVisualStyleBackColor = true;
@@ -74,9 +76,9 @@
             // 
             // btnActualizarCalificaciones
             // 
-            this.btnActualizarCalificaciones.Location = new System.Drawing.Point(621, 12);
+            this.btnActualizarCalificaciones.Location = new System.Drawing.Point(553, 12);
             this.btnActualizarCalificaciones.Name = "btnActualizarCalificaciones";
-            this.btnActualizarCalificaciones.Size = new System.Drawing.Size(103, 69);
+            this.btnActualizarCalificaciones.Size = new System.Drawing.Size(84, 69);
             this.btnActualizarCalificaciones.TabIndex = 3;
             this.btnActualizarCalificaciones.Text = "Actualizar Calificaciones";
             this.btnActualizarCalificaciones.UseVisualStyleBackColor = true;
@@ -84,9 +86,9 @@
             // 
             // btnActualizarNotasFinales
             // 
-            this.btnActualizarNotasFinales.Location = new System.Drawing.Point(381, 12);
+            this.btnActualizarNotasFinales.Location = new System.Drawing.Point(339, 12);
             this.btnActualizarNotasFinales.Name = "btnActualizarNotasFinales";
-            this.btnActualizarNotasFinales.Size = new System.Drawing.Size(103, 69);
+            this.btnActualizarNotasFinales.Size = new System.Drawing.Size(85, 69);
             this.btnActualizarNotasFinales.TabIndex = 4;
             this.btnActualizarNotasFinales.Text = "Actualizar Notas Finales";
             this.btnActualizarNotasFinales.UseVisualStyleBackColor = true;
@@ -94,9 +96,9 @@
             // 
             // btnActualizarInglesTAE
             // 
-            this.btnActualizarInglesTAE.Location = new System.Drawing.Point(500, 12);
+            this.btnActualizarInglesTAE.Location = new System.Drawing.Point(447, 12);
             this.btnActualizarInglesTAE.Name = "btnActualizarInglesTAE";
-            this.btnActualizarInglesTAE.Size = new System.Drawing.Size(103, 69);
+            this.btnActualizarInglesTAE.Size = new System.Drawing.Size(86, 69);
             this.btnActualizarInglesTAE.TabIndex = 5;
             this.btnActualizarInglesTAE.Text = "Actualizar Ingles TAE";
             this.btnActualizarInglesTAE.UseVisualStyleBackColor = true;
@@ -115,7 +117,7 @@
             this.dgwErrores.Location = new System.Drawing.Point(12, 99);
             this.dgwErrores.Name = "dgwErrores";
             this.dgwErrores.ReadOnly = true;
-            this.dgwErrores.Size = new System.Drawing.Size(712, 285);
+            this.dgwErrores.Size = new System.Drawing.Size(874, 349);
             this.dgwErrores.TabIndex = 6;
             // 
             // codigo
@@ -156,11 +158,33 @@
             this.error.ReadOnly = true;
             this.error.Width = 429;
             // 
+            // btnActualizarNotasFisicas
+            // 
+            this.btnActualizarNotasFisicas.Location = new System.Drawing.Point(658, 12);
+            this.btnActualizarNotasFisicas.Name = "btnActualizarNotasFisicas";
+            this.btnActualizarNotasFisicas.Size = new System.Drawing.Size(84, 69);
+            this.btnActualizarNotasFisicas.TabIndex = 7;
+            this.btnActualizarNotasFisicas.Text = "Actualizar Notas Físicas";
+            this.btnActualizarNotasFisicas.UseVisualStyleBackColor = true;
+            this.btnActualizarNotasFisicas.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // btnActualizarSituacionMilitar
+            // 
+            this.btnActualizarSituacionMilitar.Location = new System.Drawing.Point(759, 12);
+            this.btnActualizarSituacionMilitar.Name = "btnActualizarSituacionMilitar";
+            this.btnActualizarSituacionMilitar.Size = new System.Drawing.Size(84, 69);
+            this.btnActualizarSituacionMilitar.TabIndex = 8;
+            this.btnActualizarSituacionMilitar.Text = "Actualizar Situación Militar";
+            this.btnActualizarSituacionMilitar.UseVisualStyleBackColor = true;
+            this.btnActualizarSituacionMilitar.Click += new System.EventHandler(this.button2_Click);
+            // 
             // FormProcesoManual
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(744, 396);
+            this.ClientSize = new System.Drawing.Size(898, 460);
+            this.Controls.Add(this.btnActualizarSituacionMilitar);
+            this.Controls.Add(this.btnActualizarNotasFisicas);
             this.Controls.Add(this.dgwErrores);
             this.Controls.Add(this.btnActualizarInglesTAE);
             this.Controls.Add(this.btnActualizarNotasFinales);
@@ -190,6 +214,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn tabla;
         private System.Windows.Forms.DataGridViewTextBoxColumn idRegistro;
         private System.Windows.Forms.DataGridViewTextBoxColumn error;
+        private System.Windows.Forms.Button btnActualizarNotasFisicas;
+        private System.Windows.Forms.Button btnActualizarSituacionMilitar;
     }
 }
 

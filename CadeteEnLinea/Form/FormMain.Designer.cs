@@ -72,7 +72,7 @@
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.salirToolStripMenuItem.Text = "Cerrar";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -98,7 +98,6 @@
             this.procesosToolStripMenuItem.Name = "procesosToolStripMenuItem";
             this.procesosToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.procesosToolStripMenuItem.Text = "Procesos";
-            this.procesosToolStripMenuItem.Visible = false;
             // 
             // ejecuciónManualToolStripMenuItem
             // 
@@ -118,7 +117,7 @@
             // minimizarToolStripMenuItem
             // 
             this.minimizarToolStripMenuItem.Name = "minimizarToolStripMenuItem";
-            this.minimizarToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.minimizarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.minimizarToolStripMenuItem.Text = "Minimizar";
             this.minimizarToolStripMenuItem.Click += new System.EventHandler(this.minimizarToolStripMenuItem_Click);
             // 
@@ -135,7 +134,7 @@
             this.abrirToolStripMenuItem,
             this.mantenedorTareasToolStripMenuItem});
             this.contextMenuStrip.Name = "contextMenuStrip";
-            this.contextMenuStrip.Size = new System.Drawing.Size(188, 70);
+            this.contextMenuStrip.Size = new System.Drawing.Size(188, 48);
             // 
             // abrirToolStripMenuItem
             // 

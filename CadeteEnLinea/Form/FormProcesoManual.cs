@@ -17,6 +17,7 @@ namespace CadeteEnLinea
     {
         List<errores> result = new List<errores>();
         JavaScriptSerializer jss = new JavaScriptSerializer();
+        private cadeteenlineaEntities conexion = new cadeteenlineaEntities();
 
         public FormProcesoManual()
         {
@@ -25,162 +26,298 @@ namespace CadeteEnLinea
 
         private void buttonActualizarUsuarios_Click(object sender, EventArgs e)
         {
+            try
+            {
+                this.enableBtn(false);
 
-            this.enableBtn(false);
+                var proceso = conexion.proceso.Where(p => p.idproceso == 1).First();
+                etl etlEjecutar = new etl(proceso);
+                etlEjecutar.ejecutar();
 
-            this.setErrors(usuario.sendWeb(1));
-            this.setErrors(usuario.sendWeb(2));
-            this.setErrors(cadete.sendWeb(1));
-            this.setErrors(cadete.sendWeb(2));
-            this.setErrors(apoderado.sendWeb(1));
-            this.setErrors(apoderado.sendWeb(2));
-            this.setErrors(cadete_apoderado.sendWeb(1));
-            this.setErrors(cadete_apoderado.sendWeb(2));
-            this.setErrors(cadete_apoderado.sendWeb(3));
-            this.setErrors(apoderado.sendWeb(3));
-            this.setErrors(cadete.sendWeb(3));
-            this.setErrors(usuario.sendWeb(3));
-            
-            if (result.Count() > 0) {
-                result = new List<errores>();
-                dgwErrores.DataSource = result;
+                this.setErrors(usuario.sendWeb(1));
+                this.setErrors(usuario.sendWeb(2));
+                this.setErrors(cadete.sendWeb(1));
+                this.setErrors(cadete.sendWeb(2));
+                this.setErrors(apoderado.sendWeb(1));
+                this.setErrors(apoderado.sendWeb(2));
+                this.setErrors(cadete_apoderado.sendWeb(1));
+                this.setErrors(cadete_apoderado.sendWeb(2));
+                this.setErrors(cadete_apoderado.sendWeb(3));
+                this.setErrors(apoderado.sendWeb(3));
+                this.setErrors(cadete.sendWeb(3));
+                this.setErrors(usuario.sendWeb(3));
+
+                if (result.Count() > 0)
+                {
+                    result = new List<errores>();
+                    dgwErrores.DataSource = result;
+                }
+
+
+                if (result.Count() > 0)
+                {
+                    dgwErrores.DataSource = result;
+                    dgwErrores.Update();
+                    dgwErrores.Refresh();
+                }
+                this.enableBtn(true);
+                MessageBox.Show("Proceso finalizado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            
-
-            if (result.Count() > 0) {
-                dgwErrores.DataSource = result;
-                dgwErrores.Update();
-                dgwErrores.Refresh();
+            catch (Exception ex) {
+                MessageBox.Show(ex.ToString(), "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.enableBtn(true);
             }
-            this.enableBtn(true);
-            MessageBox.Show("Proceso finalizado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void buttonActualizarTransacciones_Click(object sender, EventArgs e)
         {
-            if (result.Count() > 0)
+            try
             {
-                result = new List<errores>();
-                dgwErrores.DataSource = result;
-            }
-            this.enableBtn(false);
+                if (result.Count() > 0)
+                {
+                    result = new List<errores>();
+                    dgwErrores.DataSource = result;
+                }
+                this.enableBtn(false);
 
-            this.setErrors(transaccion.sendWeb(1));
-            this.setErrors(transaccion.sendWeb(2));
-            this.setErrors(transaccion.sendWeb(3));
+                var proceso = conexion.proceso.Where(p => p.idproceso == 5).First();
+                etl etlEjecutar = new etl(proceso);
+                etlEjecutar.ejecutar();
 
-            if (result.Count() > 0)
-            {
-                dgwErrores.DataSource = result;
-                dgwErrores.Update();
-                dgwErrores.Refresh();
+                this.setErrors(usuario.sendWeb(1));
+                this.setErrors(usuario.sendWeb(2));
+                this.setErrors(cadete.sendWeb(1));
+                this.setErrors(cadete.sendWeb(2));
+                this.setErrors(apoderado.sendWeb(1));
+                this.setErrors(apoderado.sendWeb(2));
+                this.setErrors(cadete_apoderado.sendWeb(1));
+                this.setErrors(cadete_apoderado.sendWeb(2));
+
+                this.setErrors(transaccion.sendWeb(1));
+                this.setErrors(transaccion.sendWeb(2));
+                this.setErrors(transaccion.sendWeb(3));
+
+                this.setErrors(cadete_apoderado.sendWeb(3));
+                this.setErrors(apoderado.sendWeb(3));
+                this.setErrors(cadete.sendWeb(3));
+                this.setErrors(usuario.sendWeb(3));
+
+
+                if (result.Count() > 0)
+                {
+                    dgwErrores.DataSource = result;
+                    dgwErrores.Update();
+                    dgwErrores.Refresh();
+                }
+                this.enableBtn(true);
+                MessageBox.Show("Proceso finalizado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            this.enableBtn(true);
-            MessageBox.Show("Proceso finalizado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            catch (Exception ex) {
+                MessageBox.Show(ex.ToString(), "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.enableBtn(true);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (result.Count() > 0)
+            try
             {
-                result = new List<errores>();
-                dgwErrores.DataSource = result;
+                if (result.Count() > 0)
+                {
+                    result = new List<errores>();
+                    dgwErrores.DataSource = result;
+                }
+                this.enableBtn(false);
+
+                var proceso = conexion.proceso.Where(p => p.idproceso == 2).First();
+                etl etlEjecutar = new etl(proceso);
+                etlEjecutar.ejecutar();
+
+                this.setErrors(usuario.sendWeb(1));
+                this.setErrors(usuario.sendWeb(2));
+                this.setErrors(cadete.sendWeb(1));
+                this.setErrors(cadete.sendWeb(2));
+                this.setErrors(apoderado.sendWeb(1));
+                this.setErrors(apoderado.sendWeb(2));
+                this.setErrors(cadete_apoderado.sendWeb(1));
+                this.setErrors(cadete_apoderado.sendWeb(2));
+
+                this.setErrors(asignatura.sendWeb(1));
+                this.setErrors(asignatura.sendWeb(2));
+                this.setErrors(notas_parciales.sendWeb(1));
+                this.setErrors(notas_parciales.sendWeb(2));
+                this.setErrors(notas_parciales.sendWeb(3));
+                this.setErrors(notas_finales.sendWeb(3));
+                this.setErrors(asignatura.sendWeb(3));
+
+                this.setErrors(cadete_apoderado.sendWeb(3));
+                this.setErrors(apoderado.sendWeb(3));
+                this.setErrors(cadete.sendWeb(3));
+                this.setErrors(usuario.sendWeb(3));
+
+                if (result.Count() > 0)
+                {
+                    dgwErrores.DataSource = result;
+                    dgwErrores.Update();
+                    dgwErrores.Refresh();
+                }
+                this.enableBtn(true);
+                MessageBox.Show("Proceso finalizado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            this.enableBtn(false);
-
-            this.setErrors(asignatura.sendWeb(1));
-            this.setErrors(asignatura.sendWeb(2));
-            this.setErrors(notas_parciales.sendWeb(1));
-            this.setErrors(notas_parciales.sendWeb(2));
-            this.setErrors(notas_parciales.sendWeb(3));
-            this.setErrors(notas_finales.sendWeb(3));
-            this.setErrors(asignatura.sendWeb(3));
-
-
-            if (result.Count() > 0)
-            {
-                dgwErrores.DataSource = result;
-                dgwErrores.Update();
-                dgwErrores.Refresh();
+            catch (Exception ex) {
+                MessageBox.Show(ex.ToString(), "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.enableBtn(true);
             }
-            this.enableBtn(true);
-            MessageBox.Show("Proceso finalizado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void buttonActualizarCalificaciones_Click(object sender, EventArgs e)
         {
-            if (result.Count() > 0)
+            try
             {
-                result = new List<errores>();
-                dgwErrores.DataSource = result;
+                if (result.Count() > 0)
+                {
+                    result = new List<errores>();
+                    dgwErrores.DataSource = result;
+                }
+                this.enableBtn(false);
+
+                var proceso = conexion.proceso.Where(p => p.idproceso == 3).First();
+                etl etlEjecutar = new etl(proceso);
+                etlEjecutar.ejecutar();
+
+                this.setErrors(usuario.sendWeb(1));
+                this.setErrors(usuario.sendWeb(2));
+                this.setErrors(cadete.sendWeb(1));
+                this.setErrors(cadete.sendWeb(2));
+                this.setErrors(apoderado.sendWeb(1));
+                this.setErrors(apoderado.sendWeb(2));
+                this.setErrors(cadete_apoderado.sendWeb(1));
+                this.setErrors(cadete_apoderado.sendWeb(2));
+
+                this.setErrors(calificaciones.sendWeb(1));
+                this.setErrors(calificaciones.sendWeb(2));
+                this.setErrors(calificaciones.sendWeb(3));
+
+                this.setErrors(cadete_apoderado.sendWeb(3));
+                this.setErrors(apoderado.sendWeb(3));
+                this.setErrors(cadete.sendWeb(3));
+                this.setErrors(usuario.sendWeb(3));
+
+
+                if (result.Count() > 0)
+                {
+                    dgwErrores.DataSource = result;
+                    dgwErrores.Update();
+                    dgwErrores.Refresh();
+                }
+                this.enableBtn(true);
+                MessageBox.Show("Proceso finalizado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            this.enableBtn(false);
-
-            this.setErrors(calificaciones.sendWeb(1));
-            this.setErrors(calificaciones.sendWeb(2));
-            this.setErrors(calificaciones.sendWeb(3));
-
-
-            if (result.Count() > 0)
-            {
-                dgwErrores.DataSource = result;
-                dgwErrores.Update();
-                dgwErrores.Refresh();
+            catch (Exception ex) {
+                MessageBox.Show(ex.ToString(), "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.enableBtn(true);
             }
-            this.enableBtn(true);
-            MessageBox.Show("Proceso finalizado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnActualizarNotasFinales_Click(object sender, EventArgs e)
         {
-            if (result.Count() > 0)
+            try
             {
-                result = new List<errores>();
-                dgwErrores.DataSource = result;
+                if (result.Count() > 0)
+                {
+                    result = new List<errores>();
+                    dgwErrores.DataSource = result;
+                }
+                this.enableBtn(false);
+
+                var proceso = conexion.proceso.Where(p => p.idproceso == 6).First();
+                etl etlEjecutar = new etl(proceso);
+                etlEjecutar.ejecutar();
+
+                this.setErrors(usuario.sendWeb(1));
+                this.setErrors(usuario.sendWeb(2));
+                this.setErrors(cadete.sendWeb(1));
+                this.setErrors(cadete.sendWeb(2));
+                this.setErrors(apoderado.sendWeb(1));
+                this.setErrors(apoderado.sendWeb(2));
+                this.setErrors(cadete_apoderado.sendWeb(1));
+                this.setErrors(cadete_apoderado.sendWeb(2));
+
+                this.setErrors(asignatura.sendWeb(1));
+                this.setErrors(asignatura.sendWeb(2));
+                this.setErrors(notas_finales.sendWeb(1));
+                this.setErrors(notas_finales.sendWeb(2));
+                this.setErrors(notas_finales.sendWeb(3));
+                this.setErrors(notas_parciales.sendWeb(3));
+                this.setErrors(asignatura.sendWeb(3));
+
+                this.setErrors(cadete_apoderado.sendWeb(3));
+                this.setErrors(apoderado.sendWeb(3));
+                this.setErrors(cadete.sendWeb(3));
+                this.setErrors(usuario.sendWeb(3));
+
+                if (result.Count() > 0)
+                {
+                    dgwErrores.DataSource = result;
+                    dgwErrores.Update();
+                    dgwErrores.Refresh();
+                }
+                this.enableBtn(true);
+                MessageBox.Show("Proceso finalizado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            this.enableBtn(false);
-
-            this.setErrors(asignatura.sendWeb(1));
-            this.setErrors(asignatura.sendWeb(2));
-            this.setErrors(notas_finales.sendWeb(1));
-            this.setErrors(notas_finales.sendWeb(2));
-            this.setErrors(notas_finales.sendWeb(3));
-            this.setErrors(notas_parciales.sendWeb(3));
-            this.setErrors(asignatura.sendWeb(3));
-
-
-            if (result.Count() > 0)
-            {
-                dgwErrores.DataSource = result;
-                dgwErrores.Update();
-                dgwErrores.Refresh();
+            catch (Exception ex) {
+                MessageBox.Show(ex.ToString(), "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.enableBtn(true);
             }
-            this.enableBtn(true);
-            MessageBox.Show("Proceso finalizado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnActualizarInglesTAE_Click(object sender, EventArgs e)
         {
-            if (result.Count() > 0)
+            try
             {
-                result = new List<errores>();
-                dgwErrores.DataSource = result;
+                if (result.Count() > 0)
+                {
+                    result = new List<errores>();
+                    dgwErrores.DataSource = result;
+                }
+                this.enableBtn(false);
+
+                var proceso = conexion.proceso.Where(p => p.idproceso == 4).First();
+                etl etlEjecutar = new etl(proceso);
+                etlEjecutar.ejecutar();
+
+                this.setErrors(usuario.sendWeb(1));
+                this.setErrors(usuario.sendWeb(2));
+                this.setErrors(cadete.sendWeb(1));
+                this.setErrors(cadete.sendWeb(2));
+                this.setErrors(apoderado.sendWeb(1));
+                this.setErrors(apoderado.sendWeb(2));
+                this.setErrors(cadete_apoderado.sendWeb(1));
+                this.setErrors(cadete_apoderado.sendWeb(2));
+
+                this.setErrors(ingles_tae.sendWeb(1));
+                this.setErrors(ingles_tae.sendWeb(2));
+                this.setErrors(ingles_tae.sendWeb(3));
+
+                this.setErrors(cadete_apoderado.sendWeb(3));
+                this.setErrors(apoderado.sendWeb(3));
+                this.setErrors(cadete.sendWeb(3));
+                this.setErrors(usuario.sendWeb(3));
+
+
+                if (result.Count() > 0)
+                {
+                    dgwErrores.DataSource = result;
+                    dgwErrores.Update();
+                    dgwErrores.Refresh();
+                }
+                this.enableBtn(true);
+                MessageBox.Show("Proceso finalizado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            this.enableBtn(false);
-
-            this.setErrors(ingles_tae.sendWeb(1));
-            this.setErrors(ingles_tae.sendWeb(2));
-            this.setErrors(ingles_tae.sendWeb(3));
-
-
-            if (result.Count() > 0)
-            {
-                dgwErrores.DataSource = result;
-                dgwErrores.Update();
-                dgwErrores.Refresh();
+            catch (Exception ex) {
+                MessageBox.Show(ex.ToString(), "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.enableBtn(true);
             }
-            this.enableBtn(true);
-            MessageBox.Show("Proceso finalizado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
 
@@ -192,6 +329,8 @@ namespace CadeteEnLinea
             btnActualizarTransacciones.Enabled = estado;
             btnActualizarUsuarios.Enabled = estado;
             btnActualizarCalificaciones.Enabled = estado;
+            btnActualizarNotasFisicas.Enabled = estado;
+            btnActualizarSituacionMilitar.Enabled = estado;
         }
 
         private void setErrors(string errores)
@@ -203,6 +342,103 @@ namespace CadeteEnLinea
                 {
                     result.AddRange(jss.Deserialize<List<errores>>(errores));
                 }
+            }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                if (result.Count() > 0)
+                {
+                    result = new List<errores>();
+                    dgwErrores.DataSource = result;
+                }
+                this.enableBtn(false);
+
+                var proceso = conexion.proceso.Where(p => p.idproceso == 7).First();
+                etl etlEjecutar = new etl(proceso);
+                etlEjecutar.ejecutar();
+
+                this.setErrors(usuario.sendWeb(1));
+                this.setErrors(usuario.sendWeb(2));
+                this.setErrors(cadete.sendWeb(1));
+                this.setErrors(cadete.sendWeb(2));
+                this.setErrors(apoderado.sendWeb(1));
+                this.setErrors(apoderado.sendWeb(2));
+                this.setErrors(cadete_apoderado.sendWeb(1));
+                this.setErrors(cadete_apoderado.sendWeb(2));
+
+                this.setErrors(notas_fisico.sendWeb(1));
+                this.setErrors(notas_fisico.sendWeb(2));
+                this.setErrors(notas_fisico.sendWeb(3));
+                this.setErrors(nivelacion.sendWeb(1));
+                this.setErrors(nivelacion.sendWeb(2));
+                this.setErrors(nivelacion.sendWeb(3));
+
+                this.setErrors(cadete_apoderado.sendWeb(3));
+                this.setErrors(apoderado.sendWeb(3));
+                this.setErrors(cadete.sendWeb(3));
+                this.setErrors(usuario.sendWeb(3));
+
+
+
+                if (result.Count() > 0)
+                {
+                    dgwErrores.DataSource = result;
+                    dgwErrores.Update();
+                    dgwErrores.Refresh();
+                }
+                this.enableBtn(true);
+                MessageBox.Show("Proceso finalizado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex) {
+                MessageBox.Show(ex.ToString(), "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.enableBtn(true);
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (result.Count() > 0)
+                {
+                    result = new List<errores>();
+                    dgwErrores.DataSource = result;
+                }
+                this.enableBtn(false);
+
+                var proceso = conexion.proceso.Where(p => p.idproceso == 8).First();
+                etl etlEjecutar = new etl(proceso);
+                etlEjecutar.ejecutar();
+
+                this.setErrors(usuario.sendWeb(1));
+                this.setErrors(usuario.sendWeb(2));
+                this.setErrors(cadete.sendWeb(1));
+                this.setErrors(cadete.sendWeb(2));
+                this.setErrors(apoderado.sendWeb(1));
+                this.setErrors(apoderado.sendWeb(2));
+                this.setErrors(cadete_apoderado.sendWeb(1));
+                this.setErrors(cadete_apoderado.sendWeb(2));
+                this.setErrors(francos.sendWeb(1));
+                this.setErrors(cadete_apoderado.sendWeb(3));
+                this.setErrors(apoderado.sendWeb(3));
+                this.setErrors(cadete.sendWeb(3));
+                this.setErrors(usuario.sendWeb(3));
+
+                if (result.Count() > 0)
+                {
+                    dgwErrores.DataSource = result;
+                    dgwErrores.Update();
+                    dgwErrores.Refresh();
+                }
+                this.enableBtn(true);
+                MessageBox.Show("Proceso finalizado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex) {
+                MessageBox.Show(ex.ToString(), "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.enableBtn(true);
             }
         }
     }

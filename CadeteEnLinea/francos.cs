@@ -21,6 +21,7 @@ namespace CadeteEnLinea
         public string hora_recogida { get; set; }
         public string fecha_recogida { get; set; }
         public string asignatura_bajo { get; set; }
+        public string observaciones { get; set; }
         public Nullable<int> estado { get; set; }
     
         public virtual cadete cadete { get; set; }

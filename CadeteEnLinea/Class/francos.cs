@@ -27,6 +27,7 @@ namespace CadeteEnLinea
                 fecha_recogida = p.fecha_recogida,
                 hora_recogida = p.hora_recogida,
                 asignatura_bajo = p.asignatura_bajo,
+                observaciones = p.observaciones
             }).ToList();
 
             string result = String.Empty;

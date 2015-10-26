@@ -38,7 +38,7 @@
         <AssociationConnector Association="cadeteenlineaModel.FK_notas_fisico_cadete" />
         <EntityTypeShape EntityType="cadeteenlineaModel.nivelacion" Width="1.5" PointX="11.625" PointY="17.375" />
         <AssociationConnector Association="cadeteenlineaModel.FK_nivelacion_cadete" />
-        <EntityTypeShape EntityType="cadeteenlineaModel.francos" Width="1.5" PointX="9.5067766930473852" PointY="4.7179787925993928" />
+        <EntityTypeShape EntityType="cadeteenlineaModel.francos" Width="1.5" PointX="8.89378446009652" PointY="28.042813865487844" />
         <AssociationConnector Association="cadeteenlineaModel.FK_francos_cadete" />
         </Diagram>
     </edmx:Diagrams>

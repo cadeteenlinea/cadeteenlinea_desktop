@@ -197,7 +197,8 @@
           <Property Name="hora_salida" Type="varchar" MaxLength="50" />
           <Property Name="hora_recogida" Type="varchar" MaxLength="50" />
           <Property Name="fecha_recogida" Type="varchar" MaxLength="50" />
-          <Property Name="asignatura_bajo" Type="varchar" MaxLength="50" />
+          <Property Name="asignatura_bajo" Type="nvarchar" MaxLength="258" />
+          <Property Name="observaciones" Type="nvarchar" MaxLength="154" />
           <Property Name="estado" Type="int" />
         </EntityType>
         <EntityType Name="ingles_tae">
@@ -1145,7 +1146,8 @@
           <Property Type="String" Name="hora_salida" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="hora_recogida" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="fecha_recogida" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="asignatura_bajo" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="asignatura_bajo" MaxLength="258" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="observaciones" MaxLength="154" FixedLength="false" Unicode="true" />
           <Property Type="Int32" Name="estado" />
           <NavigationProperty Name="cadete" Relationship="cadeteenlineaModel.FK_francos_cadete" FromRole="francos" ToRole="cadete" />
         </EntityType>
@@ -1442,6 +1444,7 @@
             <EntityTypeMapping TypeName="cadeteenlineaModel.francos">
               <MappingFragment StoreEntitySet="francos">
                 <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="observaciones" ColumnName="observaciones" />
                 <ScalarProperty Name="asignatura_bajo" ColumnName="asignatura_bajo" />
                 <ScalarProperty Name="fecha_recogida" ColumnName="fecha_recogida" />
                 <ScalarProperty Name="hora_recogida" ColumnName="hora_recogida" />
