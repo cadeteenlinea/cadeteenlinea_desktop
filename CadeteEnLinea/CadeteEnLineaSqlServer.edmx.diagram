@@ -27,19 +27,19 @@
         <AssociationConnector Association="cadeteenlineaModel.FK_notas_parciales_cadete1" ManuallyRouted="false" />
         <AssociationConnector Association="cadeteenlineaModel.FK_transaccion_cadete" ManuallyRouted="false" />
         <EntityTypeShape EntityType="cadeteenlineaModel.proceso" Width="1.5" PointX="9.5" PointY="7.25" />
-        <EntityTypeShape EntityType="cadeteenlineaModel.tarea" Width="1.5" PointX="6.5" PointY="6.625" />
-        <AssociationConnector Association="cadeteenlineaModel.FK_tarea_proceso" />
         <EntityTypeShape EntityType="cadeteenlineaModel.errores" Width="1.5" PointX="2.6906094656747812" PointY="21.578686619912595" />
-        <AssociationConnector Association="cadeteenlineaModel.FK_error_tarea" />
         <EntityTypeShape EntityType="cadeteenlineaModel.sysdiagrams" Width="1.5" PointX="3.5354045161676613" PointY="31.670573130096574" />
         <EntityTypeShape EntityType="cadeteenlineaModel.estadoTarea" Width="1.5" PointX="2.5" PointY="10.5" />
-        <AssociationConnector Association="cadeteenlineaModel.FK_tarea_estadoTarea" />
         <EntityTypeShape EntityType="cadeteenlineaModel.notas_fisico" Width="1.5" PointX="9.125" PointY="19.625" />
         <AssociationConnector Association="cadeteenlineaModel.FK_notas_fisico_cadete" />
         <EntityTypeShape EntityType="cadeteenlineaModel.nivelacion" Width="1.5" PointX="11.625" PointY="17.375" />
         <AssociationConnector Association="cadeteenlineaModel.FK_nivelacion_cadete" />
         <EntityTypeShape EntityType="cadeteenlineaModel.francos" Width="1.5" PointX="8.89378446009652" PointY="28.042813865487844" />
         <AssociationConnector Association="cadeteenlineaModel.FK_francos_cadete" />
+        <EntityTypeShape EntityType="cadeteenlineaModel.tarea" Width="1.5" PointX="6.25" PointY="6.5" />
+        <AssociationConnector Association="cadeteenlineaModel.FK_error_tarea" />
+        <AssociationConnector Association="cadeteenlineaModel.FK_tarea_estadoTarea" />
+        <AssociationConnector Association="cadeteenlineaModel.FK_tarea_proceso1" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

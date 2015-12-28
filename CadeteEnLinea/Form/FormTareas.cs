@@ -68,7 +68,10 @@ namespace CadeteEnLinea
         {
             tarea tablatarea = new tarea();
             tablatarea.fecha = dtmFecha.Value.Date;
-            tablatarea.hora = new  TimeSpan(dtmHora.Value.Hour, dtmHora.Value.Minute, 0);
+            //tablatarea.hora = new  TimeSpan(dtmHora.Value.Hour, dtmHora.Value.Minute, 0);
+            //tablatarea.hora = new DateTime(dtmHora.Value.Hour, dtmHora.Value.Minute, 0);
+            tablatarea.hora = dtmFecha.Value.Date.Add(dtmHora.Value.TimeOfDay);
+
             tablatarea.estado = 1;
             tablatarea.proceso_idproceso = Convert.ToInt32(cmbProcesos.SelectedValue);
             //tablatarea.proceso.idproceso = Convert.ToInt32(cmbProcesos.SelectedValue);

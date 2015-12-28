@@ -23,7 +23,8 @@ namespace CadeteEnLinea
         {
             dgvErrores.DataSource = errores.getAllErroresTarea(tar.idtarea);
             dgvErrores.Refresh();
-            lblFecha.Text = Convert.ToDateTime(tar.fecha + tar.hora).ToString();
+            //lblFecha.Text = Convert.ToDateTime(tar.fecha + tar.hora).ToString();
+            lblFecha.Text = DateTime.Now.ToString();
             lblProceso.Text = tar.proceso.nombre;
         }
 

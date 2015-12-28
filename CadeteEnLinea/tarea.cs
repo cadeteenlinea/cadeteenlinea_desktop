@@ -21,12 +21,12 @@ namespace CadeteEnLinea
     
         public int idtarea { get; set; }
         public System.DateTime fecha { get; set; }
-        public System.TimeSpan hora { get; set; }
+        public System.DateTime hora { get; set; }
         public int estado { get; set; }
         public int proceso_idproceso { get; set; }
     
-        public virtual proceso proceso { get; set; }
         public virtual ICollection<errores> errores { get; set; }
         public virtual estadoTarea estadoTarea { get; set; }
+        public virtual proceso proceso { get; set; }
     }
 }

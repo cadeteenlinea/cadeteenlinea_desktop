@@ -101,7 +101,10 @@ namespace CadeteEnLinea
          * de ejecución de la tarea con la fecha y hora actual*/
         private double diferenciaFecha() {
             DateTime now = DateTime.Now;
-            DateTime fecha = Convert.ToDateTime(this.fecha + this.hora);
+            string fecha_s = this.fecha.Day.ToString() + "-" + this.fecha.Month.ToString()
+                + "-" + this.fecha.Year + " " + this.hora.Hour.ToString() + ":" + this.hora.Minute.ToString() + ":00";
+            DateTime fecha = Convert.ToDateTime(fecha_s);
+            //DateTime fecha =  Convert.ToDateTime(this.fecha + this.hora.Hour);
             if (fecha < now)
             {
                 return 0;

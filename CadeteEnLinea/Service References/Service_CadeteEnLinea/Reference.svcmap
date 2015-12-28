@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="dd949191-7296-4108-91d3-754d5b6a737f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="061747d9-4a92-42cc-bb81-752b4ca445af" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,10 +19,10 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost/cadeteenlinea/site/cadeteEnLineaDesktop" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://200.54.198.54/cadeteenlinea/site/cadeteEnLineaDesktop" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="SiteController1.wsdl" MetadataType="Wsdl" ID="a606e1b7-d96e-40ae-97c5-07f04e497a9e" SourceId="1" SourceUrl="http://localhost/cadeteenlinea/site/cadeteEnLineaDesktop" />
+    <MetadataFile FileName="SiteController.wsdl" MetadataType="Wsdl" ID="949b6c22-bc3a-4016-bb77-b893a5b84d4a" SourceId="1" SourceUrl="http://200.54.198.54/cadeteenlinea/site/cadeteEnLineaDesktop" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
